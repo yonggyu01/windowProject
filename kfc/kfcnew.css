@@ -1,0 +1,663 @@
+*{
+    padding: 0;margin: 0;
+    list-style: none;
+}
+a{ text-decoration: none;
+   color: black;
+   font-size: 14px;
+}
+body{
+    height: 100%;
+    font-size: 1rem;
+}
+.screenx{
+    /* text-indent: -999999px; */
+    width: 0;height: 0; overflow: hidden;
+    line-height: 0;
+    display: inline-block;
+    position: absolute;
+
+    /* vertical-align: bottom; */
+
+}
+
+/* 헤더 시작 */
+.header{
+    height: 141px;
+    border-top:1px solid rgba(102, 51, 153, 0);
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 3;
+    padding-top: 20px;
+    /* width: 1440px; */
+    margin: 0 auto;
+    box-sizing: border-box;
+    background: white;
+    
+}
+.logowrap{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 1070px;
+}
+
+h1>a{
+    content:url(images/khclgo.png);
+    display: block;
+    width: 110px;
+    height: 30px;
+    object-fit: cover;
+    background: white;
+    margin-top: 10px;
+    text-indent: -999999px;
+}
+.floatbar{
+  position: fixed;
+}
+#gnb{
+    width: 1440px;
+    margin: auto;
+    background: white;
+    /* position: fixed; */
+}
+.nav{
+    max-width: 1130px;
+    /* margin: auto; */
+    padding-right: 310px;
+    /* box-sizing: border-box; */
+}
+#nonelist{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;   
+    align-items: center;
+    width: 717px; 
+    height: 47px;
+    margin: auto;
+    box-sizing: border-box;
+    /* padding-left: 220px; */
+    /* padding-right: 110px; */
+
+}
+#nonelist>li{
+    position: relative;
+    
+    font-weight: bold;
+    width: 135px;
+    margin: auto;
+ 
+}
+#nonelist>li>a{
+    /* font-size: inherit; */
+    display: block;
+    /* padding-bottom: 20px; */
+    text-align: center;   
+    font-size: 16px; 
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#nonelist>li{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+}
+.linea{
+    display: inline-block;
+     height: 6px;
+    width: 0px;
+    overflow: hidden;
+    transition: all 0.4s;
+    box-sizing: border-box;
+    border-bottom: 1px black solid;
+    justify-content: center;
+}
+.lineb{
+    display: inline-block;
+    height: 6px;
+    width: 0px;
+    /* padding-bottom: 30px; */
+    transition: all 0.4s;
+    box-sizing: border-box;
+    border-bottom: 1px black solid;
+    justify-content: center;
+    
+
+}
+.linec{
+    display: inline-block;
+    height: 6px;
+    width: 0px;
+    /* padding-bottom: 30px; */
+    transition: all 0.4s;
+    box-sizing: border-box;
+    border-bottom: 1px black solid;
+}
+.lined{
+    display: inline-block;
+    height: 6px;
+    width: 0px;
+    /* padding-bottom: 30px; */
+    transition: all 0.4s;
+    box-sizing: border-box;
+    border-bottom: 1px black solid;
+
+}
+.linee{
+    display: inline-block;
+    height: 6px;
+    width: 0px;
+    /* padding-bottom: 30px; */
+    transition: all 0.4s;
+    box-sizing: border-box;
+    border-bottom: 1px black solid;
+
+}
+/* #nonelist>li:hover .lit1{
+    height: 180px;
+    display: block;} */
+
+.lit1{
+    /* display: none; */
+    position: absolute;
+    padding-top: 60px;
+    transition: all 0.4s;
+    height: 0px;
+
+    overflow: hidden;
+
+}
+.lit1>li{
+    font-weight:initial;
+    width: 150px;
+    text-align: center;
+    margin: 10px 0;
+}
+
+/* .nav:hover div.whitebar, .nav:hover .lit1{
+    height: 220px;
+} */
+.whitebar{
+    background: rgb(255, 255, 255);
+    width: 100%;
+    /* height: 240px; */
+    height: 0;
+    position: absolute;
+    top:60px;
+    left:0;
+    transition: all 0.5s;
+    overflow: hidden;
+}
+.bgbar{
+    content: '';
+    position: absolute;
+    top:0;
+    right: 0;
+    background: url(images/kfc_sprite.png) no-repeat;
+    width: 250px;
+    height: 150px;
+}
+
+#utill>ul{
+    display: flex;
+    flex-direction:row;
+    /* align-content: center; */
+    gap:10px;
+    /* margin-top: 20px; */
+    box-sizing: border-box;
+
+
+}
+#utill>ul>li{
+    height: 47px;
+    line-height: 47px;
+}
+
+#utill>ul>li a{
+    /* overflow: hidden;
+    display: block; */
+    padding-left: 10px;
+    /* border-left: 1px solid black; */
+    
+}
+.border{
+    border-left: 1px solid black;
+}
+.noborder{
+    border: none;
+}
+
+
+
+.arrow{
+    position: absolute;
+    top:200px;
+    width: 100%;
+    padding: 0 50px;
+    box-sizing: border-box;
+}
+/* .arrow>div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+} */
+.arrow a{
+    font-size: 50px;
+    display: block;
+    color : white;
+}
+.arrow .left{
+    position: absolute;
+    left:0;
+}
+.arrow .right{
+    position: absolute;
+    right:0;
+}
+
+
+/* 메인 */
+
+#picture_link{
+    width: 1440px;
+    margin: auto;
+}
+#picsl{
+    height: 440px;
+    width: 100%;
+    position: relative;
+}
+#picsl ul>li>a{
+    /* top: 0; */
+    /* display: block; */
+    height: 440px;
+    max-width: 100%;
+    content: '';
+    text-align: center;
+    margin: auto;
+    /* background: url(images/main1.png) no-repeat center/cover; */
+}
+.maskbox{
+    position: relative;
+    width: 100%;
+   overflow: hidden;
+   height: 440px;
+   
+}
+.maskbox>ul{
+    display: flex;
+    flex-flow:row nowrap;
+    height: 440px;
+    position: absolute;
+    left:0px;
+    transition: all 0.5s;
+
+}
+#picture_link>ul{
+    display: flex;
+    flex-direction: row;   
+    justify-content: space-evenly;
+    gap: 10px;
+
+    max-width: 100%;
+    margin: 20px 50px;;
+}
+#picture_link>ul>li:first-child a{
+content:'';
+display: block;
+width: 500px;;
+height: 182px;
+text-indent : -999999999px;
+background: url(images/banner_storesearch.png) border-box no-repeat center/100%;
+border-radius: 15px;
+}
+#picture_link>ul>li:nth-child(2) a{
+content:'';
+display: block;
+width: 500px;
+height: 182px;
+text-indent : -999999999px;
+background: url(images/banner_Delivery_v2.png) border-box no-repeat center/100%;
+border-radius: 15px;
+}
+#picture_link>ul>li:last-child a{
+content:'';
+display: block;
+width: 500px;
+height: 182px;
+text-indent : -999999999px;
+background: url(images/banner_promotion_v2.png) border-box no-repeat center/100%;
+border-radius: 15px;
+}
+.logoimg{
+    content: '';
+    background: url(images/kfc_sprite.png);
+    width: 250px;
+    height: 150px;
+ 
+}
+.titled{
+    position: relative;
+    width: 1440px;
+    margin: auto;
+}
+.titled h2{
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+.minilr{
+    position: absolute;
+    top: 90px;
+    width: 100%;
+    padding: 0 50px;
+    box-sizing: border-box;
+}
+.minilr>div{
+    display: flex;
+    gap : 10px;
+    justify-content: flex-end;
+    
+}
+.minilr a{
+    display: block;
+    padding: 0 15px 15px;
+
+    font-size: 50px;
+    border: 3px red solid;
+    border-radius: 15px;;
+    color : red
+}
+/* titled bg 정렬과 swife2 정렬 1440으로 */
+
+
+.swifebox1{
+    position: relative;
+    width: 1440px;
+    overflow: hidden;
+    height: 400px;
+    margin: auto;
+    padding-left: 20px;
+    box-sizing: border-box;
+   transition: all 0.5s;
+}
+
+.swife2 ul{
+    /* top: 0; */
+    width: 7000px;
+    left : 0px;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+    /* width: 100%; */
+    gap : 20px;
+    margin-bottom: 20px;
+    transition: all 0.5s;
+}
+.swife2 ul>li{
+width: 20%;
+/* height: 300px; */
+padding: 0 1%;
+border-radius: 15px;
+box-shadow: 1px 10px 15px rgba(0, 0, 0, 0.242);
+overflow: hidden;
+padding: 0 10px;
+margin: 0 30px;
+}
+.ssimg1>img{
+    max-width: 100%;
+    object-fit: fill;
+    display: block;
+
+}
+.ssimg2>img{
+    max-width: 100%;
+    object-fit: fill;
+    display: block;
+
+}
+.ssimg3>img{
+    max-width: 100%;
+    object-fit: fill;
+    display: block;
+
+}
+.pop1 span{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    gap: 10px;
+    margin-bottom: 20px;;
+}
+.hid{
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap ;
+}
+.pop1 span>p:last-child{
+color : red;
+}
+.moremenu{
+    border-top: 1px solid white;
+    width: 380px;
+    height: 84px;
+    background: black;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 50px;
+}
+.moremenu>a{
+    color:white;
+    font-size: 20px;
+    font-weight: bold;
+}
+.app{
+    background: red;
+    width: 100%;
+    height: 370px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.apppic{
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.apppic>a{display: flex;
+    width: 200px;
+    height: 67px;
+    background: #000;
+    color: white;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    border-radius: 15px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.apppic2>img{
+    
+    transform: translate(-100px, -50px) scale(1, 1);
+}
+
+/* sns 탭  사이즈 1440으로 정렬 */
+.sns_bg{
+    background: rgb(233, 233, 204);
+}
+.sns{
+    width: 1440px;
+    margin: auto;
+
+    padding-bottom: 50px;
+}
+
+.sns>h2{
+    font-size: 30px;
+    border-top: 1px solid rgba(255, 0, 0, 0);
+    margin: 20px 0;
+
+}
+.sns>ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 0 30px;
+    gap : 10px;
+    box-sizing: border-box;
+}
+.sns>ul>li{
+    width: 24%;
+    height: 50%;
+    border-radius: 15px;
+box-shadow: 0 10px 20px rgba(0, 0, 0, 0.342);
+overflow: hidden;
+background-color: white;
+}
+.instag>li>a>img{
+    height: 30%;
+    max-width: 100%;
+    object-fit: cover;
+}
+.instag>li{
+    position: relative;
+}
+
+.follow{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom : 15px ;
+}
+.wrap1{
+    display: flex;
+    flex-direction: row;
+    gap:10px;
+}
+
+.follow>a{
+    color:red;
+}
+.sns li:hover .boxtext1{
+    display: block;
+   
+}
+.boxtext1{
+    position: absolute;
+    display: none;
+    background: rgba(66, 32, 0, 0.904);
+    width: 200px;
+    height: 200px;
+    top: 40px;
+    left:35px;
+    box-sizing: border-box;
+    padding-top: 50px;
+    text-align: center;
+    border: 1px solid rgb(255, 140, 73);
+    color:white
+}
+
+.boxtext a{
+    color:#fcb891;
+}
+
+
+/* 유튜브 부분 시작 */
+
+
+.youtube{
+    position: relative;
+    width: 1440px;  
+    margin:0 auto 60px;;
+}
+.youtube h2{
+    font-size: 40px;
+}
+.roll ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap : 10px;
+    margin: 0 20px;;
+}
+.roll ul li{
+    width: 100%;
+    height: 315px;   
+}
+
+.roll ul li:first-child{
+    opacity: 0.4;
+}
+.roll ul li:last-child{
+    opacity: 0.4;
+}
+.roll iframe{
+    border-radius: 15px;
+}
+.youtube>div:nth-child(2){
+    top :-70px
+}
+.roadmap{
+    width: 1440px;
+    margin: auto;
+}
+.roadmap>h2{
+    display: block;
+    content: url(images/khclgo.png);
+    text-indent: -999999px;
+    width: 150px;
+    height: 40px;
+    object-fit: cover;
+
+}
+.roadmap>ul{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    justify-content: space-evenly;
+    margin: auto;
+}
+.roadmap>ul>li>a{font-size : 20px; font-weight: bold;
+}
+.roadmap>ul>li>ul{
+margin-top: 10px;
+}
+footer{
+    background: gray;
+    padding: 20px 0  80px;
+    text-align: center;
+}
+.end{
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+    justify-content: space-evenly;
+    margin: 0 auto 50px;
+}
+.end a, footer p, footer address{
+    color:white;
+    font-style: normal;
+}
+.end>a:first-child{
+    color:yellow;
+}
+.end>a::after{
+    content : '|'
+    ;
+    margin-left:25px;  
+    color: white;
+}
+.end>a:last-child::after{
+ content:'';
+}
+

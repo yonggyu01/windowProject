@@ -1,0 +1,1629 @@
+*{
+    padding: 0;
+    margin: 0;
+
+}
+ul,li{
+    list-style: none;
+}
+a{
+    color:inherit;
+    text-decoration: none;
+}
+img{
+    border: 0 none;
+}
+.xx{
+    position: absolute;
+    height: 0;
+    width: 0;
+    overflow: hidden;    
+    border: 0 none;
+}
+.displayxx{
+    display: none !important;
+}
+body{
+    /* min-width: 1200px; */
+    background: #057776;
+
+   overflow: hidden;
+   /* max-width:1300px ; */
+}
+.wrapingfull{
+    min-width: 1300px;
+    max-height: 980px;
+    
+}
+/* 윈도우오프닝 화면 구현 */
+.loading{position: relative;
+    z-index: 5;
+width: 100%;
+height:980px;
+background: url(image/windowopen.jpg) center/100% no-repeat;
+transition: all 1s;
+opacity: 1;
+}
+
+.header{
+    position: fixed;
+    z-index: 3;
+    bottom: 0%;
+    opacity: 0;
+    transition: all 1s;
+
+}
+.navi{
+    width: 110px;
+    height: 42px;  
+    position: absolute;
+    bottom: 0;
+    left:0;
+    background: #bbb8bb;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    box-sizing: border-box;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.541);
+    border-radius: 2px;
+}
+.navi_title a{
+    width: 110px;
+    height: 42px;
+    display: flex;
+    flex-direction: row-reverse;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+}
+.navi_title h2{
+    width: 60%;
+}
+.navi_title img{
+    width: 30%;
+}
+.navi .wrap1{
+    position: absolute;
+    bottom: 42px;
+    background: #bbb8bb;
+    display: flex;
+    flex-direction: row;
+    width: 300px;
+    overflow: hidden;
+    height: 0;
+    /* transition: 0.01s; */
+    /* 높이는352px */
+}
+.wrap1>ul{
+    padding-left: 50px;
+    background: #85888d;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+}
+.wrap1>ul>li>a:hover{
+    background : blue;
+}
+.wrap1>ul>li:hover .depth>ul{
+    display: block;
+}
+.depth >ul>li:hover{
+    background: blue;
+}
+.wrap1>ul>li>a{
+    width: 250px;
+}
+
+.wrap1>ul>li>a>img{
+    width: 50px;
+    vertical-align: middle;
+}
+.wrap1>ul>li{
+    height: 50px;
+    background: #bbb8bb;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.depth ul{
+    position: absolute;
+    width: 150px;
+    background: #bbb8bb;
+    display: none;
+    top:0;
+}
+
+.depth ul>li{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    box-sizing: border-box;
+}
+.depth img{
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    margin:0 10px;
+    vertical-align: middle;
+}
+
+.leftbox p{
+    font-size: 30px;
+    position: absolute;
+    top:211px;
+    left:-70px;
+    /* width: 150px; */
+    height: 50px;
+    transform: rotate(270deg);
+    color:white;
+}
+/* 여기까지가 시작버튼 */
+/* 메인은  주로 바탕화면 옵션들 여기에 */
+.main{
+    opacity: 0;
+    transition: all 1s;
+
+}
+.iconwrapbox{
+    padding-top: 30px;
+    margin-left: 25px;   
+}
+.iconwrapbox>ul{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap:15px;
+    height: 800px;
+   align-content: flex-start;
+}
+
+.iconwrapbox>ul>li{
+    width: 120px;
+}
+.iconwrapbox>ul>li>a{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.iconwrapbox h3{
+    color : white;
+    text-align: center;
+}
+.iconwrapbox img{
+    width: 60px;
+    object-fit: contain;
+    height: 60px;
+}
+/* 내컴퓨터 하나 구현 */
+.minilogo h2{
+    color :white;
+    padding-left: 10px;
+}
+.minilogo>img{
+    width: 20px;
+    vertical-align: bottom;
+}
+.internetpic{
+    transform: scale(1.5);
+}
+.wheadwrap h2{
+    display: inline-block;
+    font-size: 15px;
+    color :white;
+}
+.wheadwrap{
+    display: flex;
+    flex:row;
+    justify-content: space-between;
+    width: 600px;
+    background: blue;
+    padding-left: 5px;
+    box-sizing: border-box;
+}
+.buttonBox a{
+    width: 15px;
+    height:15px;
+    background:#bbb8bb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.buttonBox{
+    display: flex;
+    flex-direction: row;
+    gap:5px;
+    padding-right: 5px;
+    align-items: center;
+    box-sizing: border-box;
+}
+.whead>a{
+    padding-left: 5px;
+}
+.whead{
+    display: flex;
+    flex-direction: column;
+    background: #bbb8bb;
+
+    box-sizing: border-box;
+}
+
+.mycomputer{
+    border-right: 1px solid black;
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    border-bottom: 1px solid black;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.411);
+    position: absolute;
+    left:80px;
+    top:100px;
+    display: none;
+}
+.mycomputericon>ul>li>a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:10px;
+}
+.mycomputericon>ul>li{ width: 80px;}
+.mycomputericon>ul{
+    display: flex;
+    gap:20px
+}
+.mycomputericon{
+    background: rgb(241, 241, 241);
+    border: 1px rgba(0, 0, 0, 0.364) solid;
+    padding: 20px;
+}
+
+
+.mycomputericon img{
+    width: 60px;
+    height: 60px;
+    object-fit: scale-down;
+}
+.winfooter{
+    background: #85888d;
+    padding-left: 5px;
+}
+/* html정리박스 */
+.htmlStudy{
+    border-right: 1px solid black;
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    border-bottom: 1px solid black;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.411);
+    position: absolute;
+    left:30px;
+    top:50px;
+    display:none;
+}
+.wheadwrap1 h2{
+    display: inline-block;
+    font-size: 15px;
+}
+.wheadwrap1{
+    display: flex;
+    flex:row;
+    justify-content: space-between;
+    width: 1300px;
+    background: blue;
+    padding-left: 5px;
+    box-sizing: border-box;
+}
+
+.mycomputericon1>ul>li>a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:10px;
+    
+}
+.mycomputericon1>ul{
+    display: flex;
+    gap:20px;
+    height: 600px;
+
+}
+.mycomputericon1{
+    background: rgb(241, 241, 241);
+    border: 1px rgba(0, 0, 0, 0.364) solid;
+    padding: 20px;
+}
+.mycomputericon1 h3{
+    font-size: 17px;
+}
+
+.mycomputericon1 img{
+    width: 60px;
+    height: 60px;
+    object-fit: scale-down;
+}
+/* css공부정리 */
+.cssStudy{
+    border-right: 1px solid black;
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    border-bottom: 1px solid black;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.411);
+    position: absolute;
+    left:30px;
+    top:7%;
+    display:none;
+}
+.wheadwrap2 h2{
+    display: inline-block;
+    font-size: 15px;
+}
+.wheadwrap2{
+    display: flex;
+    flex:row;
+    justify-content: space-between;
+    width: 1300px;
+    background: blue;
+    padding-left: 5px;
+    box-sizing: border-box;
+}
+
+.mycomputericon2>ul>li>a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:10px;
+    
+}
+.mycomputericon2>ul{
+    display: flex;
+    gap:20px;
+    height: 600px;
+
+}
+.mycomputericon2{
+    background: rgb(241, 241, 241);
+    border: 1px rgba(0, 0, 0, 0.364) solid;
+    padding: 20px;
+}
+.mycomputericon2 h3{
+    font-size: 17px;
+}
+
+.mycomputericon2 img{
+    width: 60px;
+    height: 60px;
+    object-fit: scale-down;
+}
+/* 자바스크립트 정리 */
+.javaStudy{
+    border-right: 1px solid black;
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    border-bottom: 1px solid black;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.411);
+    position: absolute;
+    left:30px;
+    top:7%;
+    display:none;
+}
+.wheadwrap3 h2{
+    display: inline-block;
+    font-size: 15px;
+}
+.wheadwrap3{
+    display: flex;
+    flex:row;
+    justify-content: space-between;
+    width: 1300px;
+    background: blue;
+    padding-left: 5px;
+    box-sizing: border-box;
+}
+
+.mycomputericon3>ul>li>a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:10px;
+    
+}
+.mycomputericon3>ul{
+    display: flex;
+    gap:20px;
+    height: 600px;
+
+}
+.mycomputericon3{
+    background: rgb(241, 241, 241);
+    border: 1px rgba(0, 0, 0, 0.364) solid;
+    padding: 20px;
+}
+.mycomputericon3 h3{
+    font-size: 15px;
+    width: 100px;
+    white-space: wrap;
+    overflow: hidden;
+    text-align: center;
+}
+
+.mycomputericon3 img{
+    width: 60px;
+    height: 60px;
+    object-fit: scale-down;
+}
+/* 자바스크립트 노트부분 */
+.javanote{
+    border-right: 1px solid black;
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    border-bottom: 1px solid black;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.411);
+    position: absolute;
+    left:30px;
+    top:20px;
+    display:none;
+}
+
+.javanote .winmain{
+    overflow: scroll;
+    background: white;
+
+}
+.wheadwrap4 h2{
+    display: inline-block;
+    font-size: 15px;
+}
+.wheadwrap4{
+    display: flex;
+    flex:row;
+    justify-content: space-between;
+    width: 1300px;
+    background: blue;
+    padding-left: 5px;
+    box-sizing: border-box;
+}
+/* 노트2번 */
+.javanote1{
+    border-right: 1px solid black;
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    border-bottom: 1px solid black;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.411);
+    position: absolute;
+    left:30px;
+    top:20px;
+    display:none;
+}
+
+.javanote1 .winmain{
+    overflow: scroll;
+    background: white;
+    height: 800px;
+}
+.wheadwrap5 h2{
+    display: inline-block;
+    font-size: 15px;
+}
+.wheadwrap5{
+    display: flex;
+    flex:row;
+    justify-content: space-between;
+    width: 1300px;
+    background: blue;
+    padding-left: 5px;
+    box-sizing: border-box;
+}
+/* 자바노트1 내용이 좀 많아서 설정해야함 */
+.data{
+    width: 1200px;
+    margin: auto;
+}
+.tapmenu{
+    position: relative;;
+    border: 1px solid black;
+    margin-bottom: 50px;
+}
+
+.title{
+    border-bottom: 1px solid black;
+    height: 100px;
+    background-color: rgba(128, 128, 128, 0.315) ;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-indent: 5px;
+    
+}
+.tapmenu>ul{
+    width: 1200px;
+    display: flex;
+    flex-direction: row;
+    height: 300px;
+    position: relative;
+    justify-content: space-evenly;
+}
+
+
+.tapmenu h3{
+    width: 150px;
+    height: 40px;
+    border: 1px solid black;
+    margin-bottom: 50px;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.tapmenu>ul>li>a{
+    position: absolute;
+    top: 80px;
+    left:5px;            
+}
+.tapmenu p{
+    font-size: 20px;
+    
+}
+.nav{
+    position: fixed;
+    top :0;
+    font-size: 20px;
+}
+.main2{
+    width: 1200px;
+    margin: auto;
+}
+.title2 h2{
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+.tbox{
+    background: rgba(128, 128, 128, 0.377);
+    height: 110px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    border: 1px solid black;
+    padding-left: 10px;
+}
+.tapbox{
+    height: 450px;
+    border: 1px solid black;
+    margin-bottom: 50px;
+}
+.tapbox>ul{
+    display: flex;
+    position: relative;
+    justify-content: space-evenly;
+}
+.tapbox h3{
+    border: 1px solid black;
+    box-sizing: border-box;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    height: 40px;
+    align-items: center;
+}
+.tapbox>ul p{
+    position: absolute;
+    left: 10px;
+    top:80px;
+}
+/*
+메모장 구현
+*/
+.memobox{
+    border-right: 1px solid black;
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    border-bottom: 1px solid black;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.411);
+    position: absolute;
+    left:130px;
+    top:50px;
+    background:#bbb8bb;
+
+    display: none;
+
+}
+.bgboxa{
+    width: 100%;
+    background:#bbb8bb;
+}
+.savebt{
+    padding-left: 5px;
+    box-sizing: border-box;
+}
+.subprogram h2{
+    color : white;
+    font-size: 15px;
+}
+.subprogram{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+    background: blue;
+}
+
+#memo{
+    padding: 10px;
+    min-width: 200px;
+    min-height: 150px;
+    font-size: 20px;
+}
+.subprogram img{
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    vertical-align: middle;
+}
+.subbutton a{  
+    width: 15px;
+    height:15px;
+    background:#bbb8bb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.subbutton{
+    display: flex;
+    flex-direction: row;
+    gap:5px;
+    padding-right: 5px;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+/* 계산기 구현하기 */
+
+.calcul{
+    border-right: 1px solid black;
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    border-bottom: 1px solid black;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.411);
+    position: absolute;
+    left:530px;
+    top:120px;
+    display: none;
+}
+
+.calculmain{
+    background: #bbb8bb;
+    padding: 5px;
+    width: 300px;
+    height: 280px;
+
+}
+a{
+    color :inherit
+}
+.calculF{
+justify-content: flex-end;
+color :red;
+}
+#calcul{
+    width: 100%;
+    padding: 0 15px;
+    height: 30px;
+    font-size: 22px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+.calculmain div{
+    display: flex;
+    gap:5px;
+    margin: 5px;
+}
+.Lpading{
+    margin-right: 20px;
+}
+.calculmain a{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 40px;
+    background:#bbb8bb ;
+    border-right: 1px solid black;
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    border-bottom: 1px solid black;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.411);
+}
+/*그림판 화면   canvas 기능을 통해 구현해볼 예정임  대충 해당기능 숙지되면 게임도 하나 추가해보자 */
+.paint{
+    border-right: 1px solid black;
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    border-bottom: 1px solid black;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.411);
+    position: absolute;
+    left:750px;
+    top:110px;
+    display: none;
+}
+.paintmain{
+    background: #bbb8bb;
+    padding: 5px;
+    /* width: 300px; */
+    /* height: 280px; */
+
+}
+/* css에서 캔버스 크기를 조정하면 안된다고 함, html이나 js에서 해야한다함 */
+#mypainter{
+    /* width: 1000px;
+    height: 600px; */
+    background: white;
+    border: 1px solid black;
+    cursor: crosshair;
+}
+.selectsome{
+    display:flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.tools ul{
+    display: flex;
+    flex-direction: row;
+    gap : 10px;
+}
+.tools ul li a{
+    width: 20px;
+    height: 20px;
+}
+
+
+.tools img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+.colorselect ul{
+    display: flex;
+    gap: 5px;
+}
+.colorselect a{
+    display: block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+}
+.white{
+    background: white;
+}
+.black{
+    background:black;
+}
+.blue{
+    background:blue;
+}
+.red{
+    background:red;
+}
+.yellow{
+    background:yellow;
+}
+.green{
+    background:green;
+}
+.orange{
+    background:orange;
+}
+/* 카카오톡 구현 */
+.kakaotalk{
+    border-right: 1px solid black;
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    border-bottom: 1px solid black;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.411);
+    position: absolute;
+    left:450px;
+    top:80px;
+    display: none;
+}
+.kakaomain{
+    background: #bbb8bb;
+    padding: 5px;
+
+
+}
+.kakaobg{
+    background: yellow;
+    width: 350px;
+    height: 600px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+    /* 카카오톡 로그인성공시 아래  */
+    /* display: none; */
+}
+.kakaobg img{
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    margin-bottom: 30px;
+}
+#kakaologin fieldset input{
+    font-size: 20px;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+#kakaologin fieldset{
+    border: 0 none;
+    display: flex;
+    flex-direction: column;
+    gap :10px;
+}
+.wrapbb{
+    display: flex;
+    gap: 5px;
+}
+.wrapbb1{
+    width: 350px;
+    height: 450px;
+}
+/* 카카오톡 로그인 성공화면 */
+.loginsuccess{
+    display: none;
+    background: white;
+    width: 350px;
+    position: relative;
+}
+.kakaoheader img{
+    width: 45px;
+    object-fit: contain;
+    vertical-align: middle;
+}
+.kakaoheader{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 25px;
+    height: 50px;
+    align-items: center;
+    position: absolute;
+    top:5px;
+    background: white;
+    width: 290px;
+}
+.blankm{
+    margin-bottom: 50px;
+    height: 1px;
+}
+.kakaomain2{
+    background: white;
+    width: 350px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 450px;
+}
+.kakaomain2 img {
+    width: 40px;
+    object-fit: contain;
+    margin-right: 5px;
+}
+.kakaomain2 a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.kakaomain2 ul{
+    display: flex;
+    flex-direction: column;
+    gap :20px;
+    padding-left: 10px;
+    box-sizing: border-box;
+}
+/* 한글과 컴퓨터 */
+.korean{
+    border-right: 1px solid black;
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    border-bottom: 1px solid black;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.411);
+    position: absolute;
+    left:230px;
+    top:80px;
+    background:#bbb8bb;
+    display: none;
+}
+.bgboxa1 a{
+    background-color:#9e9e9e ;
+    border-right: 1px solid black;
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    border-bottom: 1px solid black;
+    box-sizing: border-box;
+    width: 150px;
+}
+.bgboxa1{
+    width: 800px;
+    background:#9e9e9eb1;
+    display: flex;
+    
+}
+.bbt{
+    
+    padding-left: 5px;
+    box-sizing: border-box;
+    display: flex;
+   justify-content: center;
+}
+.hancommain{
+    width: 800px;
+    height: 600px;
+    background: url(image/hancombg.png) no-repeat center/100%;
+
+}
+.hancomfooter{
+    height: 30px;
+    width: 800px;
+    display: flex;
+    position: absolute;
+    bottom: 0;
+}
+.hancomfooter span{ 
+display: block;
+border:1px inset #9e9e9e;
+box-shadow: 0 3px 5px #9e9e9e7c inset;
+    width: 10%; 
+padding-left : 5px;
+text-align: center;
+}
+.hancomfooter p{
+display: block;
+border:1px inset #9e9e9e;
+box-shadow: 0 3px 5px #9e9e9e7c inset;
+     width: 80%;
+     font-size: 20px;
+padding-left : 5px;
+    color:yellow; }
+.hancomfooter h3{
+    display: block;
+    border:1px inset #9e9e9e;
+box-shadow: 0 3px 5px #9e9e9e7c inset;
+    width: 10%;
+    padding-left : 5px;
+    text-align: center;
+}
+/* 자리연습 */
+
+.hancomp1{
+    width: 650px;
+    height: 450px;
+  border-right: 1px solid black;
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    border-bottom: 1px solid black;;
+    box-sizing: border-box;
+    position: absolute;
+    top:70px;
+    left : 8%;
+    display: none;
+}
+.jariheader>p{
+    color:white;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+}
+
+.jariheader{
+    padding: 0 5px;
+    height: 18px;
+    width: 638px;
+    background-color: blue;
+    box-sizing: border-box;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+.goal{
+    color:aqua;
+    display: flex;
+    align-items: center;
+}
+.accur{
+    color : yellow;
+    display: flex;
+    align-items: center;
+    padding-right: 20px;
+}
+.jariheader>span{
+    display: flex;
+    gap:5px;
+}
+.jariclosebox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 18px;
+    height: 18px;
+    box-sizing: border-box;
+    border-right: 1px solid black;
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    border-bottom: 1px solid black;;
+    background-color:#bbb8bb;
+    position: absolute;
+    right: 0;
+}
+.jariviewbox h1{
+    font-size: 40px;
+}
+.jariviewbox p{
+    font-size: 45px;
+}
+.jariviewbox{
+    width: 100px;
+    height:  100px;
+    border:1px inset #9e9e9e;
+    position: absolute;
+    left: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top :20px;
+    cursor: pointer;
+}
+.lastline{
+    display:flex;
+justify-content: center; 
+}
+.thirdline{
+    display:flex;
+justify-content: center; 
+}
+.secondline{
+    display:flex;
+justify-content: center; 
+}
+.lastline>p:last-child{
+    width: 80px;
+}
+.lastline>p:first-child{
+    width: 80px;
+}
+.lastline p{
+    box-sizing: border-box;
+    width: 6%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 3px solid black;
+    border-top: 3px solid white;
+    border-left: 3px solid white;
+    border-bottom: 3px solid black;;
+}
+.thirdline>p:last-child{
+    width: 80px;
+}
+.thirdline>p:first-child{
+    width: 80px;
+}
+.thirdline p{
+    box-sizing: border-box;
+    width: 6%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 3px solid black;
+    border-top: 3px solid white;
+    border-left: 3px solid white;
+    border-bottom: 3px solid black;;
+}
+.secondline>p:first-child{
+    width: 80px;
+}
+.secondline p{
+    box-sizing: border-box;
+    width: 6%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 3px solid black;
+    border-top: 3px solid white;
+    border-left: 3px solid white;
+    border-bottom: 3px solid black;;
+}
+
+.firtstline{
+ display:flex;
+justify-content: center;
+}
+.lineb{
+    margin-bottom: 220px;
+
+    height: 1px;
+}
+.firtstline p{
+    box-sizing: border-box;
+    width: 6%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 3px solid black;
+    border-top: 3px solid white;
+    border-left: 3px solid white;
+    border-bottom: 3px solid black;;
+}
+.jarimain input{
+    position: absolute;
+    top : 175px;
+    left :47%;
+    width: 70px;
+    border-top:none;
+    border-right:none;
+    border-left:none;
+    background-color:#bbb8bb;
+    text-align: center;
+    font-size: 20px;
+}
+/* 여기까지가  자리연습 컨텐츠 */
+.hancomp2{
+    width: 650px;
+    height: 450px;
+  border-right: 1px solid black;
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    border-bottom: 1px solid black;;
+    box-sizing: border-box;
+    position: absolute;
+    top:70px;
+    left : 8%;
+    display: none;
+}
+.jariviewbox1 h1{
+    font-size: 25px;
+}
+.jariviewbox1 p{
+    font-size: 20px;
+}
+.jariviewbox1{
+    width: 580px;
+    height:  100px;
+    border:1px inset #9e9e9e;
+    position: absolute;
+    left: 4%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top :60px;
+    cursor: pointer;
+}
+#jari1a{
+    position: absolute;
+    top : 130px;
+    left :6%;
+    width: 560px;
+    border-top:none;
+    border-right:none;
+    border-left:none;
+    background-color:#bbb8bb;
+    font-size: 20px;
+}
+#jarilong{
+    position: absolute;
+    top:190px;
+    left :4%;
+    width: 580px;
+    height: 100px;
+}
+#jarilong input{
+    width: 580px;
+}
+#speedrange{
+    color: red;
+
+}
+
+/*  한컴 게임제작 */
+.hancomp3{
+    width: 770px;
+    height: 510px;
+  border-right: 1px solid black;
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    border-bottom: 1px solid black;;
+    box-sizing: border-box;
+    position: absolute;
+    top:70px;
+    left : 2%;
+    display: none;
+}
+#jari2a{
+    position: absolute;
+    top : 460PX;
+    left :39%;
+    width: 150px;
+    border-top:none;
+    border-right:none;
+    border-left:none;
+    background-color:#bbb8bb;
+    font-size: 20px;
+    text-align: center;
+}
+
+.jariheader1>p{
+    color:white;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+}
+
+.jariheader1{
+    padding: 0 5px;
+    height: 18px;
+    width: 768px;
+    background-color: blue;
+    box-sizing: border-box;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+.jariheader1>span{
+    display: flex;
+    gap:5px;
+}
+.jariviewbox2{
+    border: 1px solid black;
+    position: relative;
+    width: 700px;
+    height: 400px;
+    overflow: hidden;
+
+}
+.noridownbox{
+    padding-left: 20px;
+    width: 700px;
+    display: flex;
+    flex-flow : wrap row;
+    position: relative;
+    transition: all 1s;
+    align-content: flex-start;
+    position: absolute;
+    top:0px;
+}
+.jarimain2{
+    width: 100%;
+    padding: 35px;
+    margin: 0 auto;
+    box-sizing: border-box;
+
+}
+.noridownbox h4{
+    display: block;
+    width: 25%;
+   
+}
+.jariviewbox2 p{
+    text-align: center;
+    font-size: 30px;;
+}
+/* .jariviewbox2 h4:first-child{
+    left:10%;
+    top:0;
+}
+.jariviewbox2 h4:nth-child(2){
+    left:30%;
+    top:0;
+}
+.jariviewbox2 h4:nth-child(3){
+    left:60%;
+    top:0;
+}
+.jariviewbox2 h4:nth-child(4){
+    left:80%;
+    top:0;
+} */
+
+
+
+
+/* 인터넷 익스플로러  나머지 인터넷 창은 스타일시트를 외부에 구현 */
+.internet{
+    border-right: 1px solid black;
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    border-bottom: 1px solid black;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.411);
+    position: absolute;
+    left:130px;
+    top:50px;
+    background:#bbb8bb;
+
+    display: none;
+
+}
+.internetbooting{
+    width: 1200px;
+    height: 800px;
+    background: url(image/internetbooting.png) no-repeat center;
+    opacity: 1;
+    transition: all 1s;
+    /* display: none; */
+}
+.internet_menu{
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+    background-color: #bbb8bb;
+
+}
+.internet_wrapmenu{
+    display: flex;
+
+}
+.internet_menu img{
+    width: 40px;
+    object-fit: contain;
+
+}
+.internet_menu a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 50px;
+    display: flex;
+    flex-flow: column wrap;
+    gap:10px;
+    /* box-shadow: 0 5px 5px rgba(0, 0, 0, 0.411); */
+    
+}
+
+.internetmain{
+    width: 1200px;
+    height: 700px;;
+    background: white;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.internet_menu input{
+    font-size: 20px;
+    width: 90%;
+    box-sizing: border-box;
+    padding-left: 10px;
+}
+.internetrowwrap p{
+    width: 10%;
+    display: block;
+    text-align: center;
+}
+.internetrowwrap {
+    display: flex;
+}
+/*  야후 */
+.firstview{
+    display: none;
+    opacity: 0;
+    transition: all 1s;
+}
+.yahoo_wrap{
+width: 1200px;
+margin: auto;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+background-image:url(image/bg1.PNG) 
+}
+.yahoo_head{
+    width: 800px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+.yahoo_head img{
+    width: 300px;
+    height: 200px;
+    object-fit: contain;
+    transform: scale(1.2);
+
+}
+/* .yahoo_main{
+; 
+} */
+.yahoo_searching{
+    width: 700px;
+    height: 100px;
+    background-color: rgba(52, 115, 164, 0.452);
+    box-sizing: border-box;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom:30px;
+}
+    
+.yahoo_searching input{
+    width: 600px;
+    height: 30px;
+    font-size: 25px;
+    padding: 0 5px;
+    box-sizing: border-box;
+   
+}
+.yahoo_searching button{
+    width: 120px;
+    height: 30px;
+    font-size: 20px;
+    background-color: rgba(255, 255, 0, 0.816);
+    border: 0 none;
+    box-sizing: border-box;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.485);
+}
+.yahoo_bookmark h2{
+    text-align: center;
+    margin-bottom: 10px;
+}
+.yahoo_bookmark{
+    width: 700px;
+    height: 180px;
+}
+.yahoo_bookmark ul{
+    display: flex;
+    justify-content: space-between;
+}
+.yahoo_bookmark a img{
+    width: 60px;
+    object-fit: contain;
+    border-radius: 20px;
+}
+.yahoo_bookmark a{
+    display: flex;
+    flex-direction: column;
+    width: 140px;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.yahoo_notice{
+    width: 700px;
+    height: 150px;
+    border: 1px solid black;
+    border-radius: 30px;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+.yahoo_notice h2{
+    margin-bottom: 10px;
+}
+.yahoo_notice p{
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: wrap;
+}
+/* cgv 홈페이지 */
+.cgvsecond{
+    display: none;
+}
+.cgvsecond iframe{
+    width: 1200px;
+    height: 800px;
+}
+/* kfc */
+.kfcsite{
+    display: none;
+}
+.kfcsite iframe{
+    width: 1200px;
+    height: 800px;
+}
+.mario{
+    display: none;
+}
+.mario iframe{
+    width: 100vw;
+    height: 800px;
+}
+
+
+
+
+/* 작업표시줄은 푸터에 구현 */
+
+.footer{
+    position: fixed;
+    bottom: 0;
+    border-top: 1px solid white;
+    z-index: 2;
+    width: 100%;
+    height: 43px;
+    background: #bbb8bb;
+    padding-left: 115px;
+    display: flex;
+    align-items: center;
+    gap:2px;
+    opacity: 0;
+    transition: all 1s;
+}
+.workinglineb h3{ 
+font-size: 15px;
+display: flex;
+align-items: center;
+}
+.workinglineb{
+    gap:5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.work_line{
+
+    display : none;
+   
+}
+.workwrap{
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.541);
+    border-radius: 2px;
+    height: 42px;
+    width: 185px;
+    gap:5px;
+    box-sizing: border-box;
+    background: #bbb8bb;
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+.work_line img{
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    vertical-align: baseline;
+    margin-left: 5px;
+}
+.timebox{
+    position: absolute;
+    right: 150px;
+    border: 1px solid black;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.466);
+}
+.timebox p{
+    padding: 5px;
+    box-sizing: border-box;
+}
+@media screen and (max-width:600px){
+	.wrapingfull{
+        min-width: 800px;
+        max-height: 800px;
+    }
+    .iconwrapbox>ul>li{
+        width: 80px;
+    }
+    .iconwrapbox>ul>li>a{
+    font-size: 15px;
+    }
+    .iconwrapbox img{
+        width: 30px;
+        object-fit: contain;
+    }
+    .timebox{display: none;}
+}

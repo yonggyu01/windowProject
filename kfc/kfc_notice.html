@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kfc게시판</title>
+    <link rel="stylesheet" href="kfcnotice.css">
+    <script src="kfc_notice.js"></script>
+    
+</head>
+<body>
+    <header id="header" class="header">
+        <div class="bgbar"></div>
+       
+     
+    
+       
+        <nav id="gnb" >
+     
+        <div class="logowrap">
+        <h1><a href = "./kfcnew.html">KFC</a></h1>
+        
+            <div id ="utill"><h2 class="screenx">유틸메뉴</h2>
+                <ul><li><a href="#none" class="noborder">로그인</a></li>
+                    <li><a href="#none" class="border">주문내역조회</a></li>
+                    <li><a href="#none" class="border">고객센터</a></li>
+                    <li><a href="#none" class="border">인재채용</a></li>   
+                    <li><a href="#none" class="border">장바구니</a></li>  
+                </ul> 
+           
+            </div>
+        </div>
+        
+        <div class="nav">    
+        <h2 class="screenx">주요메뉴</h2>
+        <div class="whitebar"></div>
+            <ul id="nonelist">
+                    <li><a href="kfc_cc.html">DELIVERY</a>
+                        <span class="linea line"></span>
+                        <ul class="lit1">
+                        <li><a href="kfc_cc.html">추천메뉴</a></li>
+                        <li><a href="kfc_cc.html">치킨세트</a></li>
+                        <li><a href="kfc_cc.html">버거세트</a></li>
+                        <li><a href="kfc_cc.html">스낵사이드</a></li>
+                        <li><a href="kfc_cc.html">음료</a></li></ul>
+                    </li>
+                    <li><a href="#none">STORE</a>
+                        <span class="lineb line"></span>
+                        <ul class="lit1">
+                            <li><a href="kfc_map.html">매장찾기</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#none">EVENT</a>
+                        <span class="linec line"></span>
+                        <ul class="lit1">
+                            <li><a href="kfc_event.html">프로모션</a></li>
+                            <li><a href="#none">새소식</a></li>
+                            <li><a href="kfc_notice.html">공지사항</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#none">KFC SERVICE</a>
+                        <span class="lined line"></span>
+                            <ul class="lit1">
+                                <li><a href="kfcmember.html">맴버십</a></li>
+                                <li><a href="#none">카드 상품권</a></li>
+                                <li><a href="#none">KFC TIP</a></li>
+                                <li><a href="#none">고객센터</a></li>
+                                <li><a href="#none">직영 입점문의</a></li>
+                            </ul>
+                    </li>
+                    <li><a href="kfc 게시판 페이지.html">가맹 및 입점 문의</a>
+                        <span class="linee line"></span>
+                        <ul class="lit1">
+                            <li><a href="kfcfren.html">가맹 상담 문의</a></li>
+                            <li><a href="#none">임대 상담 문의</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                </div>
+        </nav>
+    </header>
+    <main id="main" class="main">
+        <div class="blackbar"></div>
+        <div class="bg_bar"> <div class="bg_gg"></div>
+       
+        <div class="bar5"><img src="images/banner_notice.png" alt="">
+        <h2>공지사항</h2>
+        <p>KFC의 새로운 소식을 알려드립니다.</p>
+        </div>
+        </div>
+<div class="wrapbox2">
+
+    <section class="noticeall">
+        <h2>공지(공고)사항</h2>
+    <form name="faq" action="" method="get">
+        <fieldset>
+            <legend class="screenx">공지(공고)사항</legend>
+            <ul>
+                <li><input type="radio" name="select" value="all" class="all"><label for="all">전체</label></li>
+                <li><input type="radio" name="select" value="online" class="online"><label for="online">온라인</label></li>
+                <li><input type="radio" name="select" value="deli" class="deli"><label for="deli">딜리버리</label></li>
+                <li><input type="radio" name="select" value="etc" class="etc"><label for="etc">기타</label></li>
+            </ul>
+        <div class="search">
+            <input type="text" required placeholder="검색어를 입럭해주세요">
+            <input type="button" value="검색">
+        </div>  
+        </fieldset>
+    </form>
+</section>
+<div class="wrapbox1">
+<section class="not1">
+    <!-- 테이블에서는 css에서 버티컬 얼라인으로 위치 정렬이 가능함. img도 가능 2개만 가능함 -->
+    <table summary="게시판">
+        <caption class="screenx">공지(공고)사항</caption>
+        <thead>
+            <tr>
+                <th>구분</th>
+                <th id="a">제목</th>
+                <th id="b">작성일</th>
+                <th id="c">조회수</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>딜리버리</td>
+                <td><a href="#none" class="내용">추석특선 딜리버리 연휴안내</a></td>
+                <td class="date">2023.09.27	</td>
+                <td>15</td>
+            </tr>
+            <tr>
+                <td>기타</td>
+                <td><a href="#none" class="내용">2023 IFS 프랜차이즈 창업박람회 KFC 참가 일정 안내</a></td>
+                <td class="date">2023.09.12	</td>
+                <td>25</td>
+            </tr>
+            <tr>
+                <td>기타</td>
+                <td><a href="#none" class="내용">KFC 위치기반서비스 이용약관 개정 안내 (2023년 10월 1일 개정)</a></td>
+                <td class="date">2023.09.01	</td>
+                <td>222</td>
+            </tr>
+            <tr>
+                <td>기타</td>
+                <td><a href="#none" class="내용">KFC 고객센터 관련 안내</a></td>
+                <td class="date">2022.01.01</td>
+                <td>1515</td>
+            </tr>
+            <tr>
+                <td>기타</td>
+                <td><a href="#none" class="내용">KFC 고객센터 관련 안내</a></td>
+                <td class="date">2022.01.01</td>
+                <td>1515</td>
+            </tr>
+            <tr>
+                <td>기타</td>
+                <td><a href="#none" class="내용">KFC 고객센터 관련 안내</a></td>
+                <td class="date">2022.01.01</td>
+                <td>1515</td>
+            </tr>
+        </tbody>
+        <tfoot>
+        </tfoot>
+    </table>
+</section>
+    <div>
+ <a class="first"></a>
+ <a class="prev"></a>
+ <a class>1</a>
+ <a class>2</a>
+ <a class>3</a>
+ <a class>4</a>
+ <a class>5</a>
+    </div>
+</div>
+</div>
+<section class="roadmap">
+    <h2>사이트로드맵</h2>
+    
+    <ul>
+        <li><a href="#none">DELIVERY</a>
+        <ul>
+            <li><a href="#none">추천메뉴</a></li>
+        <li><a href="#none">치킨세트</a></li>
+        <li><a href="#none">버거세트</a></li>
+        <li><a href="#none">스낵사이드</a></li>
+        <li><a href="#none">음료</a></li></ul>
+    </li>
+    <li><a href="#none">STORE</a>
+        <ul><li><a href="#none">매장찾기</a></li></ul></li>
+    <li><a href="#none">EVENT</a>
+        <ul><li><a href="#none">프로모션</a></li>
+        <li><a href="#none">새소식</a></li>
+        <li><a href="#none">공지사항</a></li></ul></li>
+    <li><a href="#none">KFC SERVICE</a>
+        <ul><li><a href="#none">맴버십</a></li>
+        <li><a href="#none">카드 상품권</a></li>
+        <li><a href="#none">KFC TIP</a></li>
+        <li><a href="#none">고객센터</a></li>
+        <li><a href="#none">직영 입점문의</a></li></ul></li>
+    <li><a href ="#none">KFC IS</a> 
+    <ul><li><a href="#none">브랜드</a></li>
+    <li><a href="#none">연혁</a></li>
+    <li><a href="#none">IR</a></li>
+    <li><a href="#none">NEWS</a></li></ul></li>
+    
+    <li><a href="#none">인재채용</a>
+    <ul><li><a href="#none">KFC 인재채용</a></li></ul></li>
+    </ul>
+</section>
+</main>
+<footer id="footer" class="footer"><h2 class="screenx">사이트 이용안내</h2>
+<div class="end">
+  <a href="#none">개인정보처리방침</a>
+<a href="#none">사이트이용약관</a>
+<a href="#none">위치정보이용약관</a>
+<a href="#none">KFC선불카드 이용약관</a>
+<a href="#none">영상정보처리기기 운영관리 방침</a></div>
+
+<address>서울 송파구 올림픽로 299, 2F KFC</address>
+<p>사업자등록번호 : 201-81-89723 주식회사 케이에프씨코리아 대표자 신호상<br>
+    TEL:02 6020 8383 월~금 09:00 ~ 12:00, 13:00 ~ 17:00 공휴일 제외  FAX 02 6020-8399</p>
+    <p>&copy; 2017 KFC KOREA Co. Ltd All Rights Reserved.</p>
+</footer>
+</body>
+</html>

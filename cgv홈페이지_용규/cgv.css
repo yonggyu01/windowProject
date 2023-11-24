@@ -1,0 +1,1694 @@
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-size: 16px;
+}
+.wrap{
+    min-width: 1040px;
+}
+/* 전체 사이즈를 래핑을 한번 해야함  */
+a,address{
+    color:inherit;
+    text-decoration: none;
+    border: 0 none;
+}
+fieldset, img{
+    border: 0 none;
+}
+input, button{
+    vertical-align: center;
+}
+button{
+    cursor: pointer;
+    /* 초기화때 안하면 버튼에서도 그냥 화살표가 나옴 */
+}
+.hiding{
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    margin:-1px; /* 포지션 앱솔루트랑 비슷한 효과임 */
+}
+.xx{
+    display: block;
+    width: 0 !important;
+    height: 0 !important;
+    text-indent: -999999999px;
+    overflow :hidden;
+    line-height: 0;
+    border: 0 none !important;
+}
+.skipmenu{
+    position: absolute;
+    top: 0px;
+    left:0;
+    margin: 0 20px;
+}
+.skipmenu a{
+    position: absolute;
+    top:-50px;
+    left : 0;
+    display: block;
+    width: 200px;
+}
+.skipmenu a:focus,.skipmenu a:hover{
+    top:0;
+}
+img{
+    vertical-align: bottom;
+/*인라인요소인 img의 문제점중 하나 정렬이 보통 baseline기준이라 선택을 하게되면 
+밑으로 여백이 생기게됨 이 여백을 없애려면 아래 인라인요소에 설명 적어둠
+*/
+}
+
+/* 초기화 */
+/*인라인 요소는 vertical-align이 baseline이며 영문의 고절적인 문제임
+영문 aaa ggg  <- g처럼 밑에쪽으로 내려가는 문자가 있어서 아래쪽으로 여백이 기본적으로
+존재함  해결방법으로는 글자크기를 0으로 만든다던지 <- 잘쓰진 않음,, 
+인라인요소가 아니게 display block로 바꾸거나 vertical-align을 bottom이나 top으로 주면
+선택자로 선택시 하단에 여백이 나오지 않게됨
+
+나는 가상요소로 백그라운드로 넣어서 해당 사항이 발생하지 않음
+img로 넣게되면 이러한 문제가 발생하게됨
+*/
+.bannerfull{
+    width: 100%;
+    background: #fae480;
+    height: 75px;
+    
+}
+.bannertop{
+    width: 980px;
+    height: 75px;
+    margin: auto;
+    background: url(images/bannertop.jpg) no-repeat;
+    position: relative;
+}
+.bannertop>a{
+    position: absolute;
+    right: 0;
+    
+    top:0;
+}   
+
+header{
+    position: relative;
+    z-index: 3;
+}
+.logo_top{
+    width: 980px;
+    margin: auto;
+    padding: 30px 6px 25px 5px;
+    display:grid;
+    box-sizing: border-box;
+    grid-template-columns:275px 250px 455px;
+    grid-template-rows: 57px;
+    grid-template-areas: 'a b c';
+    align-items: end;
+
+
+}
+.logo a{
+    display: block;
+    width: 117px;
+    height: 53px;
+    background: url(images/logoRed.png) center/cover;
+    /*백그라운드 속성중 사이즈 속성은 포지션(center top right 등등의 값 뒤에  / 넣고 써주면 되고
+    단독으로 쓸거면 따로 작성해야함 포지션 값이 무조건 앞에 따라와야 한방에 기입이 가능하다.
+    */
+}
+
+
+.g1{
+    grid-area: a;
+}
+.logo_bga{
+    border-bottom:1px solid rgba(128, 128, 128, 0.322) ;
+}
+.logoname{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: end;
+    width: 274px;
+ 
+}
+.logoname>p{
+    font-size: 30px;
+    letter-spacing: 1px;
+}
+.topmenu{
+    grid-area: c;
+}
+
+.topmenu>ul{
+    display: grid;
+    grid-template-columns: 135px 80px 80px 80px 80px;
+    grid-template-rows: 57px;
+    grid-template-areas:
+    'a b c d e';
+    align-items: end;
+}
+
+.topmenu>ul>li:first-child>a{
+    grid-area: a;
+    display: block;
+    content: '';
+    width: 100%;
+    height: 57px;
+    overflow: hidden;
+    box-sizing: border-box;
+    background: url(images/16758461047540.png) no-repeat center/contain;
+    text-indent: -99999999px;
+}
+.topmenu>ul>li:nth-child(2)>a{
+    grid-area: b;
+    box-sizing: border-box;
+
+    width: 100%;
+    height: 57px;
+    overflow: hidden;
+    display: block;
+    background: url(images/loginPassword.png) no-repeat top/50%;
+    line-height: 90px;
+    text-align: center;
+    font-size: 14px;
+    color : #b3afac;
+}
+.topmenu>ul>li:nth-child(3)>a{
+    grid-area: c;
+    width: 100%;
+    height: 57px;
+    overflow: hidden;
+    display: block;
+    background: url(images/loginJoin.png) no-repeat top/50%;
+    line-height: 90px;
+    text-align: center;
+    font-size: 14px;
+    color : #b3afac;
+
+}
+.topmenu>ul>li:nth-child(4)>a{
+    grid-area: d;
+    width: 100%;
+    height: 57px;
+    overflow: hidden;
+    display: block;
+    background: url(images/loginMember.png) no-repeat top/50%;
+    line-height: 90px;
+    text-align: center;
+    color : #b3afac;
+    font-size: 14px;
+}
+.topmenu>ul>li:last-child>a{
+    grid-area: e;
+    width: 100%;
+    height: 57px;
+    overflow: hidden;
+    display: block;
+    background: url(images/loginCustomer.png) no-repeat top/50%;
+    line-height: 90px;
+    text-align: center;
+    color : #b3afac;
+    font-size: 14px;
+}
+/* logo 상단 끝  아래 navi 생성*/
+.gnb{
+width: 100%;    
+position: relative;
+}
+
+.navi1{
+    width: 980px;
+    margin: auto;
+    height: 50px;
+    display: grid;
+    grid-template-columns: 500px 240px 240px;
+    grid-template-rows: 50px;
+    grid-template-areas: 'a b c';
+}
+.main_menu{
+   grid-area: a;
+   display:flex;
+   flex-direction: row;
+   width: 480px;
+   justify-content: space-between;
+   height: 50px;
+   padding: 0 10px;
+   box-sizing: border-box;
+}
+.main_menu>li a{
+    font-size: 16px;
+    font-weight: bold;
+}
+.main_menu>li:nth-child(3)>a{
+    color:red;
+}
+.main_menu{
+    position: relative;
+}
+.main_menu>li{
+    width: 80px;
+    margin: auto;
+   
+}
+/* 2뎁스 메뉴 */
+.depth2{
+    height: 0;
+    /* 숨기기 */
+    width: 150px;
+    display: block;
+    position: absolute;
+    overflow: hidden;
+    padding-top: 30px;
+    /* top:30px;  탑으로 내리면 안됨 마우스 스크롤 아웃시 메뉴가 사라질 수 있음 
+    패딩으로 내려야함*/
+    transition: 0.8s;
+    box-sizing: border-box;
+}
+.submenu2{
+    left: 163px;
+}
+.submenu3{
+    left: 322px;
+    /* color:initial */
+}
+.submenu4{
+    left: 483px;
+}
+.submenu5{
+    left: 644px;
+}
+.submenu6{
+    left: 803px;
+}
+.submenu1>ul>li::after{
+    content:'';
+    position: absolute;
+    top:40px;
+    width: 1px;
+    height: 300px;
+    background: gray;
+    right:12px;
+}
+.submenu2>ul>li::after{
+    content:'';
+    position: absolute;
+    top:40px;
+    width: 1px;
+    height: 300px;
+    background: gray;
+    right:12px;
+}
+.submenu3>ul>li::after{
+    content:'';
+    position: absolute;
+    top:40px;
+    width: 1px;
+    height: 300px;
+    background: gray;
+    right:12px;
+}
+.submenu4>ul>li::after{
+    content:'';
+    position: absolute;
+    top:40px;
+    width: 1px;
+    height: 300px;
+    background: gray;
+    right:12px;
+}
+.submenu5>ul>li::after{
+    content:'';
+    position: absolute;
+    top:40px;
+    width: 1px;
+    height: 300px;
+    background: gray;
+    right:12px;
+}
+
+.depth2>ul>li{
+    font-weight: bold;
+}
+.depth2>ul>li>ul{
+    padding-top: 15px;
+    display:flex;
+    flex-direction: column;
+    gap:10px;
+    height: 300px;
+   
+}
+.depth2>ul>li>ul li{
+    font-weight: normal;
+    
+}
+
+.white{
+    width: 100%;
+    background-color: rgb(165, 43, 43);
+    height: 350px;
+}
+/* 포지션 absolute를 쓰게되면 인라인요소로 변경되서 컨텐츠가 없는 
+블락요소의 경우 width가 반드시 필요함 
+그리고 포지션의 경우 나중에 작성된 값이 더 위로 올라가기 때문에
+태그 작성시  순서를 잘 쓰거나 혹은 z-index 값도 조정해줘라
+포지션 비교는 항상 형제요소끼리 해야하니   태그의 자식요소의 z-index가 문제가되면
+비교대상의 형제요소에게 줘라 (부모요소쪽까지 올라와서 줘야함)
+*/
+
+.whitebox1{
+    position: absolute;
+    overflow: hidden;
+    top:20px;
+    left:0;
+    /* left:-500px; */
+    margin-top: 30px;
+    display: block;
+    border-top: 1px red solid;
+    width: 100%;
+    height: 0px;
+    background: rgb(255, 255, 255);
+    transition: 0.8s;
+
+}
+.navi1:hover .whitebox1, .navi1:hover .depth2{
+    height: 350px;
+}
+
+.re{
+    grid-area: c;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.re fieldset{ 
+    border-top : 0;
+    border-bottom: 0;
+    border-left:1px solid gray ;
+    border-right: 1px solid gray;
+    border-width: 20%;
+
+    padding: 0 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.re input{border: 0;
+    font-size: 24px;
+    width: 180px;
+}
+.re button{
+    border: 0;
+    /* border-radius: 15px; */
+    display: block;
+    width: 28px;
+    height: 28px;
+   background: url(images/window.png) center/100% no-repeat;
+    /* object-fit: contain; */
+    text-indent: -9999999px;
+
+}
+
+/*  y스크롤용 메뉴바 + 탭메뉴   */
+
+.navi2{
+    position: fixed;
+    top:0;
+    background: orangered;
+    width: 100%; 
+    /* overflow: hidden; */
+
+    transition: all 0.5s;
+}
+.marginbox2{
+    width: 980px;
+    height: 60px;
+    display: grid;
+    grid-template-columns: 80px 660px 240px;
+    grid-template-rows: 60px;
+    grid-template-areas: 'a b c';
+    margin: auto;
+}
+.whitebox2{
+    position: absolute;
+    height: 50px;
+    /* width: 100%; */
+}
+.main_menu2{
+
+    grid-area: b;
+    width: 660px;
+    margin: auto;
+    justify-content: space-around;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+.main_menu2>li a{font-size: 20px;
+
+}
+.main_menu2>li{
+    color:white;
+
+}
+
+.depth3>ul>li{
+    margin: 10px 10px;  
+    width: 120px;
+    color:black;
+    white-space: nowrap;   
+}
+.depth3>ul{
+    display: none;
+}
+.submenu_1 ul{
+    
+    position: absolute;
+    left: 18px; 
+}
+.submenu_2 ul{
+    
+    position: absolute;
+    left: 118px; 
+}
+.submenu_3 ul{
+   
+    position: absolute;
+    left: 218px; 
+}
+.submenu_4 ul{
+ 
+    position: absolute;
+    left: 328px; 
+}
+.submenu_5 ul{
+  
+    position: absolute;
+    left: 448px; 
+}
+.submenu_6 ul{
+   
+    position: absolute;
+    left: 558px; 
+}
+
+.depth3>ul{
+    position: absolute;
+    top:43px;
+    /* left:0; */
+    padding-top: 10px;
+    background-color: white;
+    border-left: 1px black solid;
+    border-right: 1px black solid;
+    border-bottom: 1px black solid;
+}
+
+.marginbox2>img{
+    grid-area: a;
+    padding-top: 10px;
+    width: 70px;
+    height: 35px;
+    object-fit: fill;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+
+.re1{
+    grid-area: c;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.re1 fieldset{ 
+    border-top : 0;
+    border-bottom: 0;
+    border-left:1px solid gray ;
+    border-right: 1px solid gray;
+    border-width: 20%;
+
+    padding: 0 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.re1 input{border: 0;
+    font-size: 24px;
+    width: 180px;
+    background: orangered;
+}
+.re1 button{
+    border: 0;
+    /* border-radius: 15px; */
+    display: block;
+    width: 28px;
+    height: 28px;
+   background: url(images/windowwithe.png) center/100% no-repeat;
+    /* object-fit: contain; */
+    text-indent: -9999999px;
+
+}
+
+
+
+/* 메인 */
+
+.ad{
+    width: 100%;
+    height: 470px;
+    background: black; 
+    position: relative;
+
+}
+.barwe{
+    height: 470px;
+    width: 100%;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(13,13,13,0) 26%, rgba(13,13,13,0) 66%, rgba(13,13,13,1) 100%);
+    position: absolute;
+
+}
+/* video나 img 태그같은경우 width만 쓰고 높이를 안쓰면 
+    가로세로 비율에 맞춰서 알아서 바뀜  반응형 홈페이지에 맞춰서 만들때 무조건 중요함*****
+*/
+.mainmovie1{
+    width: 980px;
+    margin: auto;
+    background: url(images/bg.gif) no-repeat; 
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+
+.fon{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 470px;
+    gap:20px;
+    color:white;
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+   
+}
+.mainmovie1 video{
+    width: 980px;
+    /* overflow: hidden; */
+    /* height: 470px; */
+    position: absolute;
+    object-fit: contain;
+    top: -30px;
+
+    
+    /* margin: auto; */
+}
+
+.shadow{
+    font-size: 30px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.486);
+}
+.bott{
+    width: 230px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.bott button{
+    text-shadow: none;
+    display: block;
+    width: 100px;
+    height: 31px;
+    border-radius: 15px;
+}
+/* 
+글자 박스 중간에 정렬법
+1. line-height (이거는 vertical align과 조합해서 정렬해라)
+2. padding-topm, box-sizing : border-box 
+3. display:flex; justify-content : center , align-items : center 
+위 세가지 조합중 아무거나 사용해서 정렬시키면 된다
+*/
+.play_stop{
+    display: block;
+    width: 30px;
+    height: 30px;
+    border: 1px solid white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.bott img{
+    width: 18px;
+    height: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sound_on_off{
+    display: block;
+    width: 30px;
+    height: 30px;
+    border: 1px solid white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*  무비차트 부분  */
+.bgbar2{
+    background: rgba(206, 203, 203, 0.212);
+    width: 100%;
+    position: relative;
+    height: 460px;
+}
+.chart1{
+    width: 1040px;
+    margin: auto;
+    /* height: 0; */
+    height: 460px;
+    box-sizing: border-box;
+    padding: 50px 30px 60px;
+    position: relative;
+  
+}
+
+
+/* 옆으로 밀어보려고 함 */
+.slidebox ul{
+    position: absolute;
+    left:0px;
+    /* left:-1000px; */
+    transition: all 0.5s;
+    
+    
+}
+.slidebox>ul>li{ 
+    width: 170px;
+    position: relative;
+}
+.slidebox2 ul{
+    position: absolute;
+    left:0px;
+    /* left:-1000px; */
+    transition: all 0.5s;
+    
+    
+}
+.slidebox2>ul>li{ 
+    width: 170px;
+    position: relative;
+}
+
+.chart1 > h2{
+font-size: 30px;
+margin-bottom: 25px;
+color : black;
+width: 150px;
+}
+.chart1 h2 a{
+    font-size: inherit;
+}
+
+.chart1 img{
+    /* max-width: 100%; */
+    width: 170px;
+    height: 234px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+.chart2 img{
+    /* max-width: 100%; */
+    width: 170px;
+    height: 234px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+.slidebox h3{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 170px;
+    white-space: nowrap;
+    text-align: center;
+    margin-top: 5px;
+}
+.slidebox2 h3{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 170px;
+    white-space: nowrap;
+    text-align: center;
+    margin-top: 5px;
+}
+.slidebox .crank{
+    display: block;
+    position: absolute;
+    top: 0px;
+    border-radius: 15px;
+    left: 0px;
+    width: 170px;   
+    height: 234px;
+    background: rgb(2,0,36);
+    background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(13,13,13,0) 76%);
+    color: white;
+    line-height: 420px;
+    font-size: 50px;
+    box-sizing: border-box;
+    text-indent: 15px;
+
+}
+
+.slidebox2 .crank{
+    display: block;
+    position: absolute;
+    top: 0px;
+    border-radius: 15px;
+    left: 0px;
+    width: 170px;   
+    height: 234px;
+    background: rgb(2,0,36);
+    background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(13,13,13,0) 76%);
+    color: white;
+    line-height: 420px;
+    font-size: 50px;
+    box-sizing: border-box;
+    text-indent: 15px;
+}
+.hide{display: inline-block;
+width: 0;height: 0;overflow: hidden;}
+
+.chart1 .slidebox>ul{
+    display: flex;
+    flex-flow : row nowrap;
+    width: 100%;
+    height: 295px;
+    gap :30px
+}
+.chart2 .slidebox2>ul{
+    display: flex;
+    flex-flow : row nowrap;
+    width: 100%;
+    height: 295px;
+    gap :30px
+}
+
+.viewf{
+    
+    position: absolute;
+    right : 60px;
+    top: 60px;
+    display: block;
+    width: 100px;
+    border: 1px solid rgba(0, 0, 0, 0.568);
+    text-align: center;
+    line-height: 30px;
+    border-radius: 15px;
+    font-size: 15px;
+    /* background: rgb(175, 175, 175); */
+    overflow: hidden;
+    box-sizing: border-box;
+    
+}
+.sang2{
+    top: -55px; 
+    right: 30px; 
+    overflow: hidden;
+
+}
+.sflex{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+}
+.mrank_all{
+    position: absolute;
+    top:5px;
+    right: 5px;    
+}
+.egg{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 48px;
+    font-size: 14px;
+    text-align: center;
+}
+.ticketing{
+    font-size: 14px;
+}
+.egg::before{
+    content:'';
+    width: 16px;
+    height: 16px;
+    display: block;
+    box-sizing: border-box;
+    margin: auto;
+    background: url(teacher/images/eggGoldenegg.png) center/100% no-repeat;
+
+}
+/* 좌우 화살표바 */
+.lefta{
+    position: absolute;
+    top:200px;
+    left:0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 50px;
+    font-size: 30px;
+    background: rgba(255, 255, 255, 0.377);
+    border-radius: 50%;
+    padding: 10px 10px;
+    box-shadow:0 10px 20px rgba(0, 0, 0, 0.342);
+    box-sizing: border-box;
+    background: url(teacher/images/arrowL.png) no-repeat center;
+    text-indent: -999999999px;
+    display: none;
+    }
+    .righta{
+        position: absolute;
+        top:200px;
+        right:0px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+        width: 50px;
+        font-size: 30px;
+        background: rgba(255, 255, 255, 0.377);
+        border-radius: 50%;
+        padding: 10px 10px;
+        box-shadow:0 10px 20px rgba(0, 0, 0, 0.342);
+        box-sizing: border-box;
+        background: url(teacher/images/arrowR.png) no-repeat center;
+        text-indent: -999999999px;
+        }
+    
+
+
+.Arrow{
+    position: absolute;
+    top:200px;
+    left:0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 1030px;
+}
+.Arrow a{
+    font-size: 30px;
+    background: rgba(255, 255, 255, 0.377);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    align-items: center;
+    text-align: center;
+    display: block;
+    box-sizing: border-box;
+    box-shadow:0 10px 20px rgba(0, 0, 0, 0.342);
+    overflow: hidden;
+
+}
+.viewf::after{
+    content: '   >' ; 
+}
+/* 상영등급 */
+.mrank_all{
+    content: url(teacher/images/age_all.png);
+    display: block;
+    /* background: url(teacher/images/age_all.png) contain; */
+    /* text-indent: -999999px; */
+    position: absolute;
+    top:5px;
+    right : 5px;
+    width: 20px;
+    height: 20px;
+    /* text-indent: -999999px; */
+}
+.mrank_18{
+    position: absolute;
+    content: url(teacher/images/age_18.png);
+    display: block;
+    top:5px;
+    right:5px;
+    width: 20px;
+    height: 20px;
+
+}
+.mrank_15{
+    position: absolute;
+    content: url(teacher/images/age_15.png);
+    display: block;
+    top:5px;
+    right:5px;
+    width: 20px;
+    height: 20px;
+}
+.d_day{
+    position: absolute;
+    top:27px;
+    right:5px;
+    border: 1px solid white;
+    font-size: 10px;
+    color:rgb(255, 0, 0);
+    background: white;
+
+}
+.screen_type{
+    position: absolute;
+    bottom: 70px;
+    right:10px;
+    border: 1px white solid;
+    font-size: 10px;
+    box-sizing: border-box;
+    color:white;
+    display: inline-block;
+    width: 32px;
+    text-align: center;
+}
+/* 무비차트 각 사진파일 하나당 상세보기 예매하기 화면 */
+.hover1{
+    position: absolute;
+    top :0px;
+    width: 170px;
+    overflow: hidden;
+    height: 0;
+
+}
+.slidebox>ul>li:hover .hover1{
+height: 234px;
+background: rgba(70, 69, 69, 0.312);
+border-radius: 15px;
+}
+.slidebox>ul>li:hover .crank, .slidebox>ul>li:hover .mrank_15,.slidebox>ul>li:hover .mrank_18, .slidebox>ul>li:hover .mrank_all,.slidebox>ul>li:hover .d_day, .slidebox>ul>li:hover .screen_type{ 
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+}
+.slidebox2>ul>li:hover .hover1{
+height: 234px;
+background: rgba(70, 69, 69, 0.312);
+border-radius: 15px;
+}
+.slidebox2>ul>li:hover .crank, .slidebox2>ul>li:hover .mrank_15,.slidebox2>ul>li:hover .mrank_18, .slidebox2>ul>li:hover .mrank_all,.slidebox2>ul>li:hover .d_day, .slidebox2>ul>li:hover .screen_type{ 
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+
+}
+.hover2{
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+    margin: auto;
+    align-items: center;
+    gap: 20px;
+    height: 234px;
+    justify-content: center;
+}
+.hover2>p:first-child>a{
+    display: block;
+    width: 100px;
+    border-radius: 5px;
+    background: white border-box center;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 13px;
+}    
+.hover2>p:last-child>a{
+    display: block;
+    width: 100px;
+    border-radius: 5px;
+    background: red border-box center;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 13px;   
+    color:white;
+}
+
+
+/*  상영예정작 파트 */
+
+.marginbox{
+    width: 980px;
+    margin: auto;
+    position: relative;
+}
+.chart2 h2>a::before{
+    content: '';
+    background: black ;
+    width: 1px;
+    height: 34px;
+    position: absolute;
+    display: block;
+    top : 3PX;
+    left : -15px;
+}
+.chart2 h2>a{
+    position: absolute;
+    top : -65px;
+    left : 160px;
+    font-size: 30px;
+}
+
+.slidebox{
+    overflow: hidden;
+    width: 980px;
+    height: 295px;
+    position: relative;
+
+}
+.slidebox2{
+    overflow: hidden;
+    width: 980px;
+    height: 0px;
+    position: relative;
+
+}
+.chart2 .lefta{
+    top: 85px;
+    left : -30px;
+    height: 100%;
+    /* display: none; */
+}
+.chart2 .righta{
+    top: 85px;
+    right : -30px;
+    height: 100%;
+    display: none;
+}
+
+
+.chart2{
+      /* height: 460px; */
+    /* height: 0; 
+    overflow: hidden;  */
+    /* 잠시 숨김 위에 두줄 삭제시 나타남 */
+    position: absolute;
+    top:115px;
+    left:30px;
+width: 100%;
+} 
+
+
+.chart2 .slidebox>ul{
+    display: flex;
+    flex-flow : row nowrap;
+    width: 100%;
+    height: 295px;
+    gap :30px
+}
+
+
+
+/* 이벤트 페이지 */
+.page > h2{
+    font-size: 30px;
+}
+.event{
+    padding: 60px 0 6px;
+    height: 395px;
+    width: 100%;
+    position: relative;
+}
+.page > .Arrow{
+    top:150px;
+    left : -20px;
+}
+.page h2{
+    width: 100%;
+    margin-bottom: 20px;
+}
+.page{
+    width: 980px;
+    margin: auto;
+    position: relative;
+}
+.pageslide2{
+    display: flex;
+    flex-flow:row nowrap;
+    justify-content: center;
+    gap :20px;
+    height: 273px;
+    position: absolute;
+    left:0px;
+    transition: all 0.5s;
+}
+.showbox1{
+    position: relative;
+    overflow:hidden;
+    width: 980px;
+    height: 273px;
+    }
+
+.youtube1{
+    width: 310px;
+    position: relative;
+}
+.youtube1 img{
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: 0.5s;
+    transform: scale(1, 1);
+}
+.hop{
+    display: block;
+    width: 310px;
+    overflow: hidden;
+    border-radius: 15px;
+}
+.hop img:hover{
+    transform: scale(1.1, 1.1);
+}
+.youtube1 a{
+    position: absolute;
+    top: 180px;
+    width: 310px;
+    height: 80px;
+    display: block;
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-end;
+}
+/* a태그를 사이즈 키우면 img호버가 안먹힘  태그 구조를 잘못짠것 같음 */
+.control3{
+    position: absolute;
+    top:0px;
+    right:0px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 140px;
+    justify-content: space-between;
+}
+.control3 a{
+    border: 1px solid black;
+    border-radius: 15px;
+}
+.controlbox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.control3>.controlbox a:first-child{
+    display: none;
+    width: 30px;
+    height: 30px;
+    content: '';
+    background: url(teacher/images/play_d.png) no-repeat 8px center /60% ;
+    text-indent: -99999px;
+    box-sizing: border-box;
+}
+.control3>.controlbox a:nth-child(2){
+    width: 30px;
+    height: 30px;
+    content: '';
+    background: url(teacher/images/pause.png) black no-repeat center/100% ;
+    text-indent: -99999px;
+    box-sizing: border-box;
+
+}
+
+.control3>a::after{
+content: '>';
+}
+.control3>a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    text-align: center;
+
+    height: 27px;
+}
+
+
+
+/* 특별관 페이지 시작 */
+.spe{
+   margin-bottom: 70px;
+}
+.list2{
+ width: 980px;
+ margin: auto;
+ position: relative;
+}
+.spe>.list2>h2{
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+.imgslide{
+    display: flex;
+    flex-direction: row;
+    gap : 40px;
+}
+.imgs{
+    position: relative;
+    width: 500px;
+    height: 265px;
+}
+
+
+.imgslide img{
+    position: absolute;
+    width: 500px;
+}
+.specialList{
+    display: flex;
+    flex-direction: column;
+    height: 265px;
+    /* justify-content: space-evenly; */
+}
+.specialList a:last-child{
+    border-bottom: gray 1px solid;
+}
+.specialList span::before{
+    content:'#';
+}
+.specialList a{
+    display: block;
+    width: 438px;
+    padding: 13px 25px 19px 12px;
+    box-sizing: border-box;
+    border-top: gray 1px solid;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.5s;
+    font-size: 22px;
+}
+.specialList span{
+    background: rgba(128, 128, 128, 0.267); 
+    /* font-size: inherit; */
+    border-radius: 10px;
+    padding:  7px;
+    font-size: 14px;
+}
+
+.spSelect{
+    /* padding: 19px 25px 19px 17px; */
+    font-size : 30px;
+    font-Weight : bold;
+    border : 1px black solid;
+    border-Radius: 15px;
+}
+.look{position: absolute;
+    top : 0;
+    right : 0;
+    border: 1px solid black;
+    border-radius: 15px;
+    display: block;
+    box-sizing: border-box;
+    width: 100px;
+    height: 27px;
+    text-align: center ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.look a::after{
+    content:' >';
+}
+
+/* 패키지3개 묶음 */
+.product{
+    width: 980px;
+    margin: 0 auto 50px;
+    display: flex;
+    justify-content: space-between;
+
+}
+.p1>a{
+    display: inline-block;
+    border: 1px solid black;   
+    width: 65px;
+    text-align: center;
+    border-radius: 15px;
+    font-size: 12px;
+    line-height: 33px; 
+}
+.p1>h2{
+    font-size: 25px;
+}
+.pack1{
+    width: 310px;
+    height: 376px;
+    box-sizing: border-box;
+    border: 1px solid gray;
+    padding: 20px 19px 30px;
+    border-radius: 10px;
+}
+.pack2{
+    width: 310px;
+    height: 376px;
+    box-sizing: border-box;
+    border: 1px solid gray;
+    padding: 20px 19px 30px;
+    border-radius: 10px;
+}
+.pack3{
+    width: 310px;
+    height: 376px;
+    box-sizing: border-box;
+    border: 1px solid gray;
+    padding: 20px 19px 30px;
+    border-radius: 10px;
+}
+.p1{
+    display: flex;
+    flex-direction: row;
+    width: 270px;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+.pp1>a{
+    display:flex;
+    flex-flow:nowrap row;
+    width: 270px;
+    height: 76px;
+    gap: 10px;
+}
+.flex3{
+    height: 288px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    
+}
+.pp1 img{
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+/* 공지사항 탭 */
+
+.grd1{
+    width: 100%;
+    height: 388px;
+}
+
+.notice1{
+    display: grid;
+    width: 980px;
+    margin: auto;
+    grid-template-columns: 514px 222px 33px 211px;
+    grid-template-rows: 236px;
+    grid-template-areas: 'a b c d';
+}
+.par1{
+    grid-area: a;
+    border: 1px solid black;
+    padding: 24px 26px 20px 30px;
+    border-radius: 15px 0 0 15px;
+}
+
+.no1 p{
+    width: 300px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.notice2{
+    grid-area: d;
+    width: 211px;height: 236px;
+    border-radius: 20px;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.no1{
+    height: 46px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 458px;
+    padding: 0 0 20px;
+    border-bottom: 1px solid black;
+}
+.no1 h2{
+    margin-right: 20px;
+}
+.more2>a{
+    display: block;
+    border : 1px solid black;
+    width: 65px;
+    border-radius: 25px;
+    text-align: center;
+}
+.no2{
+    padding: 20px 0 0 0;
+    display: flex;
+    flex-direction: row;
+    gap:25px;
+    height: 112px;
+}
+.no2>span{
+    width: 300px;
+}
+.no2>span>p:first-child{
+    font-weight: bold;
+    }
+.no3{
+    display: flex;
+    flex-direction: row;
+    gap :10px
+
+}
+.no3>a{
+    
+    padding: 0 10px;
+    background: rgba(128, 128, 128, 0.432);
+}
+
+.par2{
+    border: 1px solid black;
+    border-left: 0;
+    border-radius: 0 15px 15px 0;
+    grid-area: b;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+text-align: center  ;
+box-sizing: border-box;
+padding: 10px 10px 10px;
+}
+.par2 h2{
+    margin-bottom: 10px;
+}
+.par2 img{
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    text-align: center;
+ display: block;
+ margin: auto;
+
+}
+.par2>p{
+    font-size: 12px;
+}
+/* footer부분 작성 */
+footer{
+    width: 100%;
+    height: 150px;
+    position: relative;
+    z-index: 2;
+}
+.company{
+    width: 980px;
+    margin: 0 auto 30px;
+}
+.company>ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 980px;
+
+}
+.company li a{font-size : 13px}
+.gag{font-style: italic;text-decoration: underline;font-weight: bold;}
+.end{
+    position: relative;
+
+    padding-top: 30px;
+    padding-right: 40px;
+    border-top: 1px solid black; 
+    box-sizing: border-box;  
+}
+.bar::after{
+    content:'△';
+    margin: 0 5px;;
+}
+.end>div{
+    /* width: 400px; */
+}
+.line1,.line2{
+    display:flex;
+}
+.alignbox{
+    width: 980px;
+    margin: auto;
+}
+.end p, .end address{
+    font-size: 12px;
+}
+
+.quick{
+    position: absolute;
+    right: 48px;
+    top:60px;
+    display: flex;
+    align-items: flex-end;
+    /* margin-bottom: 20px; */
+    bottom: 15px;
+    height: 36px;
+    z-index: 5;
+}
+/* .quick:hover .wbox, .quick:hover .wbox dl{
+height: 400px;
+
+} */
+.quick h3{
+    border: 1px solid black;
+    background: white;
+    width: 178px;
+    height: 34px;
+    line-height: 32px;
+    text-indent: 5px;
+}
+.quick h3>a{
+    display: block;
+    width: 160px;
+    height: 32px;
+    background: url(images/arrowDown.jpg) no-repeat 145px center;
+}
+.quick dl{
+    position: absolute;
+    display: flex;
+    bottom:-309px;
+    /*bottom 0으로 하면 올라옴*/
+    flex-direction: column;
+    overflow: hidden;
+    transition: 0.5s;
+    gap : 5px;
+    white-space: nowrap;
+    padding-bottom: 15px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+}
+.quick dl dd{
+    font-size: 13px;
+    margin:0px 0 0px 20px;
+    width: 100%;
+}
+.quick dl dd:hover{
+    color: blue;;
+}
+.quick dl dt{
+    margin:0px 0 0px 5px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.wbox{
+    position: absolute;
+    bottom: 35px;
+    left:0;
+    /* height: 411px; */
+    width: 178px;
+    background: white;
+    border: 1px black solid;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.151);
+    overflow: hidden;
+    transition: 0.5s;
+    visibility: hidden;
+    cursor: default;
+}
+.go{
+    position: absolute;
+    left:181px;
+}
+.go a{
+    box-sizing: border-box;
+    display: block;
+    width: 36px;
+    height: 36px;
+    line-height: 34px;
+    text-align: center;
+    border: 1px black solid;
+    color: white;
+    background: gray;
+    }
+
+.topup{
+    position: fixed;
+    bottom: 45px;
+    left:50%;
+    margin-left: 270px;
+    display: flex;
+    flex-direction: row-reverse;   
+    justify-content: space-evenly;
+    align-items: center;
+    gap:15px;
+    height: 50px;   
+    z-index: 2;
+  }
+.gotop{
+    padding: 15px;
+}
+.gotop img{
+    border :1px black solid;
+    border-radius: 50%;
+    object-fit: scale-down;
+    width: 49px;height: 49px;
+    background: white;
+    
+
+}
+.topup:hover .blindb a{
+    left : 0;
+
+}
+.blindb a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 136px;
+    height: 50px;
+    background: orangered;
+    border-radius: 25px;
+    color :white;
+    position: absolute;
+    left:280px;
+    transition: all 0.5s;
+}
+.blindb{
+    width:136px ;
+    height: 50px;
+    overflow: hidden;
+    position: relative;
+}
+

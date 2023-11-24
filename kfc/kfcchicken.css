@@ -1,0 +1,768 @@
+*{
+    padding: 0;margin: 0;
+    list-style: none;
+}
+a{ text-decoration: none;
+   color: black;
+   font-size: 14px;
+}
+body{
+    height: 100%;
+    font-size: 1rem;
+}
+.screenx{
+    /* text-indent: -999999px; */
+    width: 0;height: 0; overflow: hidden;
+    line-height: 0;
+    display: inline-block;
+    position: absolute;
+
+    /* vertical-align: bottom; */
+
+}
+/* 헤더 시작 */
+.header{
+    height: 141px;
+    border-top:1px solid rgba(102, 51, 153, 0);
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 3;
+    padding-top: 20px;
+    /* width: 1440px; */
+    margin: 0 auto;
+    box-sizing: border-box;
+    background: white;
+}
+.logowrap{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 1070px;
+}
+
+h1>a{
+    content:url(images/khclgo.png);
+    display: block;
+    width: 110px;
+    height: 30px;
+    object-fit: cover;
+    background: white;
+    margin-top: 10px;
+    text-indent: -999999px;
+}
+.floatbar{
+  position: fixed;
+}
+#gnb{
+    width: 1440px;
+    margin: auto;
+    background: white;
+    /* position: fixed; */
+}
+.nav{
+    max-width: 1130px;
+    /* margin: auto; */
+    padding-right: 310px;
+    /* box-sizing: border-box; */
+}
+#nonelist{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;   
+    align-items: center;
+    width: 717px; 
+    height: 47px;
+    margin: auto;
+    box-sizing: border-box;
+    /* padding-left: 220px; */
+    /* padding-right: 110px; */
+
+}
+#nonelist>li{
+    position: relative;
+    
+    font-weight: bold;
+    width: 135px;
+    margin: auto;
+ 
+}
+#nonelist>li>a{
+    /* font-size: inherit; */
+    display: block;
+    /* padding-bottom: 20px; */
+    text-align: center;   
+    font-size: 16px; 
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#nonelist>li{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+}
+.linea{
+    display: inline-block;
+     height: 6px;
+    width: 0px;
+    overflow: hidden;
+    transition: all 0.4s;
+    box-sizing: border-box;
+    border-bottom: 1px black solid;
+    justify-content: center;
+}
+.lineb{
+    display: inline-block;
+    height: 6px;
+    width: 0px;
+    /* padding-bottom: 30px; */
+    transition: all 0.4s;
+    box-sizing: border-box;
+    border-bottom: 1px black solid;
+    justify-content: center;
+    
+
+}
+.linec{
+    display: inline-block;
+    height: 6px;
+    width: 0px;
+    /* padding-bottom: 30px; */
+    transition: all 0.4s;
+    box-sizing: border-box;
+    border-bottom: 1px black solid;
+}
+.lined{
+    display: inline-block;
+    height: 6px;
+    width: 0px;
+    /* padding-bottom: 30px; */
+    transition: all 0.4s;
+    box-sizing: border-box;
+    border-bottom: 1px black solid;
+
+}
+.linee{
+    display: inline-block;
+    height: 6px;
+    width: 0px;
+    /* padding-bottom: 30px; */
+    transition: all 0.4s;
+    box-sizing: border-box;
+    border-bottom: 1px black solid;
+
+}
+/* #nonelist>li:hover .lit1{
+    height: 180px;
+    display: block;} */
+
+.lit1{
+    /* display: none; */
+    position: absolute;
+    padding-top: 60px;
+    transition: all 0.4s;
+    height: 0px;
+
+    overflow: hidden;
+
+}
+.lit1>li{
+    font-weight:initial;
+    width: 150px;
+    text-align: center;
+    margin: 10px 0;
+}
+
+/* .nav:hover div.whitebar, .nav:hover .lit1{
+    height: 220px;
+} */
+.whitebar{
+    background: rgb(255, 255, 255);
+    width: 100%;
+    /* height: 240px; */
+    height: 0;
+    position: absolute;
+    top:60px;
+    left:0;
+    transition: all 0.5s;
+    overflow: hidden;
+}
+.bgbar{
+    content: '';
+    position: absolute;
+    top:0;
+    right: 0;
+    background: url(images/kfc_sprite.png) no-repeat;
+    width: 250px;
+    height: 150px;
+}
+
+#utill>ul{
+    display: flex;
+    flex-direction:row;
+    /* align-content: center; */
+    gap:10px;
+    /* margin-top: 20px; */
+    box-sizing: border-box;
+
+
+}
+#utill>ul>li{
+    height: 47px;
+    line-height: 47px;
+}
+
+#utill>ul>li a{
+    /* overflow: hidden;
+    display: block; */
+    padding-left: 10px;
+    /* border-left: 1px solid black; */
+    
+}
+.border{
+    border-left: 1px solid black;
+}
+.noborder{
+    border: none;
+}
+
+
+
+.arrow{
+    position: absolute;
+    top:200px;
+    width: 100%;
+    padding: 0 50px;
+    box-sizing: border-box;
+}
+/* .arrow>div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+} */
+.arrow a{
+    font-size: 50px;
+    display: block;
+    color : white;
+}
+.arrow .left{
+    position: absolute;
+    left:0;
+}
+.arrow .right{
+    position: absolute;
+    right:0;
+}
+
+
+/*
+*/
+.roadmap>h2{
+    display: block;
+    content: url(images/khclgo.png);
+    text-indent: -999999px;
+    width: 150px;
+    height: 40px;
+    object-fit: cover;
+
+}
+.roadmap>ul{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    justify-content: space-evenly;
+    margin: auto;
+}
+.roadmap>ul>li>a{font-size : 20px; font-weight: bold;
+}
+.roadmap>ul>li>ul{
+margin-top: 10px;
+}
+footer{
+    background: gray;
+    padding: 20px 0  80px;
+    text-align: center;
+}
+.end{
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+    justify-content: space-evenly;
+    margin: 0 auto 50px;
+}
+.end a, footer p, footer address{
+    color:white;
+    font-style: normal;
+}
+.end>a:first-child{
+    color:yellow;
+}
+.end>a::after{
+    content : '|'
+    ;
+    margin-left:25px;  
+    color: white;
+}
+.end>a:last-child::after{
+ content:'';
+}
+
+
+/*   윗내용은 푸터와 헤더부분임
+
+*/
+
+.main{
+    margin: auto;
+    position: relative;
+    z-index: 1;}
+.mainbar{
+    width: 100%;
+    background: black url(images/banner_delivery_pattern.png) center /100%;
+}
+.mainp{
+    height: 200px;
+    width: 1000px;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    color : white;
+    margin: auto;
+}
+.mainp h2{
+    font-size: 50px;
+}
+.menuselect{
+    margin-bottom: 50px;
+}
+.menuselect>ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 800px;
+    margin: auto;
+}
+.menuselect>ul>li{
+height: 120px;
+width: 150px;
+overflow: hidden;
+}
+.aa{
+    width: 100%;
+    height: 58px;
+    display: block;
+    margin: auto;
+}
+.a1{
+content:'';
+background: url(images/pruduct/dv_mn_new.png) no-repeat 0 0px; 
+}
+.a2{
+content:'';
+background: url(images/pruduct/dv_mn_set_chicken.png) no-repeat 0 0px; 
+}
+.a3{
+content:'';
+background: url(images/pruduct/dv_mn_set_burger.png) no-repeat 0 0px; 
+}
+.a4{
+content:'';
+background: url(images/pruduct/dv_mn_side_menu.png) no-repeat 0 0px; 
+}
+.a5{
+    content:'';
+    background: url(images/pruduct/dv_mn_drink.png) no-repeat -13px 0px; 
+    width: 100%;
+    height: 58px;
+    display: block;
+    }
+.a6{
+    content:'';
+    background: url(images/pruduct/db_mn_address.png) no-repeat 0 0px; 
+}
+.menuselect a:hover .a5{
+    background-position: -14px -64px;
+}
+.menuselect a:hover .aa{
+    background-position: 0 -64px;
+}
+
+.menuselect>ul>li{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+/*   여기부터 메인 리스트 선택자 */
+.fullmenu{
+    position: relative;
+    height: 1278px;
+}
+
+
+.mainlist{
+    width: 100%;
+    margin-bottom: 50px;
+
+}
+.mainlist>ul{
+    display: flex;
+    flex-flow: row wrap;
+    width: 1280px;
+    padding: 0 20px;
+    margin: auto;
+    align-content: space-around;
+}
+.mainlist>ul>li{
+    width: 23%;
+    height: 426px;
+    padding: 0 10px;
+
+}
+.mainlist img{
+    max-width: 100%;
+    object-fit: cover;
+}
+.mainlist>ul>li>ul>li{
+    display: flex;
+    flex-direction: column;
+   justify-content: space-evenly;
+   align-items: center;
+    height: 150px;
+    position: relative;
+}
+.bot1{ 
+    position: absolute;
+    top: 150px;
+    left:50px
+}
+.bot{
+    display: flex;
+    flex-direction: row;
+     gap: 10px;
+    width: 180px;
+    height: 40px;
+    border: 2px solid black; 
+    line-height: 36px;
+    text-indent: 15px;
+    border-radius: 20px;
+    box-sizing: border-box;
+}
+.nowp{
+    position: absolute;
+    right: 0px;
+    top:0;
+    border: 2px solid black;
+    border-radius: 20px;
+    
+  
+}
+.mainlist span>p{
+    color:red;
+}
+.mainlist h3{
+    font-size: 20px;
+}
+
+/* 나머지 리스트는 동일하기 때문에 그냥 복붙하면 됨 */
+
+.water{
+    width: 100%;
+    position: absolute;
+    top:0;
+    height: 1278px;
+}
+.water>ul{
+    display: flex;
+    flex-flow: row wrap;
+    width: 1280px;
+    padding: 0 20px;
+    margin: auto;
+    align-content: space-around;
+}
+.water>ul>li{
+    width: 23%;
+    height: 426px;
+    padding: 0 10px;
+
+}
+.water img{
+    max-width: 100%;
+    object-fit: cover;
+}
+.water>ul>li>ul>li{
+    display: flex;
+    flex-direction: column;
+   justify-content: space-evenly;
+   align-items: center;
+    height: 150px;
+    position: relative;
+}
+.water span>p{
+    color:red;
+}
+.water h3{
+    font-size: 20px;
+}
+
+
+/*  buger*/
+
+.buger{
+    width: 100%;
+    position: absolute;
+    top:0;
+    height: 1278px;
+
+}
+.buger>ul{
+    display: flex;
+    flex-flow: row wrap;
+    width: 1280px;
+    padding: 0 20px;
+    margin: auto;
+    align-content: space-around;
+}
+.buger>ul>li{
+    width: 23%;
+    height: 426px;
+    padding: 0 10px;
+
+}
+.buger img{
+    max-width: 100%;
+    object-fit: cover;
+}
+.buger>ul>li>ul>li{
+    display: flex;
+    flex-direction: column;
+   justify-content: space-evenly;
+   align-items: center;
+    height: 150px;
+    position: relative;
+}
+.buger span>p{
+    color:red;
+}
+.buger h3{
+    font-size: 20px;
+}
+/*snack*/
+.snack{
+    width: 100%;
+    position: absolute;
+    top:0;
+    height: 1278px;
+
+}
+.snack>ul{
+    display: flex;
+    flex-flow: row wrap;
+    width: 1280px;
+    padding: 0 20px;
+    margin: auto;
+    align-content: space-around;
+}
+.snack>ul>li{
+    width: 23%;
+    height: 426px;
+    padding: 0 10px;
+
+}
+.snack img{
+    max-width: 100%;
+    object-fit: cover;
+}
+.snack>ul>li>ul>li{
+    display: flex;
+    flex-direction: column;
+   justify-content: space-evenly;
+   align-items: center;
+    height: 150px;
+    position: relative;
+}
+.snack span>p{
+    color:red;
+}
+.snack h3{
+    font-size: 20px;
+}
+
+/* a메인리스트 임시 1*/
+.blackbar{
+    padding: 10px;
+    /* margin-bottom: 150px; */
+}
+.mainlist1{
+    width: 100%;
+    width: 100%;
+    position: absolute;
+    top:0;
+    height: 1278px;
+
+}
+.mainlist1>ul{
+    display: flex;
+    flex-flow: row wrap;
+    width: 1280px;
+    padding: 0 20px;
+    margin: auto;
+    align-content: space-around;
+}
+.mainlist1>ul>li{
+    width: 23%;
+    height: 426px;
+    padding: 0 10px;
+
+}
+.mainlist1 img{
+    max-width: 100%;
+    object-fit: cover;
+}
+.mainlist1>ul>li>ul>li{
+    display: flex;
+    flex-direction: column;
+   justify-content: space-evenly;
+   align-items: center;
+    height: 150px;
+    position: relative;
+}
+
+.mainlist1 span>p{
+    color:red;
+}
+.mainlist1 h3{
+    font-size: 20px;
+}
+
+/*
+display none 클래스
+*/
+
+.none{
+    display : none;
+}
+/*주소관련 클릭시 이벤트로 나타낼것*/
+
+.find{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(88, 88, 88, 0.826);
+    z-index: 55;
+    display: none;
+}
+.bigbox{
+    display: flex;
+    max-width: 1000px;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top:15%;
+    left : 20%
+}
+.boxone{
+    width: 500px;
+    background: rgba(255, 0, 0, 0.404) url(images/del_note_bg.jpg) center/cover;
+    border: 1px solid pink;
+    height: 700px;
+    position: relative;
+}
+.deli{
+    position: absolute;
+    left : 20px
+    ;top : 30px;
+    padding: 30px 50px 0;
+}
+.deli h2{
+    color:#f5d4b7;
+    margin-bottom: 40px;
+}
+.deli p{
+    margin-left: 20px;
+    color:#ccb4a2;
+}
+.flextime ul{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 10px;
+}
+fieldset{
+    border: 0 none;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.boxtwo h2{
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid black;
+}
+
+.boxtwo{
+    width: 500px;
+    height: 700px;
+    background: white;
+    padding: 60px 50px 0;
+    box-sizing: border-box;
+}
+.boxtwo .sub1{
+    width: 345px;
+    height: 33px;
+    margin-right: 2px;
+    padding-left: 10px;
+    box-sizing: border-box;
+}
+.boxtwo button{
+    width: 48px;
+    height: 33px;
+    box-sizing: border-box;
+
+}
+.textbox{
+    border: 1px solid black;
+    padding: 5px;
+    height: 350px;
+    margin-bottom: 15px;
+}
+.textbox p{
+    padding: 10px 0;
+    font-size: 14px;
+}
+.fboxx{
+   
+    
+    position: relative;
+}
+.fboxx a{
+    position: absolute;
+    top:50px;
+    left:140px;
+    width: 40px;
+    height: 30px;
+    border: 1px solid black;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fboxx a:last-child{
+    left:200px
+}
+
+.submap{
+    width: 400px;
+    height: 33px;
+    padding-left: 10px;
+    box-sizing: border-box;
+}
+.closebox{
+    position: absolute;
+    top :1px;
+    right : -30px;
+}

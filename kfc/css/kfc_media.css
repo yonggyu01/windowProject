@@ -1,0 +1,18 @@
+
+@media screen and (max-width:980px){
+    #picsl a{
+       width: 100%;
+       margin: auto;
+    }
+     #picture_link>ul{
+       flex-wrap: wrap;
+       width: 980px;
+       
+    }
+    .swifebox1{
+       height: 300px;
+    }
+    .swifebox1>ul{
+       width: 5000px;
+    }
+   }
