@@ -138,6 +138,39 @@ function nowopenmycom(value){
     mode=0;
     startmenu.style.zIndex = 0;
 }
+//
+    /**
+    *인덱스 체커
+    *window에 클릭이벤트를 걸어둬야 하며 내가 클릭한 태그가 부모요소가 있는 경우 내가 선택한 태그의 index값을 
+    *가져올 수 있음, 동일하게 인덱스요소를 사용하는 태그를 열고 닫고싶을때 사용하기 위해 만듬
+    */
+    function indexcheck(e){
+        let targetcount = e.target?.parentElement?.childElementCount 
+        let allindexnum = 0;
+        for(let i=0; i<targetcount; i++){
+            if(e.target?.parentElement.children[i] == e.target){
+                allindexnum = i
+            }
+        }
+        return allindexnum;
+    }
+    // 간단한 버튼들은 변수로 지정하지 않고 그냥 사용하기위해 윈도우의 클릭이벤트를 선택자로 활용해서
+    // 스위치문으로 작성_ 선택하고싶은 태그요소에  클래스나 아이디값이 있는 버튼의 경우 그냥 사용하면되며 인덱스 값도 받아 올 수 있기 때문에
+    // 인덱스가 필요한 경우 인덱스 체커를 활용해서 하드코딩
+    window.onclick =function(e){
+        indexcheck(e)
+        // console.log(e)
+        console.log(indexcheck(e))
+       let tt =  e.target.id || e.target.classList.value
+       console.log(tt) 
+       switch (tt){
+        case 'f1':
+            break; 
+       }
+
+    }
+
+
 
 /*
 // bricon[0].addEventListener('click',function(){
