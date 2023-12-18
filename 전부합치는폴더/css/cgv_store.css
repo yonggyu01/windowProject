@@ -179,6 +179,9 @@ margin-bottom: 70px;
     align-items: center;
     box-sizing: border-box;
 } */
+.moviewrap h3,.snackwrap h3,.giftcardwrap h3{
+    margin-bottom: 8px;
+}
 .moviewrap p:not(.packbold),.giftcardwrap p:not(.packbold),.snackwrap p:not(.packbold){
     color: #666;
     margin-bottom: 10px;

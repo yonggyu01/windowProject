@@ -23,6 +23,9 @@ window.addEventListener('scroll',function(event){
 })
 
 
+
+
+
 // 회원가입기능 구현
 
 
@@ -34,3 +37,16 @@ fetch('https://jsonplaceholder.typicode.com/posts',{
      }), headers : {'Content-type' : 'application/json'}
 
     }).then(res=>res.json()).then(data=>console.log(data,data))
+
+
+    // 스크롤 제한 기능
+
+    window.addEventListener('scroll',function(e){
+        if(this.addEventListener == scroll){
+            e.stop();
+            e.stopImmediatePropagation();
+        }
+        console.log(e)
+        
+    },false)
+    

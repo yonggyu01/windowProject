@@ -423,7 +423,9 @@ video{
 .chart2_wrap{
     position: absolute;
     top:97px;
-    left : 125px;
+    left : 50%;
+    transform: translateX(-490px);
+  
     width: 980px;
     margin: 0 auto;  
     display: none;
@@ -494,7 +496,7 @@ video{
     background:rgba(255, 255, 255, 0.8)  url('../img/arrowR.png')center/ 9px 13px  no-repeat;
     box-shadow: 2px 2px 8px 0 rgba(0, 0, 0, 0.5);
 }
-.slide_wrap{
+.chart_wrap .slide_wrap{
     overflow: hidden;
     width:1000px;
     height:310px;
@@ -507,6 +509,13 @@ video{
     counter-reset:number;
     transition: all 0.5s;
     left:0;
+}
+
+.chart2_wrap .slide_wrap{
+    overflow: hidden;
+    width:1000px;
+    height:310px;
+    transform:perspective(0px);
 }
 .slide_list li{
     width: 170px;

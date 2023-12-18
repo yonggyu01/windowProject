@@ -34,7 +34,7 @@ window.onload =function(){
 
                 e.target.parentElement.nextElementSibling.children[0].style.color = 'gray'
                 e.target.style.color='black'
-               document.querySelector('.slide_wrap').style.display = 'block'
+               document.querySelector('.chart_wrap .slide_wrap').style.width = '1000px'
                document.querySelector('.chart2_wrap').style.display = 'none'
                document.querySelector('.chart_wrap .slide_btn').style.display = 'block'
             break;
@@ -44,7 +44,7 @@ window.onload =function(){
                 e.target.style.color='black'
                 document.querySelector('.chart2_wrap').style.display = 'block'
                 document.querySelector('.chart_wrap .slide_btn').style.display = 'none'
-                document.querySelector('.slide_wrap').style.display = 'none'
+                document.querySelector('.chart_wrap .slide_wrap').style.width = '0px'
             break;
             case 'chartpreb' : //차트 슬라이드 버튼  gap 30px임
                 ++chartnum
@@ -133,6 +133,10 @@ window.onload =function(){
                     clearInterval(autotimer)
                     eventtime = 0;
                     }
+                    
+                        // 추가로 수정 방향은 -> 이벤트 부분은 이렇게 id체커로  이벤트를 직접 주는게 아니라 
+                        //이벤트 리스너로 이벤트를 직접 해당태그에 등록하고 오토플레이시 변수.dispatchEvent(new Event('click'))
+                        //이런식으로 구동시켜도 될것같음
                 break;
         }
     }
