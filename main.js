@@ -26,7 +26,7 @@ var mycom = document.querySelector('.mycomputer')
 let xbutton = document.querySelectorAll('.xbutton, .xb')
 let tmycom = document.querySelectorAll('.mycomputericon>ul>li>a')
 let mycommenu = document.querySelectorAll('#mycom')
-let killmenu =document.querySelectorAll('#screenmenu, #mycom, #javanote ,.memobox,.calcul,.paint,.kakaotalk,.korean,.internet')
+let killmenu =document.querySelectorAll('#screenmenu, #mycom, #javanote ,.memobox,.calcul,.paint,.kakaotalk,.korean,.internet,.bomb')
 // killmenu에 아이템 새로 등록시 추가로 등록시키기만 하면됨. 단 자바 노트부분에 컨텐츠 추가시 html태그에서 위치를 잘 고민해야함
 
 bricon.forEach(function(item,idx){
@@ -96,6 +96,9 @@ opennavi1.forEach(function(item,idx){
                 break;
             case 2:
                 nowopenwindow(9);
+                break;
+            case 3:
+                nowopenwindow(12);
                 break;
             case 4:
                 nowopenwindow(10);
@@ -390,7 +393,7 @@ wheadwrap.onmousedown = function(e){
 */
 
 let whead = document.querySelectorAll('.wheadwrap,.wheadwrap1,.wheadwrap2,.wheadwrap3,.wheadwrap4,.wheadwrap5,.subprogram')
-let movewin = document.querySelectorAll('.mycomputer,.htmlStudy,.cssStudy,.javaStudy,.javanote,.javanote1,.memobox,.calcul,.paint,.kakaotalk,.korean,.internet')
+let movewin = document.querySelectorAll('.mycomputer,.htmlStudy,.cssStudy,.javaStudy,.javanote,.javanote1,.memobox,.calcul,.paint,.kakaotalk,.korean,.internet,.bomb')
     whead.forEach(function(item,idx){
         item.addEventListener('mousedown',function(e){
             movewin[idx].style.zIndex = 10000;
@@ -496,7 +499,6 @@ fullbtn.forEach(function(item){
 })
 
 let savebt = document.querySelector('.savebt')
-let memojang = document.querySelector('#memo')
 savebt.onclick =function(e){
     let h3name = prompt('저장할 파일명을 입력해주세요')
     console.log(e)
@@ -505,7 +507,7 @@ savebt.onclick =function(e){
     let newimg = document.createElement('img')
     let newh3 = document.createElement('h3')
     newh3.innerText = h3name
-    newimg.setAttribute('src','image/2.png')
+    newimg.setAttribute('src','image/note.png')
     newa.append(newimg)
     newa.append(newh3)
     newli.append(newa)
@@ -1184,7 +1186,76 @@ yahoo_sbtn.onclick = function(){
 }
 
 
+// 지뢰찾기 아이디어
 
+let ul = document.querySelector('.gameplaybox>ul')
+init()
+
+function init(){
+    for(let i=0 ; i<17; i++){
+        let li = document.createElement('li')
+        let ul_sub = document.createElement('ul')
+        for(let a=0; a<24; a++){
+            let li_sub = document.createElement('li')
+            ul_sub.prepend(li_sub)
+        }
+        li.prepend(ul_sub)
+        ul.prepend(li)
+    }
+}
+
+ // 상자생성
+
+ let blocks = {
+    type : 'box',
+    x : 0,
+    y:0,
+    positionX : [
+    [0],
+    [0],
+    [0],
+    [0]
+    ],
+    positionY : [
+        [0],
+        [0],
+        [0],
+        [0]
+        ],
+    color : 'blue'
+} 
+let tempBox = {
+    ...blocks
+}
+function renderbox(){
+   let {type,x,y,positionX,positionY,color} = tempBox
+//    for(let i =0; i<positionX.length; i++){
+//         for(let a = 0; a<positionX[i].length; a++){
+//             ul.children[positionY[i][a]+y ].children[0].children[positionX[i][a]+x].className = snake;
+//         }
+//    }
+ul.children[y].children[0].children[x].className = 'snake';
+}
+window.onkeydown = function(e){
+        // console.log(e.code)
+        console.log(tempBox.x,tempBox.y)
+        switch (e.code){
+            case 'KeyA':
+                tempBox.x -=1 
+                break;
+            case 'KeyD':
+                tempBox.x +=1 
+                break;
+            case 'KeyW':
+                tempBox.y -=1
+                break;
+            case 'KeyS':
+                tempBox.y +=1    
+                break;
+        }
+    renderbox()
+    
+}
 
 
 })

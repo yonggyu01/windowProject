@@ -1085,6 +1085,29 @@
                 </section>
             </div>
         </article>
+        <!-- 현재 html문서를 미완성 시킨 상태로 스크립트를 중간중간 동작시켜서 
+        작성중인 태그에 li문서와 파일들을 연동시키면 스크립트를 한번더 손보긴 해야함
+        해결책으로는 일단 작성하지 않은 문서는 목록에서 삭제하고
+        추가로 다시 작성하는게 좋을것 같음
+        -->
+        <article class="bomb">
+            <div class="subprogram">
+                <h2><img src="image/bomb.png" alt="">지뢰찾기</h2>
+                <div class="subbutton">
+                    <a href="#none" class="mb">-</a>
+                    <a href="#none" class="fb">□</a>
+                    <a href="#none" class="xb">X</a>
+                </div>
+            </div>
+            <section class="gamefullwrapbox">
+                <div class="gamescorebox">
+                    <p>0</p>
+                </div>
+                <div class="gameplaybox">
+                    <ul></ul>
+                </div>
+            </section>
+        </article>
     </article>
 </main>
 <footer class="footer" id="footer">
@@ -1159,6 +1182,12 @@
             <div class="workwrap">
            <img src="image/95internet_540.png" class="internetpic" alt="">
            <h3>Internet</h3>
+            </div>
+       </div>
+        <div class="work_line">
+            <div class="workwrap">
+           <img src="image/bomb.png" alt="">
+           <h3>지뢰찾기</h3>
             </div>
        </div>
     </div>
