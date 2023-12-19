@@ -26,7 +26,6 @@ document.addEventListener('DOMContentLoaded',function(){
 
     function rightC(){
         maskposition = maskposition -1920 
-        console.log(maskposition)
 
         if(maskposition == 0){
             leftA.style.display = 'none'
@@ -43,7 +42,6 @@ document.addEventListener('DOMContentLoaded',function(){
     }
     function leftC(){
         maskposition = maskposition +1920
-        console.log(maskposition)
         if(maskposition == 0){
             
             leftA.style.display = 'none'
@@ -168,7 +166,6 @@ navilist.forEach(function(item,idx){
                 line[i].style.width = 0 + 'px';
             }
         } 
-        console.log(whitebarheight)
     })
 })
 
@@ -184,7 +181,6 @@ nav1.addEventListener('mouseleave',function(){
             }
     }, 500)
     
-    console.log(whitebarheight)
 })
 
 function baropen(){

@@ -14,7 +14,6 @@
                 let mariofloor = document.querySelectorAll('.mariofloor>div')
                 let mfloor = document.querySelector('footer').getBoundingClientRect().height
         window.onkeypress =function(e){
-            console.log(e)
         switch(e.code){
             case 'KeyA' : 
             moving -= 10; 
@@ -50,7 +49,6 @@
                   },400)
                   return;
                  }
-            console.log(moving)
             mup = 400;
             human.style.bottom = mup + 'px';
         let ht =  document.getElementsByTagName('a')
@@ -78,10 +76,8 @@
 
     window.onresize = function(){
     windowiner = window.innerWidth
-        console.log(window.innerWidth) 
     }
 
-    console.log(document.getElementsByTagName('a')[0].getBoundingClientRect().bottom)
     console.log(document.getElementsByTagName('a')[0].getBoundingClientRect().left)
    }
 

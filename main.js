@@ -160,9 +160,9 @@ function nowopenmycom(value){
     window.onclick =function(e){
         indexcheck(e)
         // console.log(e)
-        console.log(indexcheck(e))
+        // console.log(indexcheck(e))
        let tt =  e.target.id || e.target.classList.value
-       console.log(tt) 
+    //console.log(tt) 
        switch (tt){
         case 'f1':
             break; 
@@ -435,6 +435,7 @@ movewin.forEach(function(item,idx){
 
 //하단 푸터버튼 관련 - 최소화 버튼을 누르면 화면하단에 작업표시줄에
 // 글자가 생성됨,  이거 생성시 기존 창은 꺼버리는게 낫겠음
+
 let minbutton = document.querySelectorAll('.minbutton, .mb')
 minbutton.forEach(function(item,idx){
     item.addEventListener('click',function(){
@@ -447,6 +448,71 @@ work_line.forEach(function(item,idx){
         killmenu[idx].style.display='block'
     }
 })
+// 풀스크린 버튼  2가지 기능 필요  한번누르면 최대화  다시 누르면 원래사이즈로
+// fullbutton하고 fb랑 구조가 좀 다름  스위치문으로 작성하면 될거같음
+// fullbutton은 구조상 키워야할것들
+let fullbtn = document.querySelectorAll('.fullbutton,.fb'),fullswitch=0;
+function fullandmin(item,selected,maxormin){
+   if (selected == 'fullbutton' &&  maxormin== 'max'){
+       item.parentElement.parentElement.style.width = '100vw'
+       item.parentElement.parentElement.parentElement.parentElement.style.width = '100vw'
+       item.parentElement.parentElement.parentElement.parentElement.style.top = '0px'
+       item.parentElement.parentElement.parentElement.parentElement.style.left = '0px'
+       item.parentElement.parentElement.parentElement.nextElementSibling.children[0].style.height = '100vh'
+   }else if(selected == 'fullbutton' &&  maxormin== 'min'){
+    item.parentElement.parentElement.style.width = '50vw'
+    item.parentElement.parentElement.parentElement.parentElement.style.width = '50vw'
+    item.parentElement.parentElement.parentElement.parentElement.style.top = (Math.random()*20)+'px'
+    item.parentElement.parentElement.parentElement.parentElement.style.left = (Math.random()*20) +'px'
+    item.parentElement.parentElement.parentElement.nextElementSibling.children[0].style.height = '50vh'}
+    else if(selected == 'fb' && maxormin == 'max' && item.parentElement.parentElement.parentElement.className =='internet' ){
+    item.parentElement.parentElement.style.width = '100vw'
+    item.parentElement.parentElement.parentElement.style.top = '0px'
+    item.parentElement.parentElement.parentElement.style.left = '0px'
+    item.parentElement.parentElement.parentElement.children[item.parentElement.parentElement.parentElement.children.length-1].style.height = '100vh'
+    item.parentElement.parentElement.parentElement.children[item.parentElement.parentElement.parentElement.children.length-1].style.width = '100vw'
+   }else if(selected == 'fb' && maxormin == 'min' && item.parentElement.parentElement.parentElement.className =='internet'){
+    item.parentElement.parentElement.style.width = '50vw'
+    item.parentElement.parentElement.parentElement.style.top =  (Math.random()*500)+'px'
+    item.parentElement.parentElement.parentElement.style.left =  (Math.random()*600)+'px'
+    item.parentElement.parentElement.parentElement.children[item.parentElement.parentElement.parentElement.children.length-1].style.height = '50vh'
+    item.parentElement.parentElement.parentElement.children[item.parentElement.parentElement.parentElement.children.length-1].style.width = '50vw'
+   }    
+}
+
+fullbtn.forEach(function(item){
+    item.addEventListener('click',function(e){
+        let classname = e.target.className
+        if (fullswitch == 0){
+            fullandmin(e.target,classname,'max')
+            fullswitch = 1
+        }else{
+            fullandmin(e.target,classname,'min')
+            fullswitch = 0
+        }
+                   
+               console.log(e)
+    })
+})
+
+let savebt = document.querySelector('.savebt')
+let memojang = document.querySelector('#memo')
+savebt.onclick =function(e){
+    let h3name = prompt('저장할 파일명을 입력해주세요')
+    console.log(e)
+    let newli = document.createElement('li')
+    let newa = document.createElement('a')
+    let newimg = document.createElement('img')
+    let newh3 = document.createElement('h3')
+    newh3.innerText = h3name
+    newimg.setAttribute('src','image/2.png')
+    newa.append(newimg)
+    newa.append(newh3)
+    newli.append(newa)
+    document.querySelector('.iconwrapbox ul').appendChild(newli)
+
+}
+
 
 
 //   여기는 자바스크립트 내용1번이 좀 길어서 갖고옴
@@ -672,11 +738,7 @@ const mypainter = document.getElementById('mypainter')
 const ctx = mypainter.getContext('2d');
 mypainter.width = 1000;
 mypainter.height = 600;
-let painting = false;
-let canvasX; 
-let canvasY; 
-let lineWidth = 1;
-let paintercolor='black';
+let painting = false,canvasX,canvasY,lineWidth = 1,paintercolor='black';
 let fillcolor = ['white','black','blue','red','yellow','green','orange']
 let tools = document.querySelectorAll('.tools ul li a')
 let colorselect = document.querySelectorAll('.colorselect ul li a')
@@ -685,7 +747,7 @@ strokeStyle = paintercolor;
 colorselect.forEach(function(item,idx){
     item.onclick =function(){
         paintercolor = fillcolor[idx]
-        console.log(paintercolor)
+     
     }
 })
 tools.forEach(function(item,idx){
@@ -705,11 +767,15 @@ tools.forEach(function(item,idx){
     
 })
 mypainter.onmousedown = function(event){ 
-    canvasX=event.clientX-mypainter.getBoundingClientRect().left
-    canvasY=event.clientY-mypainter.getBoundingClientRect().top
+    // 사이즈를 2배로 키웠기 때문에   캔버스의 현재위치가 달라짐
+    // canvasX=event.clientX-mypainter.getBoundingClientRect().left
+    // canvasY=event.clientY-mypainter.getBoundingClientRect().top
+    canvasX=event.offsetX
+    canvasY=event.offsetY
     painting = true;
     ctx.beginPath();
     ctx.moveTo(event.offsetX, event.offsetY)
+    console.log(event.offsetX,event.offsetY)
 }
 // 마우스의 현재 위치는 event.offsetx 와 offsety로 잡았음
 mypainter.onmouseup = function(event){
@@ -776,6 +842,25 @@ setInterval(function(){
     timebox.innerHTML= nowhour + " : " +nowmi;
  }
 },(1000*30))
+// 카카오톡 : 추후구현 기능 -> 카카오gpt api삽입하여 채팅기능 구현, 카카오톡 로그인기능 추가 (실게 카톡으로도 대화내용 전송되도록 해보고 싶음)
+
+let kakaouserID = document.querySelector('#userID')
+let kakaouserPass = document.querySelector('#userPass')
+let userloginbtn = document.querySelector('#userloginbtn')
+kakaouserPass.addEventListener('keydown',function(e){
+    if(e.code == 'Enter'){
+        kakaouserID.value
+        kakaouserPass.value
+    }
+})
+userloginbtn.addEventListener('click',function(){
+    document.querySelector('.loginsuccess').style.display ='block'
+    document.querySelector('.kakaobg').style.display = 'none'
+})
+
+
+
+
 // 한글과 컴퓨터 자리연습 구현
 
 let jari = document.querySelector('#jari')

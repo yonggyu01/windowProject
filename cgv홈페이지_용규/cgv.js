@@ -86,7 +86,6 @@ chart1Right.addEventListener('click',function(){
     chart1Left.style.visibility = 'visible' 
     chart1Left.style.display = 'block' 
 
-    console.log(styleposition)
 })
 
 
@@ -100,7 +99,6 @@ chart1Left.addEventListener('click',function(){
     }else{chart1Left.style.visibility = 'visible' 
     chart1Right.style.visibility = 'visible'
     }
-    console.log(styleposition)
 })
 
 
@@ -138,7 +136,6 @@ char1Name.addEventListener('click',function(){
     char1[i].style.display = 'block'
     char2[i].style.height =0 + 'px'
     char2[i].style.display = 'none'
-    console.log(boxSize[i])
 }
 chart1Left.style.visibility = 'hidden' 
 styleposition = 0;
@@ -171,7 +168,6 @@ chart2Right.addEventListener('click',function(){
     }
     slidebox2.style.left = styleposition2 + 'px'
     chart2Left.style.visibility = 'visible'
-    console.log(styleposition2+'상영예정작쪽')
 })
 
 chart2Left.addEventListener('click',function(){
@@ -183,7 +179,6 @@ chart2Left.addEventListener('click',function(){
     }else{chart2Left.style.visibility = 'visible' 
     chart2Right.style.visibility = 'visible'
     }
-    console.log(styleposition2 + '상영예정작쪽')
 })
 
 /* 특별관 스크립트 
@@ -227,7 +222,6 @@ mouseS.forEach(function(item,idx){
          mouseS[i].classList.remove('spSelect')
             }
         }
-        console.log(idx)
              })
     })
 /*이벤트 스크립트도 좌우로 움직여야함
