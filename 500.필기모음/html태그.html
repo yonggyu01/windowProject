@@ -1,0 +1,429 @@
+<style>
+    *{padding: 0;
+    margin: 0;}
+
+
+
+    .htmltaglist{
+        border-top : 1px solid black;
+        border-right : 1px solid black;
+        border-left : 1px solid black;
+        box-sizing:border-box;
+    }
+    .tablexample{
+        border:1px solid black;
+        font-size: 24px;
+    }
+    .tablexample td, .tablexample th{
+        width: 200px;
+    height: 100px;
+    border: 1px solid black;
+    }
+    .html_tagwrap{
+        position: relative;
+    }
+    .htmltaglist{
+        max-width: 900px;
+        margin: 0 auto;
+    }
+    .htmltaglist h1{
+        margin-bottom: 10px;
+        padding-left: 10px;
+    }
+    .htmltaglist>ul{
+        list-style: none;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        width: 900px;
+        height: 100px;
+        box-sizing: border-box;
+        gap:1px
+      
+    }
+    .htmltaglist>ul>li{
+        box-sizing: border-box;
+        border: 1px solid rgba(0, 0, 0, 0.434);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .htmltaglist ul>li:nth-child(1){
+        border-left: 1px solid transparent !important;
+    }
+    
+    .htmltaglist ul>li:nth-child(5){
+        border-left: 1px solid transparent !important;
+    }
+  
+    .htmltaglist ul>li:nth-child(9){
+        border-left: 1px solid transparent !important;
+        border-bottom: 1px solid transparent !important;
+    }
+    .htmltaglist ul>li:nth-child(10),.htmltaglist ul>li:nth-child(11){
+        border-bottom: 1px solid transparent !important;
+    }
+    .htmltaglist ul>li:last-child{
+  
+        border-bottom: 1px solid transparent !important;
+    }
+    .html_tagnotebox ul{
+        position: relative;
+        width: 900px;
+        margin: 0 auto;
+        border: 1px solid black;
+        
+        box-sizing: border-box;
+        height: 100vh;
+    }
+    .html_tagnotebox ul>li{
+        position: absolute;
+        left : 30px;
+        top: 5px;
+        display: none;
+    }
+    .html_tagnotebox p,.html_tagnotebox details,.html_tagnotebox summary,.html_tagnotebox h2{
+        margin-bottom: 10px;
+    }
+    .html_tagnotebox details{
+        background-color: bisque;
+        display: inline;
+    }
+</style>
+
+
+<div class="html_tagwrap">
+    <div class="htmltaglist">
+        <h1>HTML의 태그 정리</h1>
+        <ul>
+            <li>문자 데이터 관련 태그</li>
+            <li>HTML 텍스트 서식</li>
+            <li>인용구관련 태그</li>
+            <li>이미지관련 태그</li>
+            <li>그룹 요소</li>
+            <li>의미 없는 블록/인라인요소</li>
+            <li>테이블</li>
+            <li>레이아웃용 요소</li>
+            <li>모달창</li>
+            <li>템플릿</li>
+            <li>details/summary</li>
+            <li>form 태그</li>
+        </ul>
+    </div>
+    <div class="html_tagnotebox">
+        <ul>
+            <li>
+                <h2>문자 데이터 관련 태그</h2>
+                <ol>
+                    <li>
+                        <p>h1~h6 : 제목(Heading)</p>
+                        <p>요소레벨 블록 / 일반적으로 문서의 제목으로 사용함</p>
+                    </li>
+                    <li>
+                        <p>p : 단락(내용구분-Pharagraph)</p>
+                        <p>요소레벨 블록</p>
+                    </li>
+                    <li><p>a : 링크 (Anchor:닻)</p>
+                        <details>
+                            <summary> 링크 속성 설명 </summary>
+                            <p> - href 속성: 이동할 곳(hyper text reference) <br> </p>
+                                <p>  - target 속성: 창옵션(_blank새창) <br> </p>
+                                    <p>   (기본값은 _self 현재창) <br> </p>
+                                        <p>    기본적으로 폰트색상과, 텍스트 데코레이션에 밑줄을 가지고 있으며 초기화 해서 사용해야함
+                                </p>
+                        </details>
+                       
+                    </li>
+                    <li>
+                        <p>br : 줄바꿈 (break )</p>
+                    </li>
+                    <li>
+                        <p>hr : 가로구분선 (horizontal 수평선) <br>  </p>
+                            <p> 줄바꿈과 선을 표기할때 사용하나 디자인적으로 사용할때는 hr의 기본 선의 스타일이 있기때문에 이 점을 주의할것
+                        </p>
+                    </li>
+                </ol>
+            </li>
+            <li>
+                <h2>HTML 텍스트 서식</h2>
+                <p> b - 굵은 텍스트 (bold 두꺼운체)  </p>
+                <p>strong - 중요한 텍스트 (의미-시멘틱) - </p>
+                    <details>
+                        <summary> B태그와 Strong태그의 차이점</summary>
+                        <p>  B태그는 시각적으로 굵게만 보이고 strong도 굵은 텍스트는 같지만 <br> </p>
+                            <p>    b태그는 리더기에서 강조해주지 않고 strong태그는 리더기에서 강조를 해준다는점 !! (시멘틱) 
+                            </p>
+                    </details>
+            <p>i - 기울임꼴 텍스트 <i> (italic 기울림글꼴)</i> </p>
+            <p>em - 강조된 텍스트 <em> (emphasize 강조하다 - 의미-시멘틱)</em> </p>
+            <details>
+                <summary> i태그와 em태그의 차이점</summary>
+                <p>  i태그와 em는 시각적으로 기울어져 보이는것은 같지만 <br></p>
+                    <p>   <i> i태그는 리더기에서 강조해주지 않고 </i> <em>  em태그는 리더기에서 강조를 해준다는점 !!</em> (시멘틱) 
+                    </p>
+            </details>
+            <p>mark - 표시된 텍스트  <mark> (노란색 글자배경-눈에 잘띔)</mark></p>
+            <p>small - 더 작은<small> 텍스트</small></p>
+            <p>del - 삭제된 텍스트 (delete <del>지우다</del>)</p>
+            <p>ins - 삽입된 텍스트 <ins>(insert 삽입하다)</ins></p>
+            <p>sub - 아래 첨자 텍스트<sub>(subscript text)</sub></p>
+            <p>sup - 위 첨자 텍스트<sup>(superscript text)</sup></p>
+            </li>
+            <li>
+                <h2>인용구관련 태그</h2>
+                <p>blockquote - 인용된 내용을 <blockquote>블록처리</blockquote> </p>
+                <small> - cite 속성: 인용된 사이트 주소(출처) - 선택옵션</small>
+                <p>q - 짧은 인용구(인라인) - <q> quotation </q>  태그로 감싼부분에 " " 자동 표기됨  </p>
+                <p>abbr - 약자    <abbr title="abbr을 사용하면 기본 속성으로 타이틀이 필요함">(Abbriviation 줄임말)</abbr>
+                    <details>
+                        <summary>abbr </summary>
+                        <p>  - title속성을 사용하여 원래의 뜻을 툴팁으로 띄워준다! <br></p>
+                            <p>   -> title은 abbr의 필수속성! <br></p>
+                                <p>     (title속성은 어떤 요소에나 모두 사용가능하고 툴팁을 띄움)
+                            </p>
+                    </details>
+                
+                </p>
+                <p>address - 주소,전화번호,대표자 등(유의미-시멘틱) </p>
+                <small>-&gt; 블록요소, 이탤릭 기본적용</small>
+                <br>
+                <p>bdo - 글자진행방향 변경  (반대방향으로 쓰는 문자지원)    <br> </p>
+                    <p> - dir="rtl" -> 오른쪽에서 왼쪽으로 출력! -&gt;   <bdo dir="rtl"> 문자가 거꾸로 표시가능</bdo> </p>
+            </li>
+            <li>
+                <h2>이미지관련 태그</h2>
+                <p>figure - 사진, 표, 도형 등을 담는 블록박스</p>
+                <p>figcaption - figure요소의 하위 자식요소</p>
+                <details>
+                    <summary>사용예시 </summary>
+                    <figure>
+                        <img src="../image/1.png" alt="아무파일임" style="width: 100px;">
+                        <figcaption> 설명 넣는것임 </figcaption>
+                    </figure>
+                </details>
+                <p>img - 이미지 표시요소
+                   <br>
+                   <small> - src 속성: 이미지호출 경로 <br><br>
+
+                   - alt 속성: 이미지 설명(웹 접근성-평등의원칙 필수!) </small> <br><br>
+
+                   또하나의 특징으로 width height 값을 가질 수 있고, text-align 으로 정렬도 가능하다.<br>
+                   <br>
+                   기본적으로 a 태그처럼 초기화 해야하는 값들이 존재함
+                </p>
+            </li>
+            <li>
+                <h2>그룹 요소 (블록요소)</h2>
+                <p>ul : 순서없는 리스트(unordered list) <br>
+                    <small>  -&gt;  순서가 없는 리스트이기 때문에 블릿옵션을 가지고 있음 : list-style  disc </small>
+                </p>
+                <p> ol : 순서있는 리스트(ordered list) <br>
+                    <small>  -&gt;  순서가 있는 리스트이기 때문에 순서를 표시해줌 : list-style  upper-greek </small>
+                </p>
+                <p>
+                    li  :  ul과 ol요소의 필수 자식요소!
+                </p>
+                <p>
+                    dl : 용어설명리스트 (Description Lists) 
+                </p>
+                <p>
+                    dt : 용어 (defines terms)
+                </p>
+                <p>
+                    dd : 용어설명 (defines description)
+                </p>
+                <p>
+                    -&gt; dl 아래 자식으로 반드시 dt와 dd는 한개이상 와야함!<br>
+                    -&gt; dt와 dd는 형제요소임!
+                </p>
+            </li>
+            <li>
+                <h2>의미 없는 빈 블록/인라인요소</h2>
+                <p>div : 내용을 구분할때 사용하는 요소
+                    <details>
+                        <summary>특징 </summary>
+                        <p> -> display:block 라는 설정외에 아무런 셋팅이 없다 <br>
+                            -> 자유롭게 블록요소로 구조를 잡을때 사용함
+                          </p>
+                    </details>
+                </p>
+                <p>span : 인라인 내용요소나 문자데이터를 구분할때 사용하는 요소</p>
+            </li>
+            <li>
+                <h2>테이블</h2>
+                <p>table : 테이블 전체 부모요소</p>
+                <p>tr : 테이블 레코드행 (table row)</p>
+                <p>td : 테이블 데이터요소 (table data)</p>
+                <p>th : 테이블 머릿부분에 사용될 경우 <br>
+                <small>td대신 th를 사용할 수 있다. <br>
+                    (기본디자인-중앙정렬+두꺼운글자)</small> </p>
+                <p>(테이블 구조를 위한 추가요소들)</p>
+                <p>caption : 테이블 제목</p>
+                <p>thead : 테이블 머릿부분</p>
+                <p>tbody : 테이블 중앙 내용부분</p>
+                <p>tfoot : 테이블 하단부분</p>
+
+                <details>
+                    <summary>테이블 실사용예제 </summary>
+                    <p> 구조를 위한 추가요소들을 활용해서 thead  tbody tfoot중에 리더기에 먼저 나와야 하는 부분의 경우
+                        순서를 조정해서 사용이 가능하며<br>
+                        리더기 사용자를 위해 th들에 id값을 지정한 후에  <br>
+                         td에서 해당 내용의 값이 출력될때 <br>
+                         headers = "먼저 불릴th 요소의 내용 , 뒤에 불릴 th요소 내용"<br>
+                         을 사용해서 리더기 사용자들의 사용성을 증대 가능 <br>
+                         &lt;th id="s" &gt;삼성 &lt;/th&gt; <br>
+                         &lt;th id ="t" &gt;태블릿 &lt;/th&gt; <br>
+                         &lt;td headers="s t"&gt;170,000&lt;/td&gt; -&gt; id s에 해당하는 행의 내용을 읽고 <br>
+                        id t에 해당하는 행의 내용을 읽어준뒤  td태그에 있는 값을 읽어줌<br>
+                        해석하면 삼성 , 태블릿 170000 이라고 리더기에서 읽어줄것임
+                    </p>
+                    <table summary="중고폰가격비교표" class="tablexample">
+                        <caption>중고폰</caption>
+                    <thead>
+                        <tr>
+                            <th>구분</th>
+                            <th id="s">삼성</th>
+                            <th id="a">애플</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>합계</th>
+                            <td>370,000</td>
+                            <td>390,000</td>
+                        </tr>
+                    </tfoot>   
+                        <tbody>
+                        <tr>
+                            <th id ="p">스마트폰</th>
+                            <td headers="s p">150,000</td>
+                            <td headers="a p">160,000</td>
+                        </tr>
+                        <tr>
+                            <th id ="t">태블릿</th>
+                            <td headers="s t">170,000</td>
+                            <td headers="a t">190,000</td>
+                        </tr>
+                    </tbody>
+                    </table>
+                </details>
+            </li>
+            <li>
+                <h2>레이아웃용 요소</h2>
+                <p>header - 머릿부분</p>
+                <p>footer - 하단부분</p>
+                <p>main - 메인컨텐츠(한번만!)</p>
+                <p>nav - 네비게이션</p>
+                <p>aside - 부가적 내용</p>
+                <p>section</p>
+                <p>article</p>
+                <p>위의 레이아웃 요소등을 활용해서 html문서를 작성하는것이 가독성 부분에서도 좋을것임</p>
+            </li>
+            <li>
+                <h2>모달창</h2>
+                <p>dialog  태그를 활용하여 조금더 쉽게 제작은 가능함</p>
+                   <p> 태그는 기본적으로 네모난 박스형태이며 display : none상태로 시작됨  </p>
+                  <p> dialog의  속성에 open이라는 속성에 true 값을 주면 display = block 상태로 전환됨 </p>
+                  <p> 기본값은 false상태로   스크립트에서 dialog.open = true  or false 로 값을 변경함으로  손쉽게 모달창을 제작 가능함   </p>
+                  <p> &lt;dialog&gt; ㄱㄱㄱ&lt;/dialog&gt; </p>
+               
+            </li>
+            <li>
+                <h2>템플릿</h2>
+                <p>html의 템플릿 기능이며 html문서에서 작성시 해당 내용은 html문서에서 나타나지는 않음</p>
+                    <br>
+                    <p>    스크립트 등을 활용하여 반복적으로 사용해야하는 태그의 반복이 있는경우</p>
+                    <br>
+                    <p>  html에서  템플릿을 작성해두고  이를활용하여  스크립트상에서 템플릿에 내용을 작성후  원하는 태그에 prepend 나 append 로  추가하는 형태로 사용
+                </p>
+
+            </li>
+            <li>
+                <h2>details/summary</h2>
+                <p>일반적으로 버튼을 만들고 해당 버튼을 클릭하면 <br></p>
+                    <p> 내부에 있는 내용이 노출될 수 있도록 작업을 하는 경우에 <br></p>
+                        <p>  자바스크립트를 사용해서 관련 내용을 만든다.</p>
+                <p>하지만 html5에서 해당기능을 지원해준다.</p>  
+                <p> details 태그는 html5에서 추가 된 태그로 
+ <br>                    하위 요소로 summary > 태그를 사용해서 detail 태그 안의 내용을 클릭 할때마다 열기/닫기를 통해 보여준다.</p>
+                    <p>기본 속성으로 marker를 가지고 있으며 <br><br>
+                         이 속성은 css에서  details summary::marker{font-size:0;} 를 사용해서 제거가 가능하다
+                    </p>
+            </li>
+            <li>
+                <h2>form태그 </h2>
+
+                <p>
+                    - 입력된 데이터를 묶어서 서버로 전송하는 역할</p>
+                <p>- action 속성 : 서버전송 페이지 주소 </p>    
+                <p>- method 속성 : 전송방식 선택(get/post)</p>
+                <p>-> get방식은 url로 데이터를 전달하는 방식</p>
+                <p>-> post방식은 페이지로 숨겨서 데이터를 전달하는 방식</p>
+                <p>(보안성은 post방식이 좋다!) </p>
+                <br>
+                <br>
+                <h3>input 요소
+                </h3>
+                <details>
+                    <summary>사용자가 입력할 수 있도록 입력양식을 제공하는 요소</summary>
+                    <p> - type 속성: 여러가지 입력양식을 선택함</p>
+                    <p>                    1) text - 글자입력</p>
+                    <p>                    2) password - 비밀번호입력(입력시 글자숨김)</p>
+                    <p>                    -> 비밀번호는 영역복사도 안됨!</p>
+                    <p>                    3) radio - 라디오버튼(보통 단일 선택시 사용)</p>
+                    <p>                        -> name속성명을 같은 이름으로 하면 그룹설정되어</p>
+                    <p>                        여러라디오 버튼중 하나만 선택된다!</p>
+                    <p>                    4) checkbox - 체크박스버튼(보통 다중 선택시 사용)</p>
+                    <p>                    5) button - 버튼형식의 입력폼</p>
+                    <p>                    6) submit - form요소의 입력값을 전송하는 기능</p>
+                    <p>                    (form요소의 action속성값에 셋팅된 페이지로 감!)</p>
+                    <p>                    7) reset - 폼양식 데이터를 초기화함(모두지움)</p>
+                    <p>                    8) hidden - 데이터를 숨겨서 페이지에 저장할 목적으로 사용</p>
+                </details>
+           
+           
+                <br>
+              
+                <details>
+                    <summary>기타 html5에서 새로이 등장한 type들 </summary>
+                    <p>    - search : 검색, tel : 전화번호, email : 이메일주소  </p>
+                    <p>                        url : 웹페이지 주소  </p>
+                    <p>                    -> 기존에 text 하나만 있었으나 데이터 유효성검사를  </p>
+                    <p>                    브라우저 자체 내장 유효성 검사를 할 수 있게 제공함!  </p>
+                    <p>                    - 특이한 것들:  </p>
+                    <p>                        color : 컬러피커가 뜸(색상정보)  </p>
+                    <p>                        date : 달력이 뜸(날짜입력)  </p>
+                    <p>                        file : 파일선택창 뜸(파일경로정보)  </p>
+                    <p>                        number : 입력숫자범위 지정  </p>
+                    <p>                        range : 지정된 범위값을 버튼 드래그로 설정  </p>
+                    <p>                        time : 시간선택창 뜸(시간입력)  </p>
+                    <p>                        week : 주단위선택창 뜸(주단위입력)  </p>
+                </details>
+                
+                   
+            </li>
+        </ul>
+    </div>
+    
+</div>
+
+
+<script>
+    // html페이지를 탭메뉴로 구성함
+    let htmllist_li = document.querySelectorAll('.htmltaglist li')
+    let html_tagnotebox = document.querySelectorAll('.html_tagnotebox>ul>li')
+    html_tagnotebox[0].style.display = 'block'
+    htmllist_li.forEach(function(item,idx){
+        item.onclick= function(){
+            for(let i = 0; i<htmllist_li.length; i++){
+                if(idx == i){
+                    htmllist_li[i].style.background= 'orange'
+                    html_tagnotebox[i].style.display = 'block'
+                }else{
+                    htmllist_li[i].style.background= 'white'
+                    html_tagnotebox[i].style.display = 'none'
+                }
+            }
+        }
+    })
+</script>

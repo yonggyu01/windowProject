@@ -1,0 +1,247 @@
+   
+<div class="htmlbasic">
+    <h1>    HTML 기초 </h1>
+    <div class="html_subwrapbox">
+    <ol>
+        <li>
+            <h2> HTML은 <strong>Hyper Text Markup Language</strong>를 나타냅니다.</h2>
+            <details>
+                <summary>  하이퍼텍스트(Hyper Text)란? </summary>
+                <p> - 순서가 없는 정보를 담고 있는 텍스트</p>
+            </details>
+            <br>
+            <details>
+                <summary>  마크업(Markup) 이란? </summary>
+                <p>  - 정보를 구조화하여 순서대로 웹 페이지에 띄우는것</p>
+            </details>
+            <br>
+            <details>
+                <summary> Hyper Text Markup Language란? </summary>
+                <p> 
+                    - 순서가 없는 정보를 담고 있는 텍스트의
+                    정보를 구조화하여 순서대로 웹 페이지에
+                   표시하기 위한 브라우저 언어
+                   </p>
+            </details>
+            <br>
+            <details>
+                <summary> 
+                        [ 구조화란? ]
+             </summary>
+                <p> 
+                    - 구조 -> 체계 -> 순서/분류
+                    -> 체계가 없는 데이터를 체계있게 순서를 정해주는 것
+                   </p>
+            </details>
+        
+            
+        </li>
+        <li>
+            <h2>
+                HTML 은 XML에서 온 것이다!
+            </h2>
+            <p>  - XML 은 정보를 구조화하는 확장가능한 마크업 언어이다!</p>
+            <br>
+            <details>
+                <summary>  표기법</summary>
+                <p> 1) 최상단에 xml선언부 <br>
+                    2) 최상위 태그가 단 하나임! -&gt; Root라고함! <br>
+                    3) 하위 구조화태그 생성 <br><br>
+                    <details>
+                        <summary> 
+                            예시 보기
+                     </summary>
+                        <p> 
+                            &lt;?xml version="1.0" encoding="UTF-8"?&gt; <br>
+                            &lt;회사정보&gt;<br>
+                                &lt;회사 창립일="1988년"&gt;<br>
+                                    &lt;회사명&gt;유아이 &lt; /회사명&gt;<br>
+                                    &lt;사원수&gt;3000 &lt;/사원수&gt;<br>
+                                    &lt;연매출&gt;1억&lt;/연매출&gt;<br>
+                                &lt;/회사&gt;<br>
+                                &lt;회사 창립일="2000년"&gt;<br>
+                                    &lt;회사명 &gt;데이터굿&lt;/회사명&gt;<br>
+                                    &lt;사원수&gt;400&lt;/사원수&gt;<br>
+                                    &lt;연매출&gt;10억&lt;/연매출&gt;<br>
+                                &lt; /회사 &gt;<br>
+                            &lt;/ 회사정보 &gt;
+                     </p>
+                    </details>
+                    <br>
+                    <details>
+                        <summary> 
+                            참고: 파일확장자란?
+                     </summary>
+                        <p> 
+                             - 파일 포멧을 알려주는 표시자<br>
+                              ※ 파일 확장자를 반드시 보이게할것!
+                     </p>
+                    </details>
+                   </p>
+            </details>
+        </li>
+        <li>
+            <h2>HTML의 태그구조</h2>
+            <p>
+                - 태그: 구조화 요소의 표시자
+                <br>
+                - 태그(Tag)는 요소(Element)라고도 함
+            </p>
+        </li>
+        <li>
+            <h2>태그구조</h2>
+            <ol>
+                <li> 
+                    <h3>선언부</h3>
+                    <details>
+                        <summary> 
+                            &lt;!doctype html&gt;
+                     </summary>
+                        <p> 브라우저가 이것을 읽는 순간<br>
+                            html5문법으로 읽을 준비를 한다
+                           
+                     </p>
+                    </details>
+
+                </li>
+                <li> 
+                    <h3>문서에서 html 태그는 : 오직한번만 사용한다</h3>
+                    <p>이것을 다른말로 Root라고 함</p>
+                </li>
+                <li> 
+                    <h3>머리(head)</h3>
+                    <p>-&gt; 웹 페이지 타이틀, 인코딩설정 등 메타데이터(요약데이터)</p>
+                    <details>
+                        <summary> 
+                            meta태그: 문서의 기본정보
+                     </summary>
+                        <p>  - charset="utf-8" <br>
+                            -&gt; 한글, 일본어, 한자어 등 2byte   체계의 문자셋이 브라우저에 잘 표시되도록 인코딩 설정함! <br>
+                            - 사이트의 기본 정보 등을 표시함                           
+                     </p>
+                     
+                    </details>
+                    <p>
+                        title태그 : 브라우저 탭에 제목출력
+                     </p>
+                </li>
+                <li>
+                    <h3> 도큐먼트 (body) </h3>
+                    <p>브라우저에 출력되는 내용부분</p>
+                    <p> &lt;body&gt;&lt;/body&gt;</p>
+
+                </li>
+                <li>
+                   <h3>저장시 확장자</h3>
+                   <details>
+                    <summary> 
+                        확장자
+                 </summary>
+                    <p>  -&gt; .html 또는 .htm <br>
+                        -&gt; 이것이 브라우저가 읽을 수 있는 웹문서 확장자 <br>
+                        - 이름이 같아도 확장자가 다르면 다른문서로 인식함   <br>
+                        예) main.html , main.htm 서로다른 웹문서임
+
+                 </p>
+                    <details>
+                        <summary> 
+                            참고사항
+                    </summary>
+                        <p>  참고) 첫번째 홈페이지는 index.html 로 하는 것이 국룰이다!  <br>
+                            왜? 웹서버가 이름없이 가장먼저 읽는 기본 파일명이다!
+                    </p>
+                     </details>
+                </details>
+                </li>
+                <li>
+                    <h3>코딩툴</h3>
+                    <p>vs code, 에디트 플러스, 아톰, 서브라임텍스트3 , 메모장으로 하드코딩도 가능</p>
+                </li>
+                <li>
+                    <h3>요소간 관계</h3>
+                    <p>- 어떤요소의 하위요소가 있다면 상위요소 "부모요소" <br>
+                        하위요소는 "자식요소"라고 한다.
+                    </p>
+                </li>
+                <li>
+                    <h3>html 주석</h3>
+                    <p>
+                        - 출력되지 않는 구간표시
+                    </p>
+                    <p>  &lt;!-- 주석내용 --&gt;</p>
+                </li>
+                <li>
+                   <h3>태그 구성요소</h3> 
+                   &lt;요소명 속성명="값" &gt;
+                   <details>
+                    <summary> 
+                        참고사항
+                </summary>
+                    <p>   - 요소명은 정해져 있다.  <br>
+                        - 정해진 속성명이 있고 만들 수 있는 속성명도 있다! <br>
+                        새로운 속성을 만들려면 반드시 data-로 시작해야함! (임의의 변수를 설정할 수 있음)
+                </p>
+                 </details>
+                </li>
+                <li>
+                    <h3>HTML 표기에 대한 기본원칙</h3>
+                    <ol>
+                        <li>
+                            <p> 1) 소문자로 표기한다.</p>
+                        </li>
+                        <li>
+                            <p>  2) 속성명의 값은 쌍따옴표를 사용한다.</p>
+                        </li>
+                        <li>
+                            <p>  3) 요소와 속성명 사이, 속성과 속성 사이는 반드시 한칸 띄어쓴다.</p>
+                        </li>
+                    </ol>
+                </li>
+                <li>
+                    <h3>html요소의 두 가지 구분법</h3>
+                    <details>
+                        <summary> 
+                            블록요소
+                    </summary>
+                        <p>  - 여러가지 요소를 담는 구분구역을 감싸는 요소 <br>
+                            - 내용상 구분을 목적으로 한다!<br>
+                            - 특징: 블록요소는 설정라인 끝까지 잡으므로<br>
+                                옆에 다른 요소가 올 수 없다!<br>
+                                - 대표요소들: div, p, h1~h6, blockquote, ul, ol, dl 등<br>
+                                - 블록요소 대표: div(인라인과 블록요소들을 담는 구역설정시 사용)
+                    </p>
+                     </details>
+                     <details>
+                        <summary> 
+                            인라인요소
+                    </summary>
+                        <p>  - 내용상 구분하는 구역설정요소<br>
+                            - 블록요소 내부에 주로 위치함<br>
+                            - 특징: 인라인요소는 옆에 다른 인라인요소가 올 수 있다!<br>
+                            - 주의 사항: 인라인요소는 블록요소를 포함할 수 없다!<br>
+                            - 대표요소들: span, a, em, b, i, bdo, q, strong 등<br>
+                            - 인라인요소 대표: span(인라인요소 범위를 잡을 때 사용함)
+                    </p>
+                     </details>
+                </li>
+                <li>
+                    <h3>HTML 특수문자처리 (엠퍼샌드와 세미콜론사이에 표기)</h3>
+                    <p>
+                        태그문자 꺽쇠 표시하기    <br>
+                        &lt; & lt;  여는 꺽쇠는 ~보다 작다(less than)   <br>
+                        &gt; & gt; 닫는 꺽쇠는 ~보다 크다(greater than) <br>
+                        줄바꿈없는 공백표시하기(no-break space) - & nbsp; <br>
+                        & 엔퍼샌드(ampersand)  & amp;
+                    </p>
+    
+                </li>
+            </ol>
+           
+     
+        </li>
+    </ol>
+
+    </div>
+
+</div>
+

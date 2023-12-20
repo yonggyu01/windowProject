@@ -1,0 +1,231 @@
+<style>
+    *{padding: 0;margin: 0;}ul,li{list-style:none;}
+    .css_media_wrap{
+        display: block;
+        padding-top: 30px;
+    }
+    .css_media_list{
+        width: 900px;
+        margin: 0 auto ;
+    }
+    .css_media_list h1{
+        margin-bottom: 10px;
+    }
+    .css_media_list>ul{
+        position: relative;
+        width: 900px;
+        margin: 0 auto;
+        display: flex;
+        height: 80px;
+        gap :1px;
+        border-right: 1px solid black;
+        border-left: 1px solid black;
+        box-sizing: border-box;
+    }
+    .css_media_list li:first-child{width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-top: 1px solid black;
+        border-right: 1px solid black;
+    }
+    .css_media_list li:last-child{width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+    }
+    .css_media_list li:not(:first-child,:last-child){
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-right: 1px solid black;
+        border-left: 1px solid black;
+        border-top: 1px solid black;
+    }
+    .css_media_use ul{
+    position: relative;
+    width: 900px;
+    margin: 0 auto;
+    height: 700px;
+    border: 1px solid black;
+    box-sizing: border-box;
+    }
+    .css_media_use details{
+        background-color: bisque;
+        display: inline;
+    }
+    .css_media_use ul li h2{
+        margin-bottom: 20px;
+    }
+    .css_media_use ul li{
+        position: absolute;
+        display: none;
+        top:9px;
+        left : 10px;
+    }
+    .css_media_use p{
+        margin-bottom: 10px;
+    }
+    .css_media_use table{
+    text-align: center;
+    }
+
+</style>
+
+
+<div class="css_media_wrap">
+    <section class="css_media_list">
+        <h1>미디어쿼리는 무엇이며 왜 사용하는가?</h1>
+        <ul>
+            <li>미디어쿼리란</li>
+            <li>왜 사용하는가?</li>
+            <li>유형 및 종류</li>
+            <li>사용방법</li>
+            <li>연산자</li>
+        </ul>
+      
+    </section>
+    <section class="css_media_use">
+        <ul>
+            <li>
+                <h2>미디어쿼리란</h2>
+                <p> 디바이스의 환경에 따라 </p>
+                <p> 사전에 설정해둔 값에 맞춰서 반응형으로 홈페이지를 표현해 줄 수 있는</p>
+                <p> 코딩 기법</p>
+                <p>반응형 웹 디자인(Responsive Web Design)의 핵심 요소 </p>
+                <p> 미디어 유형은 장치의 종류를 나타내며, 예를 들어 스크린(screen), 프린터(printer), 스피커(speech) 등이 있습니다</p>
+            </li>
+            <li>
+                <h2>왜 사용하는가</h2>
+                <p>넓은 화면에서 보이던 레이아웃이 작은화면에</p>
+                <p>맞지 않는 가독성과 구조의 복잡함을 해결하기위해</p>
+                <p>각 사이즈별로 디자인을 변경할 수 있도록</p>
+                <p>미디어쿼리를 사용이 가능하며</p>
+                <p>상황에 맞게 다크 모드를 사용중인 사람이라면 다크모드로 표현도 가능하며</p>
+                <p>홈페이지를 사용하는 사용자에게 조금더 사용성이 좋게 디자인된 페이지를 제공할 수 있다.</p>
+            </li>
+            <li>
+                <h2>유형 및 종류</h2>
+                <p>미디어 유형에는 all(모든 매체), print(프린터 기기), screen(컴퓨터, 태블릿, 스마트폰 등), speech(스크린 리더) 등이 있다.</p>
+                <p>이 중 all, screen, print를 가장 많이 쓰이는데 생략이 가능해서 생략하셔도 되며. 생략할 경우 기본값은 all 이다.</p>
+                <table style="border-collapse: collapse; width: 80%; height: 173px;" border="1" class="css_media_table">
+                    <tbody>
+                    <tr style="height: 20px;">
+                    <td style="width: 22.5581%; height: 20px;">미디어 유형</td>
+                    <td style="width: 77.4419%; height: 20px;">설명</td>
+                    </tr>
+                    <tr style="height: 17px;">
+                    <td style="width: 22.5581%; height: 17px;">all</td>
+                    <td style="width: 77.4419%; height: 17px;">모든 미디어 유형</td>
+                    </tr>
+                    <tr style="height: 17px;">
+                    <td style="width: 22.5581%; height: 17px;">screen</td>
+                    <td style="width: 77.4419%; height: 17px;">컴퓨터 스크린(스마트폰 스크린 포함) - 가장 많이 사용</td>
+                    </tr>
+                    <tr style="height: 17px;">
+                    <td style="width: 22.5581%; height: 17px;">print</td>
+                    <td style="width: 77.4419%; height: 17px;">인쇄 장치</td>
+                    </tr>
+                    <tr style="height: 17px;">
+                    <td style="width: 22.5581%; height: 17px;">tv</td>
+                    <td style="width: 77.4419%; height: 17px;">음성과 영상이 동시 출력되는 TV</td>
+                    </tr>
+                    <tr style="height: 17px;">
+                    <td style="width: 22.5581%; height: 17px;">aural</td>
+                    <td style="width: 77.4419%; height: 17px;">음성 합성 장치(주로 화면을 읽어 소리로 출력해주는 장치)</td>
+                    </tr>
+                    <tr style="height: 17px;">
+                    <td style="width: 22.5581%; height: 17px;">braille</td>
+                    <td style="width: 77.4419%; height: 17px;">점자 표시 장치</td>
+                    </tr>
+                    <tr style="height: 17px;">
+                    <td style="width: 22.5581%; height: 17px;">handheld</td>
+                    <td style="width: 77.4419%; height: 17px;">패드(pad)처럼 손에 들고 다니는 장치</td>
+                    </tr>
+                    <tr style="height: 17px;">
+                    <td style="width: 22.5581%; height: 17px;">projection</td>
+                    <td style="width: 77.4419%; height: 17px;">프로젝터</td>
+                    </tr>
+                    <tr style="height: 17px;">
+                    <td style="width: 22.5581%; height: 17px;">tty</td>
+                    <td style="width: 77.4419%; height: 17px;">디스플레이 기능이 제한된 장치(픽셀(px) 단위를 사용할 수 없음)</td>
+                    </tr>
+                    <tr>
+                    <td style="width: 22.5581%;">embossed</td>
+                    <td style="width: 77.4419%;">점자 프린터</td>
+                    </tr>
+                    </tbody>
+                    </table>
+            </li>
+            <li>
+                <h2>작성방법</h2>
+                <p>미디어 쿼리는 CSS의 @media 규칙을 사용하여 정의해야 한다.</p>
+                <p>@media only screen and (max-width:800px){
+                    변경할 CSS 코딩
+                }</p>
+                <details>
+                    <summary> 위 코드 해석</summary>
+                    <p>화면 너비가 800px 이하인 경우에만 적용되는 스타일</p>
+                    <p>해당 쿼리 내용으로는 해당 사이즈에서 변경되는 내용만 작성하면 된다. 이미 적용되어 있는 값은 따로 적을 필요 없음</p>
+                    <p>작성시 주의사항은 CSS에서 미디어 쿼리의 작성 위치도 중요하다  </p>
+                    <p>breakpoints를  높은 값에서 낮은 값 순으로 내려가면서 작성해야하며</p>
+                    <p>순서를 어기게 되면 미디어쿼리 동작이 원활하게 이루어 지지 않을 수 있음</p>
+                </details>
+                <br>
+                <br>
+                <p>breakpoints를 생각해서 쿼리를 작성해야함</p>
+                <img src="../image/breakpoint.png" alt="">
+            </li>
+            <li>
+                <h2>연산자</h2>
+                <table style="border-collapse: collapse; width: 80%; height: 88px;" border="1" class="css_media_table2">
+                    <tbody>
+                    <tr style="height: 17px;">
+                    <td style="width: 17.5581%; height: 17px; text-align: center;"><b>연산자</b></td>
+                    <td style="width: 82.4419%; height: 17px; text-align: center;"><b>설명</b></td>
+                    </tr>
+                    <tr style="height: 17px;">
+                    <td style="width: 17.5581%; height: 17px;">and</td>
+                    <td style="width: 82.4419%; height: 17px;">앞의 소스처럼 조건을 계속 추가할 수 있습니다.</td>
+                    </tr>
+                    <tr style="height: 20px;">
+                    <td style="width: 17.5581%; height: 20px;">,(쉼표)</td>
+                    <td style="width: 82.4419%; height: 20px;">동일한 스타일 유형을 사용할 미디어의 유형과 조건이 있다면 쉼표를 이용하여 추가합니다.</td>
+                    </tr>
+                    <tr style="height: 17px;">
+                    <td style="width: 17.5581%; height: 17px;">only</td>
+                    <td style="width: 82.4419%; height: 17px;">미디어 쿼리를 지원하는 웹 브라우저에서만 조건을 인식하게 합니다. 이 키워드를 사용하면 미디어 쿼리를 지원하지 않는 웹 브라우저에서는 미디어 쿼리를 무시하고 실행하지 않습니다.</td>
+                    </tr>
+                    <tr style="height: 17px;">
+                    <td style="width: 17.5581%; height: 17px;">not</td>
+                    <td style="width: 82.4419%; height: 17px;">not 다음에 지정하는 미디어 유형을 제외합니다. 예를 들어 'not tv'라고 지정한다면 TVz를 제외한 나머지 미디어 유형에만 적용됩니다.</td>
+                    </tr>
+                    </tbody>
+                    </table>
+            </li>
+        </ul>
+    </section>
+</div>
+
+<script>
+    let css_media_list = document.querySelectorAll('.css_media_list ul li')
+    let css_media_use = document.querySelectorAll('.css_media_use ul li')
+    css_media_use[0].style.display='block'
+    css_media_list[0].style.background='orange'
+    css_media_list.forEach(function(item,idx){
+        item.onclick=function(){
+            for(let i=0; i<css_media_list.length; i++){
+                if(idx==i){
+                    item.style.background='orange'
+                    css_media_use[i].style.display='block'
+                }else{
+                    css_media_list[i].style.background='white'
+                    css_media_use[i].style.display='none'
+                }
+            }
+        }
+    })
+</script>

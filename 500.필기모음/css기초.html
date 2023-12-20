@@ -1,0 +1,287 @@
+<style>
+*{
+    padding: 0;margin: 0;
+}
+ul,ol,li{list-style: none;}
+
+
+
+.css_basic_wrap{
+    display: block;
+    /* 추가시 none로 합치면됨 */
+}
+.css_basic_list{
+    margin: 0 auto;
+    width: 900px
+}
+.css_basic_list h1{
+    margin-bottom: 10px;
+}
+.css_basic_list ol{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    gap:2px;
+    max-width: 900px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    border: 1px solid black;
+    height: 100px;
+    border-collapse: collapse;
+}
+.css_basic_list ol li{
+    display: flex;
+    justify-content: center;
+    border: 1px solid black;
+    align-items: center;
+}
+.css_basic_list ol li a{
+    text-decoration: none;
+    color:inherit
+}
+.css_basic_note{
+    width: 900px;
+    margin: 0 auto;
+}
+.css_basic_note ul{
+    position: relative;
+    box-sizing: border-box;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+    height: 700px;
+}
+.css_basic_note ul li{
+    position: absolute;
+    top :5px;
+    left : 10px
+    ;display:none;
+}
+.css_basic_note h2,.css_basic_note h3{
+    margin-bottom: 8px;
+}
+.css_basic_note p{
+    margin-bottom: 7px;
+}
+.css_basic_note details{
+    display: inline;
+    background-color: bisque;
+}
+</style>
+
+<div class="css_basic_wrap">
+    <section class="css_basic_list">
+        <h1>CSS 기초</h1>
+        <ol>
+            <li>
+                <a href="#none">
+                    CSS란?
+                </a>
+            </li>
+    
+            <li>
+                <a href="#none">
+                    적용방식
+            </a>
+    
+            </li>
+            <li>
+                <a href="#none">
+                    기본문법
+            </a>
+    
+            </li>
+            <li>
+                <a href="#none">
+                    선택자의 종류
+            </a>
+    
+            </li>
+            <li>
+                <a href="#none">
+                    가상클래스
+            </a>
+    
+            </li>
+            <li>
+                <a href="#none">
+                    CSS 적용 우선순위
+            </a>
+    
+            </li>
+            <li>
+                <a href="#none">
+                    CSS 변수
+            </a>
+    
+            </li>
+            <li>
+                <a href="#none">
+                    CSSOM (CSS Object Model)
+            </a>
+    
+            </li>
+            <li>
+                <a href="#none">
+                    CSS 랜더링 순서**
+            </a>
+    
+            </li>
+        </ol>
+    </section>
+    <section class="css_basic_note">
+        <ul>
+            <li>
+                <h2>CSS란</h2>
+                <p> - Cascading Style Sheet</p>
+                <p>- 마치 폭포수처럼 이어져 내리는</p>
+                <p>요소들의 디자인 셋팅을 하는 언어</p>
+                <p>- 마치 세프가 주문의 요구사항을 보고</p>
+                <p>요리하는것 처럼 디자인옵션을 브라우저에</p>
+                <p>display 하기전에 셋업하도록 명령한다!</p>
+               
+            </li>
+
+            <li>
+                <h2>적용방식</h2>
+                <p>1) 인라인방식: 태그에 style속성으로 작성</p>
+                <p>2) 인터널방식: html문서에 style요소 내부에 작성</p>
+                <p>3) 익스터널방식: .css확장자의 문서를 html에 link방식으로 삽입</p>
+            </li>
+
+            <li>
+                <h2>기본문법:</h2>
+               <p>선택자 {속성명:값;}</p> 
+            </li>
+
+            <li>
+                <h2>선택자의 종류</h2>
+                <p>1) 타입선택자: 요소명</p>
+                <p>2) 자손선택자: 띄어쓰기</p>
+                <p>3) 아이디선택자: #</p>
+                <p>4) 클래스선택자: .</p>
+                <p>5) 직계자식선택자: ></p>
+                <p>6) 그룹선택자: ,</p>
+                <p>7) 종속선택자: 태그명+아이디/클래스선택자</p>
+                <p>8) 속성선택자: []</p>
+                <p>9) 형제선택자: + </p>
+                <p>    예) li+li , tr+tr 앞에 다른형제가 있는 요소를 선택함</p>
+                <p>10) 다중형제선택자: ~</p>
+                <p>    예) li:nth-child(4)~li -> 4번째 li이후 모든 형제선택</p>
+            </li>
+
+            <li>
+                <h2>가상클래스</h2>
+                <p>- 마치 클래스를 지정하여 준것 같다하여 가상클래스라고 함</p>
+                <p>- 가상클래스는 콜론(:)하나를 사용함!</p>
+                <p>1) :hover -> 마우스오버시 디자인설정함</p>
+                <p>2) 자식 중 같은 종류의 타입만 선택하는 가상클래스</p>
+                <p>    :first-child</p>
+                <p>    :last-child</p>
+                <p>    :nth-child(n) </p>
+                <p>    -> 숫자n은 1부터!, 짝수는 even, 홀수는 odd</p>
+            </li>
+
+            <li>
+                <h2>CSS 적용 우선순위</h2>
+                <p>인라인 &gt; id &gt; class &gt; type </p>
+                <p>- 만약 !important를 값 뒤에 쓰면</p>
+                <p>가장 우선순위로 적용됨!(신중히 쓸것)</p>
+                <p>위 방식에서 적용 우선순위는 점수로 생각하면 이해가 쉽다 </p>
+                <p>인라인 : 1000점,  id : 100점,  class : 10점, element : 1점 </p>
+                <p>css에서 선택자로 .클래스명 태그명{} 이렇게 작성시  클래스 10점에 태그 1점 해서 11점이다.</p>
+                <p>위와같이 선택시 일반적으로 클래스로 선택한것보다는 우선순위가 올라간다고 생각하면 된다.</p>
+            
+
+            </li>
+            <li>
+                <h2>CSS 변수</h2>
+                <p>CSS 변수는 바(-) 2개를 붙여 표시합니다  --red: #a00;</p>
+                <p>"--red" 변수명에 "#a00" 이라는 속성 값이 적용된 것입니다.</p>
+                <p>.content{   --newcolor: #000;   } 이렇게 변수를 선언했다면  content라는 클래스의 하위 요소에서만</p>
+                <p>해당 변수를 사용 할 수 있습니다.</p>
+                <p>전역으로 사용하기 위한 변수(들)은 다음과 같이 ":root" 가상 클래스에 정의합니다.</p>
+                <p>:root{ --red: #a00;   --dark: #404040;  --light: #c0c0c0;  }</p>
+                <h3> 변수의 사용 </h3>
+                <p>선언한 CSS 변수를 사용시 변수 값을 적용할 속성 값 위치에 "var()"로 변수명을 감싸서 표시하면 됩니다.</p>
+                <p>color: var(--red);</p>
+                <details>
+                    <summary>자바스크립트에서 변수의 접근</summary>
+                    <p>let theme = document.querySelector(':root');</p>
+                    <p>let styles = getComputedStyle(theme);</p>
+                    <p>console.log(styles.getPropertyValue('--hover')); // 변수 값 얻기</p>
+                    <p>theme.style.setProperty('--hover', 'green'); // 변수 값 변경</p>
+                    <p>단 자바스크립트로 변수를 제어시 html태그에 인라인 형식으로 직접 적용되기 때문에 우선순위를 기억할 것</p>
+                </details>
+            </li>
+            <li>
+                <h2>CSSOM (CSS Object Model)</h2>
+                <p>HTML과 마찬가지로 CSS도 브라우저가 이해할 수 있는 형식으로 변환해야 합니다.</p>
+                <p>HTML 마크업 내에 직접(인라인) 스타일을 선언하지 않고 CSS와 HTML을 별도로 </p>
+                <p>유지하면 콘텐츠와 디자인을 별도의 항목으로 처리할 수 있습니다. </p>
+                <p>CSS 객체 모델은 브라우저가 DOM을 생성하는 프로세스와 같습니다. </p>
+                <p>따라서 HTML 대신 CSS에 대해 DOM 프로세스를 진행하며 CSSOM(CSS Object Mode)도 </p>
+                <p>트리 구조를 갖습니다.</p>
+                <img src="../image/cssom.png" alt="">
+                <p>CSSOM이 트리 구조를 갖게 되면서 cascading 룰을 갖고 스타일을 세분화합니다. </p>
+                <p>DOM과 CSSOM은 독립적인 데이터 구조입니다</p>
+
+            </li>
+            <li>
+                <h2>CSS 랜더링 순서**</h2>
+                <p>브라우저에서 html파싱 및 dom트리를 형성하고 css도 파싱 후 cssom을 형성하여 렌더링 트리를 형성한다</p>
+                <p>렌더링 트리에서 레이아웃을 실행하여 각 노드의 기하학적 형태를 계산한다.</p>
+                <details>
+                    <summary>레이아웃 단계</summary>
+                    <p>- 레이아웃 단계에서 노드의 정확한 위치와 크기를 계산한다.</p>
+                    <p>- 노드의 정확한 크기와 위치를 파악하기 위해 루트부터 노드를 순회하면서 계산하고, </p> 
+                    <p>레이아웃 결과로 각 노드의 위치와 크기를 픽셀 값으로 렌더트리에 반영한다.(ex: % -> px)</p>
+                </details>
+                <p>개별 노드를 화면에 페인트한다</p>
+                <details>
+                    <summary>페인트 단계</summary>
+                    <p>픽셀을 채우는 프로세스로써 텍스트 색상, 이미지, border, shadow 등 요소의 시작적인 부분을 그리는 작업이 포함된다.</p>
+                    <p>- 이전 레이아웃 단계에서 계산된 값을 이용해 렌더트리의 각 노드를 화면상의 실제 픽셀로 변환되는데 페인팅 단계에서는 </p>
+                    <p>CSS 속성(색상, 투명도 등)을 적용한다.</p>
+                    <p>- 픽셀로 변환된 결과는 개별 레이어로 관리된다.</p>
+                </details>
+                <p>합성 & 렌더  (composite)</p>
+                <details>
+                    <summary>composite</summary>
+                    <p>페이지가 정확히 렌더링되려면 정확한 순서로 화면을 그려야한다.</p>
+                    <p>- 페인트 단계에서 생성된 레이어를 합성하여 스크린을 업데이트하고 합성과 렌더링이 끝나면 화면에서 웹 페이지를 볼 수 있다.</p>
+                </details>
+                <h3>레이아웃과 리페인트</h3>
+                <img src="../image/layout,repaint.png" alt="">
+                <p>렌더트리는 자바스크립트에 의해 DOM 트리, CSSOM 트리가 변경될 때 다시 재구성된다.</p>
+                <p>스타일 -> 레이아웃 -> 페인트 -> 합성을 렌더링이라고 하고 상황에 따라 반복하여 발생할 수 있다 </p>
+                <p>DOM이 추가, 삭제되거나 높이, 넓이, 위치를 주는 CSS 속성값이 변경되는 경우 렌더트리가 재구된다. </p>
+                <p> (배경색, 폰트색, 텍스트 데코레이션)레이아웃 과정을 건너뛰고 페인트부터 수행하는데 이를 리페인트.</p> 
+                <p> 레이아웃부터 이후 과정을 수행하는 것을 레이아웃 또는 리플로우라고 한다.</p>
+
+            </li>
+
+        </ul>
+    </section>
+</div>
+
+<script>
+let css_basic_list =document.querySelectorAll('.css_basic_list ol li')
+let css_basic_note = document.querySelectorAll('.css_basic_note ul li')
+css_basic_note[0].style.display='block'
+css_basic_list.forEach(function(item,idx){
+    item.onclick = function(){
+            for(let i = 0 ; i<css_basic_note.length; i++){
+                if(idx==i){
+                    item.style.background = 'orange'
+                    css_basic_note[i].style.display='block'
+                }else{
+                    css_basic_list[i].style.background = 'white'
+                    css_basic_note[i].style.display='none'
+                }
+            }
+    }
+})
+</script>
+
+
+
