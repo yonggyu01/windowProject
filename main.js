@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded',function(){
-
+    let work_line= document.querySelectorAll('.work_line')
 // 윈도우 부팅느낌 나게 해주려고 추가함
     let booting = document.querySelector('.loading')
     let header = document.querySelector('.header')
@@ -90,22 +90,22 @@ opennavi1.forEach(function(item,idx){
         zindexnum++
         switch (idx){
             case 0:
-                nowopenwindow(8);
-                break;
-            case 1:
-                nowopenwindow(7);
-                break;
-            case 2:
-                nowopenwindow(9);
-                break;
-            case 3:
                 nowopenwindow(12);
                 break;
+            case 1:
+                nowopenwindow(11);
+                break;
+            case 2:
+                nowopenwindow(13);
+                break;
+            case 3:
+                nowopenwindow(16);
+                break;
             case 4:
-                nowopenwindow(10);
+                nowopenwindow(14);
                 break;
             case 5:
-                nowopenwindow(11);
+                nowopenwindow(15);
                 //인터넷 오픈창은
                 setTimeout(function(){
                     internetbooting.style.opacity = 0;
@@ -209,16 +209,32 @@ bricon[1].onclick = function(){
 tmycom.forEach(function(menu,idx){
     menu.addEventListener('click',function(){
         zindexnum++
-        mycommenu[idx].style.display = 'block'
-        mycommenu[idx].style.zIndex = zindexnum;
-        work_line[idx+1].style.display = 'block'
+        switch (idx){
+            case 0:
+            mycommenu[idx].style.display = 'block'
+            mycommenu[idx].style.zIndex = zindexnum;
+            work_line[idx+1].style.display = 'block'
+            break;
+            case 1:
+            mycommenu[idx].style.display = 'block'
+            mycommenu[idx].style.zIndex = zindexnum;
+            work_line[idx+3].style.display = 'block'
+            break;
+            case 2:
+            mycommenu[idx].style.display = 'block'
+            mycommenu[idx].style.zIndex = zindexnum;
+            work_line[idx+5].style.display = 'block'
+            break;
+        }
+        
+        
     })
     menu.ondragstart = function(){
         return false;
     }
 })
 // 닫기
-let work_line= document.querySelectorAll('.work_line')
+
 xbutton.forEach(function(item,idx){
     item.addEventListener('click',function(e){
         let selector = e.target.classList.value
@@ -260,9 +276,9 @@ javanote.forEach(function(item,idx){
     item.addEventListener('click',function(){
         if(idx <2){
             zindexnum++
-            killmenu[idx+4].style.zIndex = zindexnum;      
-        killmenu[idx+4].style.display ='block'
-        work_line[idx+4].style.display= 'block'
+            killmenu[idx+8].style.zIndex = zindexnum;      
+        killmenu[idx+8].style.display ='block'
+        work_line[idx+8].style.display= 'block'
      }// 현재 파일이 2개 뿐이라 이렇게 임시로 땜방해둠 
     })
     item.ondragstart = function(){
@@ -782,7 +798,10 @@ tools.forEach(function(item,idx){
     
 })
 mypainter.onmousedown = function(event){ 
-    // 사이즈를 2배로 키웠기 때문에   캔버스의 현재위치가 달라짐
+    // 사이즈를 2배로 키워서 해상도를 올리고 싶으나.. css로 크기 조절시
+    // 좌표가 인식이 안됨...  해결방안으로는 투명한 그림판을 위에 깔고(일반해상도)
+    // 바로 아래에 2배 해상도 그림판을 깐뒤  위에 있는 투명한  원본 해상도에 그리는걸 뒤에 2배 해상도에도 같이 그려지게 하면
+    // 해상도 올릴 수 있을것 같음.. 아이디어 1번임
     // canvasX=event.clientX-mypainter.getBoundingClientRect().left
     // canvasY=event.clientY-mypainter.getBoundingClientRect().top
     canvasX=event.offsetX
@@ -1330,7 +1349,8 @@ css_media_list.forEach(function(item,idx){
 //  html 문서 오픈
 document.querySelectorAll('.mycomputericon1 li').forEach(function(item,idx){
    item.onclick = function(){
-   document.querySelectorAll('.html_note1,.html_note2')[idx].style.display = 'block' 
+   document.querySelectorAll('.html_note1,.html_note2')[idx].style.display = 'block'
+   work_line[idx+2].style.display = 'block' 
    document.querySelectorAll('.html_note1,.html_note2')[idx].style.left = Math.random()*200 +'px'  
    document.querySelectorAll('.html_note1,.html_note2')[idx].style.top = Math.random()*150 +'px'
 }
@@ -1339,6 +1359,7 @@ document.querySelectorAll('.mycomputericon1 li').forEach(function(item,idx){
 document.querySelectorAll('.mycomputericon2 li').forEach(function(item,idx){
     item.onclick = function(){
     document.querySelectorAll('.css_note1,.css_note2')[idx].style.display = 'block'
+    work_line[idx+5].style.display = 'block' 
     document.querySelectorAll('.css_note1,.css_note2')[idx].style.left = Math.random()*200 +'px'  
     document.querySelectorAll('.css_note1,.css_note2')[idx].style.top = Math.random()*150 +'px'  
     }
