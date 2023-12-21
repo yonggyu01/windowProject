@@ -1372,12 +1372,16 @@ document.querySelectorAll('.mycomputericon2 li').forEach(function(item,idx){
  });
 
 // cmd 창
+let cmdenter = document.querySelector('#cmdenter'),mm=2,cmdwrap=document.querySelector('.cmdwrap');
 document.querySelector('.cmdopen').onclick=function(){
     document.querySelector('.cmd').style.display = 'block'
+
     startbutton.dispatchEvent(new Event('click'))
+    work_line[17].style.display='block'
+
+    
 }
 //cmd창 인풋 구현
-let cmdenter = document.querySelector('#cmdenter'),cmdwrap=document.querySelector('.cmdwrap');
 
 cmdenter.onkeyup=function(e){
     console.log(e)
@@ -1386,11 +1390,21 @@ cmdenter.onkeyup=function(e){
         let br = document.createElement('br')
         switch (evalue) {
             case 'cd..':
-            let text1 = document.createElement('p')
-            text1.innerHTML = '이미 최상위 폴더입니다.'
-            cmdenter.value = ''
-            cmdwrap.append(text1)
-            cmdwrap.append(br)
+            if(mm==2){
+                mm--
+                document.querySelector('.cmd_linewrap p').innerText = "C:\\Users\\"
+                cmdenter.value = ''
+            }else if(mm==1){
+                mm--
+                document.querySelector('.cmd_linewrap p').innerText = "C:\\"
+                cmdenter.value = ''
+            }else{
+                let text1 = document.createElement('p')
+                text1.innerHTML = '이미 최상위 폴더입니다.'
+                cmdenter.value = ''
+                cmdwrap.append(text1)
+                cmdwrap.append(br)
+            }
             break;
             case 'dir' : 
             let text2 = document.createElement('p')
@@ -1398,6 +1412,25 @@ cmdenter.onkeyup=function(e){
             cmdenter.value = ''
             cmdwrap.append(text2)
             cmdwrap.append(br)
+            break;
+            case 'ipconfig' : 
+            let text3 = document.createElement('p')
+            text3.innerHTML = '127.0.0.1'
+            cmdenter.value = ''
+            cmdwrap.append(text3)
+            cmdwrap.append(br)
+            break;
+            case 'html' : 
+            document.querySelector('.cmd_linewrap p').innerText = "C:\\html\\"
+            cmdenter.value = ''
+            break;
+            case 'css' : 
+            document.querySelector('.cmd_linewrap p').innerText = "C:\\css\\"
+            cmdenter.value = ''
+            break;
+            case 'javascript' : 
+            document.querySelector('.cmd_linewrap p').innerText = "C:\\javascript\\"
+            cmdenter.value = ''
             break;
             default:
                 let textline = document.createElement('p')
