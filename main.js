@@ -1421,14 +1421,17 @@ cmdenter.onkeyup=function(e){
             cmdwrap.append(br)
             break;
             case 'cd html' : 
+            mm==1
             document.querySelector('.cmd_linewrap p').innerText = "C:\\html\\"
             cmdenter.value = ''
             break;
             case 'cd css' : 
+            mm==1
             document.querySelector('.cmd_linewrap p').innerText = "C:\\css\\"
             cmdenter.value = ''
             break;
             case 'cd javascript' : 
+            mm==1
             document.querySelector('.cmd_linewrap p').innerText = "C:\\javascript\\"
             cmdenter.value = ''
             break;
