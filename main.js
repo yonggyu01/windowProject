@@ -26,9 +26,9 @@ var mycom = document.querySelector('.mycomputer')
 let xbutton = document.querySelectorAll('.xbutton, .xb')
 let tmycom = document.querySelectorAll('.mycomputericon>ul>li>a')
 let mycommenu = document.querySelectorAll('#mycom')
-let killmenu =document.querySelectorAll('#screenmenu, #mycom, #javanote ,.memobox,.calcul,.paint,.kakaotalk,.korean,.internet,.bomb')
+let killmenu =document.querySelectorAll('#screenmenu, #mycom, #javanote ,.memobox,.calcul,.paint,.kakaotalk,.korean,.internet,.bomb,.html_note1,.html_note2,.css_note1,.css_note2')
 // killmenu에 아이템 새로 등록시 추가로 등록시키기만 하면됨. 단 자바 노트부분에 컨텐츠 추가시 html태그에서 위치를 잘 고민해야함
-
+// kill메뉴 이제 필요는 없긴 함...
 bricon.forEach(function(item,idx){
     item.onclick =function(){
         zindexnum++
@@ -46,9 +46,9 @@ bricon.forEach(function(item,idx){
                 }, 3000)
             break;
             case 7 :
-                killmenu[idx+4].style.display = 'block'
-                killmenu[idx+4].style.zIndex = zindexnum;
-                work_line[idx+4].style.display = 'block'
+                killmenu[idx+8].style.display = 'block'
+                killmenu[idx+8].style.zIndex = zindexnum;
+                work_line[idx+8].style.display = 'block'
                 let internetboottimer = setTimeout(function(){
                     internetbooting.style.opacity = 0;
                     setTimeout(function(){
@@ -61,9 +61,9 @@ bricon.forEach(function(item,idx){
             break;
             default: 
             console.log(idx)
-                killmenu[idx+4].style.display = 'block'
-                killmenu[idx+4].style.zIndex = zindexnum;
-                work_line[idx+4].style.display = 'block';
+                killmenu[idx+8].style.display = 'block'
+                killmenu[idx+8].style.zIndex = zindexnum;
+                work_line[idx+8].style.display = 'block';
         }
     }
     item.ondragstart = function(){
@@ -107,7 +107,7 @@ opennavi1.forEach(function(item,idx){
             case 5:
                 nowopenwindow(11);
                 //인터넷 오픈창은
-                let internetboottimer = setTimeout(function(){
+                setTimeout(function(){
                     internetbooting.style.opacity = 0;
                     setTimeout(function(){
                     internetbooting.style.display = 'none';
