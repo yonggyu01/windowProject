@@ -164,7 +164,9 @@ function nowopenmycom(value){
         let recycle ;
     window.onmousedown =function(e){
         indexcheck(e)
-        recycle = e.target.parentElement.parentElement
+        if (e.target.parentElement.parentElement?.classList?.value=='newnote'){
+            recycle = e.target.parentElement.parentElement
+        }
         // console.log(e)
         // console.log(indexcheck(e))
     //    let tt =  e.target.id || e.target.classList.value
