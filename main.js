@@ -185,10 +185,12 @@ window.ondragend=function(e){
     // document.elementFromPoint(x, y); 내 마우스가 어디 태그 위에 있는지를 알려줌
     if(cb.id=='rec'){
     recycle.style='display:none'
+    }else{
+        cb.append(recycle)
+        // 수정해서 파일 드래그 드롭기능으로 변경함  
     }
     }
 dropClick(x,y)
-
 }
 
 
