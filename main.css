@@ -311,8 +311,7 @@ opacity: 1;
     left:30px;
     top:50px;
     display:none;
-    min-width: 600px;
-    width: 80vw;
+    width: 30vw;
 }
 .wheadwrap1 h2{
     display: inline-block;
@@ -322,8 +321,8 @@ opacity: 1;
     display: flex;
     flex:row;
     justify-content: space-between;
-    width: 80vw;
-    min-width: 600px;
+    width: 30vw;
+    /* min-width: 600px; */
     background: blue;
     padding-left: 5px;
     box-sizing: border-box;
@@ -344,7 +343,7 @@ opacity: 1;
 .mycomputericon1>ul{
     display: flex;
     gap:20px;
-    height: 50vh;
+    height: 20vh;
     flex-wrap: wrap;
     align-content: baseline;
     align-items: baseline;
@@ -366,6 +365,112 @@ opacity: 1;
     height: 60px;
     object-fit: scale-down;
 }
+/* html노트 */
+#html_note{
+     display:none;
+    position: absolute;
+    top:100px;
+    left : 200px
+}
+.htmlbasic details{
+    display: inline;
+    background-color: bisque;
+}
+.htmlbasic{
+    background-color: white;
+    overflow-x: scroll;
+    height: 700px;
+}
+
+/* html다음노트 */
+.htmltaglist{
+    border-top : 1px solid black;
+    border-right : 1px solid black;
+    border-left : 1px solid black;
+    box-sizing:border-box;
+}
+.tablexample{
+    border:1px solid black;
+    font-size: 24px;
+}
+.tablexample td, .tablexample th{
+    width: 200px;
+height: 100px;
+border: 1px solid black;
+}
+.html_tagwrap{
+    position: relative;
+    background-color: white;
+    overflow-y: scroll;
+}
+.htmltaglist{
+    max-width: 900px;
+    margin: 0 auto;
+}
+.htmltaglist h1{
+    margin-bottom: 10px;
+    padding-left: 10px;
+}
+.htmltaglist>ul{
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    width: 900px;
+    height: 100px;
+    box-sizing: border-box;
+    gap:1px
+  
+}
+.htmltaglist>ul>li{
+    box-sizing: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.434);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.htmltaglist ul>li:nth-child(1){
+    border-left: 1px solid transparent !important;
+}
+
+.htmltaglist ul>li:nth-child(5){
+    border-left: 1px solid transparent !important;
+}
+
+.htmltaglist ul>li:nth-child(9){
+    border-left: 1px solid transparent !important;
+    border-bottom: 1px solid transparent !important;
+}
+.htmltaglist ul>li:nth-child(10),.htmltaglist ul>li:nth-child(11){
+    border-bottom: 1px solid transparent !important;
+}
+.htmltaglist ul>li:last-child{
+
+    border-bottom: 1px solid transparent !important;
+}
+.html_tagnotebox ul{
+    position: relative;
+    width: 900px;
+    margin: 0 auto;
+    border: 1px solid black;
+    
+    box-sizing: border-box;
+    height: 100vh;
+}
+.html_tagnotebox ul>li{
+    position: absolute;
+    left : 30px;
+    top: 5px;
+    display: none;
+}
+.html_tagnotebox p,.html_tagnotebox details,.html_tagnotebox summary,.html_tagnotebox h2{
+    margin-bottom: 10px;
+}
+.html_tagnotebox details{
+    background-color: bisque;
+    display: inline;
+}
+
 /* css공부정리 */
 .cssStudy{
     border-right: 1px solid black;
@@ -376,8 +481,8 @@ opacity: 1;
     position: absolute;
     left:30px;
     top:7%;
-    min-width: 600px;
-    width: 80vw;
+    min-width: 300px;
+    width: 30vw;
     display:none;
 }
 .wheadwrap2 h2{
@@ -388,8 +493,8 @@ opacity: 1;
     display: flex;
     flex:row;
     justify-content: space-between;
-    min-width: 600px;
-    width: 80vw;
+    min-width: 300px;
+    width: 30vw;
     background: blue;
     padding-left: 5px;
     box-sizing: border-box;
@@ -412,7 +517,7 @@ opacity: 1;
     display: flex;
     gap:20px;
     flex-wrap: wrap;
-    height: 600px;
+    height: 200px;
     align-content: baseline;
     align-items: baseline;
 }
@@ -430,6 +535,154 @@ opacity: 1;
     height: 60px;
     object-fit: scale-down;
 }
+/* css 노트 */
+#css_note{
+    display:none;
+    position: absolute;
+    top:100px;
+    left : 200px;
+}
+.css_basic_wrap{
+    display: block;
+    /* 추가시 none로 합치면됨 */
+    background-color: white;
+    overflow-y: scroll;
+}
+.css_basic_list{
+    margin: 0 auto;
+    width: 900px
+}
+.css_basic_list h1{
+    margin-bottom: 10px;
+}
+.css_basic_list ol{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    gap:2px;
+    max-width: 900px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    border: 1px solid black;
+    height: 100px;
+    border-collapse: collapse;
+}
+.css_basic_list ol li{
+    display: flex;
+    justify-content: center;
+    border: 1px solid black;
+    align-items: center;
+}
+.css_basic_list ol li a{
+    text-decoration: none;
+    color:inherit
+}
+.css_basic_note{
+    width: 900px;
+    margin: 0 auto;
+}
+.css_basic_note ul{
+    position: relative;
+    box-sizing: border-box;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+    height: 700px;
+}
+.css_basic_note ul li{
+    position: absolute;
+    top :5px;
+    left : 10px
+    ;display:none;
+}
+.css_basic_note h2,.css_basic_note h3{
+    margin-bottom: 8px;
+}
+.css_basic_note p{
+    margin-bottom: 7px;
+}
+.css_basic_note details{
+    display: inline;
+    background-color: bisque;
+}
+/* css 미디어 */
+.css_media_wrap{
+    display: block;
+    padding-top: 30px;
+    background-color: white;
+    overflow-y: scroll;
+
+}
+.css_media_list{
+    width: 900px;
+    margin: 0 auto ;
+}
+.css_media_list h1{
+    margin-bottom: 10px;
+}
+.css_media_list>ul{
+    position: relative;
+    width: 900px;
+    margin: 0 auto;
+    display: flex;
+    height: 80px;
+    gap :1px;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+    box-sizing: border-box;
+}
+.css_media_list li:first-child{width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+}
+.css_media_list li:last-child{width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+}
+.css_media_list li:not(:first-child,:last-child){
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+    border-top: 1px solid black;
+}
+.css_media_use ul{
+position: relative;
+width: 900px;
+margin: 0 auto;
+height: 700px;
+border: 1px solid black;
+box-sizing: border-box;
+}
+.css_media_use details{
+    background-color: bisque;
+    display: inline;
+}
+.css_media_use ul li h2{
+    margin-bottom: 20px;
+}
+.css_media_use ul li{
+    position: absolute;
+    display: none;
+    top:9px;
+    left : 10px;
+}
+.css_media_use p{
+    margin-bottom: 10px;
+}
+.css_media_use table{
+text-align: center;
+}
+
+
+
 /* 자바스크립트 정리 */
 .javaStudy{
     border-right: 1px solid black;

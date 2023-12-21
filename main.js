@@ -84,6 +84,7 @@ function nowopenwindow(value){
     startmenu.style.zIndex = 0;
 }
 let opennavi1=document.querySelectorAll('.depth ul li') 
+ // CSS HTML 페이지등이 나중에 내용추가를 해서... 전체적으로 좀 ... 
 opennavi1.forEach(function(item,idx){
     item.onclick =function(){
         zindexnum++
@@ -219,10 +220,22 @@ tmycom.forEach(function(menu,idx){
 // 닫기
 let work_line= document.querySelectorAll('.work_line')
 xbutton.forEach(function(item,idx){
-    item.addEventListener('click',function(){
-        killmenu[idx].style.display='none'
-        zindexnum = 0;
-        work_line[idx].style.display='none'
+    item.addEventListener('click',function(e){
+        let selector = e.target.classList.value
+        switch (selector) {
+            case 'xbutton' : 
+            e.target.parentElement.parentElement.parentElement.parentElement.style.display = 'none'
+            zindexnum = 0;
+            break;
+
+            case 'xb' :
+            e.target.parentElement.parentElement.parentElement.style.display = 'none'
+            zindexnum = 0;
+            break;
+        }
+        // killmenu[idx].style.display='none'
+       
+        work_line[idx].style.display='none' // 이건 인덱스 말고 생성방법을 고민해보자...
     })
 })
 
@@ -393,7 +406,7 @@ wheadwrap.onmousedown = function(e){
 */
 
 let whead = document.querySelectorAll('.wheadwrap,.wheadwrap1,.wheadwrap2,.wheadwrap3,.wheadwrap4,.wheadwrap5,.subprogram')
-let movewin = document.querySelectorAll('.mycomputer,.htmlStudy,.cssStudy,.javaStudy,.javanote,.javanote1,.memobox,.calcul,.paint,.kakaotalk,.korean,.internet,.bomb')
+let movewin = document.querySelectorAll('.mycomputer,.htmlStudy,.cssStudy,.javaStudy,.javanote,.javanote1,.memobox,.calcul,.paint,.kakaotalk,.korean,.internet,.bomb,.html_note1,.html_note2,.css_note2,.css_note1')
     whead.forEach(function(item,idx){
         item.addEventListener('mousedown',function(e){
             movewin[idx].style.zIndex = 10000;
@@ -1256,6 +1269,81 @@ window.onkeydown = function(e){
     renderbox()
     
 }
+
+
+
+//html 노트
+  // html페이지를 탭메뉴로 구성함
+
+  let htmllist_li = document.querySelectorAll('.htmltaglist li')
+  let html_tagnotebox = document.querySelectorAll('.html_tagnotebox>ul>li')
+  html_tagnotebox[0].style.display = 'block'
+  htmllist_li.forEach(function(item,idx){
+      item.onclick= function(){
+          for(let i = 0; i<htmllist_li.length; i++){
+              if(idx == i){
+                  htmllist_li[i].style.background= 'orange'
+                  html_tagnotebox[i].style.display = 'block'
+              }else{
+                  htmllist_li[i].style.background= 'white'
+                  html_tagnotebox[i].style.display = 'none'
+              }
+          }
+      }
+  })
+// css 노트부분
+
+let css_basic_list =document.querySelectorAll('.css_basic_list ol li')
+let css_basic_note = document.querySelectorAll('.css_basic_note ul li')
+css_basic_note[0].style.display='block'
+css_basic_list.forEach(function(item,idx){
+    item.onclick = function(){
+            for(let i = 0 ; i<css_basic_note.length; i++){
+                if(idx==i){
+                    item.style.background = 'orange'
+                    css_basic_note[i].style.display='block'
+                }else{
+                    css_basic_list[i].style.background = 'white'
+                    css_basic_note[i].style.display='none'
+                }
+            }
+    }
+})
+let css_media_list = document.querySelectorAll('.css_media_list ul li')
+let css_media_use = document.querySelectorAll('.css_media_use ul li')
+css_media_use[0].style.display='block'
+css_media_list[0].style.background='orange'
+css_media_list.forEach(function(item,idx){
+    item.onclick=function(){
+        for(let i=0; i<css_media_list.length; i++){
+            if(idx==i){
+                item.style.background='orange'
+                css_media_use[i].style.display='block'
+            }else{
+                css_media_list[i].style.background='white'
+                css_media_use[i].style.display='none'
+            }
+        }
+    }
+})
+
+//  html 문서 오픈
+document.querySelectorAll('.mycomputericon1 li').forEach(function(item,idx){
+   item.onclick = function(){
+   document.querySelectorAll('.html_note1,.html_note2')[idx].style.display = 'block' 
+   document.querySelectorAll('.html_note1,.html_note2')[idx].style.left = Math.random()*200 +'px'  
+   document.querySelectorAll('.html_note1,.html_note2')[idx].style.top = Math.random()*150 +'px'
+}
+});
+// css도 똑같음
+document.querySelectorAll('.mycomputericon2 li').forEach(function(item,idx){
+    item.onclick = function(){
+    document.querySelectorAll('.css_note1,.css_note2')[idx].style.display = 'block'
+    document.querySelectorAll('.css_note1,.css_note2')[idx].style.left = Math.random()*200 +'px'  
+    document.querySelectorAll('.css_note1,.css_note2')[idx].style.top = Math.random()*150 +'px'  
+    }
+ });
+
 
 
 })
