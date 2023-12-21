@@ -161,19 +161,33 @@ function nowopenmycom(value){
     // 간단한 버튼들은 변수로 지정하지 않고 그냥 사용하기위해 윈도우의 클릭이벤트를 선택자로 활용해서
     // 스위치문으로 작성_ 선택하고싶은 태그요소에  클래스나 아이디값이 있는 버튼의 경우 그냥 사용하면되며 인덱스 값도 받아 올 수 있기 때문에
     // 인덱스가 필요한 경우 인덱스 체커를 활용해서 하드코딩
-    window.onclick =function(e){
+        let recycle ;
+    window.onmousedown =function(e){
         indexcheck(e)
+        recycle = e.target.parentElement.parentElement
         // console.log(e)
         // console.log(indexcheck(e))
-       let tt =  e.target.id || e.target.classList.value
+    //    let tt =  e.target.id || e.target.classList.value
     //console.log(tt) 
-       switch (tt){
-        case 'f1':
-            break; 
-       }
-
+    //    switch (tt){
+    //     case 'f1':
+    //         break; 
+    //    }
     }
+// 휴지통기능 임시로 구현  새로 만든 파일들은 드래그해서 넣으면 사라짐
+window.ondragend=function(e){
+    let x = e.clientX
+    let y = e.clientY
+   function dropClick(x, y){
+    let cb = document.elementFromPoint(x, y);
+    // document.elementFromPoint(x, y); 내 마우스가 어디 태그 위에 있는지를 알려줌
+    if(cb.id=='rec'){
+    recycle.style='display:none'
+    }
+    }
+dropClick(x,y)
 
+}
 
 
 /*
@@ -1445,5 +1459,9 @@ cmdenter.onkeyup=function(e){
         }
        
 }
+
+
+
+
 
 })
