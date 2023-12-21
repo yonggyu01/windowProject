@@ -1420,15 +1420,15 @@ cmdenter.onkeyup=function(e){
             cmdwrap.append(text3)
             cmdwrap.append(br)
             break;
-            case 'html' : 
+            case 'cd html' : 
             document.querySelector('.cmd_linewrap p').innerText = "C:\\html\\"
             cmdenter.value = ''
             break;
-            case 'css' : 
+            case 'cd css' : 
             document.querySelector('.cmd_linewrap p').innerText = "C:\\css\\"
             cmdenter.value = ''
             break;
-            case 'javascript' : 
+            case 'cd javascript' : 
             document.querySelector('.cmd_linewrap p').innerText = "C:\\javascript\\"
             cmdenter.value = ''
             break;
