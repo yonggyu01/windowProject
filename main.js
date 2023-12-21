@@ -251,21 +251,17 @@ xbutton.forEach(function(item,idx){
         }
         // killmenu[idx].style.display='none'
        
-        work_line[idx].style.display='none' // 이건 인덱스 말고 생성방법을 고민해보자...
+        work_line[idx].style.display='none' // 이건 인덱스가 일치해서 그냥 씀...
     })
 })
 
-//자바 노트부분만 먼저 작성/ 현재 2페이지만 작성했으므로 인덱스는 4와 5만 존재함
+//자바 노트부분만 먼저 작성/ 현재 2페이지만 작성
 
 //코드를 수정해서 켜지는 창을 오픈시키는 코드들의 변수명을 전부 배열에 저장해서
 // 내가 원하는 인덱스를 지정하게 되면 화면 개발시 순서가 꼬여서 발생하는 문제가 
 // 해결이 가능해짐
 
 
-
-// 현재 클릭시 화면이 오픈되어야 하는 순서는 푸터의 순서와 같음 
-// 푸터에는 [내컴퓨터, html , css , java, 자바스크립트 내용1, 내용2 ]
-// 이렇게 배열이 짜여져 있음  
 
 // 눌렀을때 켜야하고 꺼야하는 클릭이벤트의  버튼은 전부 다르지만 
 //  결국 켜져야 하는  행위는 모두 동일함  함수로 작성해서  클릭시 인자를 보내서
@@ -422,7 +418,7 @@ wheadwrap.onmousedown = function(e){
 */
 
 let whead = document.querySelectorAll('.wheadwrap,.wheadwrap1,.wheadwrap2,.wheadwrap3,.wheadwrap4,.wheadwrap5,.subprogram')
-let movewin = document.querySelectorAll('.mycomputer,.htmlStudy,.cssStudy,.javaStudy,.javanote,.javanote1,.memobox,.calcul,.paint,.kakaotalk,.korean,.internet,.bomb,.html_note1,.html_note2,.css_note2,.css_note1')
+let movewin = document.querySelectorAll('.mycomputer,.htmlStudy,.cssStudy,.javaStudy,.javanote,.javanote1,.memobox,.calcul,.paint,.kakaotalk,.korean,.internet,.bomb,.html_note1,.html_note2,.css_note2,.css_note1,.cmd')
     whead.forEach(function(item,idx){
         item.addEventListener('mousedown',function(e){
             movewin[idx].style.zIndex = 10000;
@@ -526,12 +522,12 @@ fullbtn.forEach(function(item){
                console.log(e)
     })
 })
-
-let savebt = document.querySelector('.savebt')
+let savebt = document.querySelector('.savebt'),newnote;
 savebt.onclick =function(e){
     let h3name = prompt('저장할 파일명을 입력해주세요')
     console.log(e)
     let newli = document.createElement('li')
+    newli.classList.add('newnote')
     let newa = document.createElement('a')
     let newimg = document.createElement('img')
     let newh3 = document.createElement('h3')
@@ -541,8 +537,18 @@ savebt.onclick =function(e){
     newa.append(newh3)
     newli.append(newa)
     document.querySelector('.iconwrapbox ul').appendChild(newli)
-
+    notelicheck()
 }
+ function notelicheck(){
+    newnote= document?.querySelectorAll('.newnote')
+     newnote.onclick=function(e){
+         e.target.onmousemove=function(){
+            let x = e.clientX,y=clientY;
+            e.target.style.tansform = `translate(${x},${y})`         }
+     }
+ }
+
+
 
 
 
@@ -1365,6 +1371,43 @@ document.querySelectorAll('.mycomputericon2 li').forEach(function(item,idx){
     }
  });
 
+// cmd 창
+document.querySelector('.cmdopen').onclick=function(){
+    document.querySelector('.cmd').style.display = 'block'
+    startbutton.dispatchEvent(new Event('click'))
+}
+//cmd창 인풋 구현
+let cmdenter = document.querySelector('#cmdenter'),cmdwrap=document.querySelector('.cmdwrap');
 
+cmdenter.onkeyup=function(e){
+    console.log(e)
+    let enter1 = e.code,evalue=cmdenter.value;
+    if(enter1=='Enter'){
+        let br = document.createElement('br')
+        switch (evalue) {
+            case 'cd..':
+            let text1 = document.createElement('p')
+            text1.innerHTML = '이미 최상위 폴더입니다.'
+            cmdenter.value = ''
+            cmdwrap.append(text1)
+            cmdwrap.append(br)
+            break;
+            case 'dir' : 
+            let text2 = document.createElement('p')
+            text2.innerHTML = 'HTML, CSS, JAVASCRIPT 폴더가 존재합니다.'
+            cmdenter.value = ''
+            cmdwrap.append(text2)
+            cmdwrap.append(br)
+            break;
+            default:
+                let textline = document.createElement('p')
+                textline.innerHTML = cmdenter.value
+                cmdenter.value = ''
+                cmdwrap.append(textline)
+                cmdwrap.append(br)
+            }
+        }
+       
+}
 
 })
