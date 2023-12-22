@@ -92,6 +92,7 @@ window.onload= function(){
         let packslideli = document.querySelector('.storemainwrapbox li').getBoundingClientRect().width    
         let idchecker = e.target.id || e.target.classList.value;
         console.log(leftnum)
+
         switch (idchecker){
             case 'btn_close' :
                 document.querySelector('.adTop').style.display = 'none'
@@ -106,6 +107,7 @@ window.onload= function(){
                 leftnum +=(packslideli+30)
                 document.querySelector('.storemainwrapbox ul').style.transform = `translateX(${leftnum}px)`
             break;
+        
         }
     }
 

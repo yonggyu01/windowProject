@@ -278,6 +278,7 @@ opacity: 1;
     align-items: center;
     justify-content: center;
     gap:10px;
+    text-align: center;
 }
 .mycomputericon>ul>li{ width: 80px;}
 .mycomputericon>ul{
@@ -511,6 +512,7 @@ border: 1px solid black;
     gap:10px;
     height: 80px;
     width: 110px;
+    text-align: center;
     
 }
 .mycomputericon2>ul{
@@ -722,6 +724,7 @@ text-align: center;
     gap:10px;
     width: 110px;
     height: 120px;
+    text-align: center;
     
 }
 .mycomputericon3>ul{
