@@ -67,7 +67,7 @@ bricon.forEach(function(item,idx){
         }
     }
     item.ondragstart = function(){
-        return false;
+        // return false;
     }
 })
 //  네비게이션바 메뉴들 눌렀을때 실행함수
@@ -166,6 +166,23 @@ function nowopenmycom(value){
         indexcheck(e)
         if (e.target.parentElement.parentElement?.classList?.value=='newnote'){
             recycle = e.target.parentElement.parentElement
+            //임시로 메모장기능 추가함 바로바로 뜨니깐 좀 정신사나움 1.5초후 뜨는거로
+            let datachecker = e.target.nextElementSibling?.nextElementSibling == null ?  e.target.dataset.id : e.target.nextElementSibling.nextSibling.dataset.id
+            console.log(datachecker)
+            let dialogselect = document.querySelector(`dialog[data-id="${datachecker}"]`)
+            setTimeout(function(){
+                dialogselect.open =dialogselect.open == false ?  true : false;
+                dialogselect.style.left = Math.random()*1000+'px'
+                dialogselect.style.top = Math.random()*500+'px'
+                dialogselect.style.width = 300+'px'
+                dialogselect.style.height = 300 + 'px'
+                dialogselect.style.overflow = 'scroll'
+            },1500)
+            
+        }else if(e.target.parentElement.parentElement?.classList?.value=='moving'){
+            recycle = e.target.parentElement.parentElement
+        }else if(e.target.parentElement.parentElement?.classList?.value=='nonep'){
+            recycle = '';
         }
         // console.log(e)
         // console.log(indexcheck(e))
@@ -187,11 +204,16 @@ window.ondragend=function(e){
     recycle.style='display:none'
     }else{
         cb.append(recycle)
-        // 수정해서 파일 드래그 드롭기능으로 변경함  
+        // 수정해서 파일 드래그 드롭기능으로 변경함 (사소한 버그가 존재함... 근데 재밌으니 뭐..)
     }
     }
 dropClick(x,y)
 }
+
+// 문제점 발견  각 창별로 드래그드롭으로 아이콘 이동시 크기를 매번 계산해서 재반영해야함
+// 태그별로 전부 width는 본인의 li 갯수별 * ?? px로 늘리게 할까... 고민해보자
+
+
 
 
 /*
@@ -540,10 +562,11 @@ fullbtn.forEach(function(item){
                console.log(e)
     })
 })
-let savebt = document.querySelector('.savebt'),newnote;
+let savebt = document.querySelector('.savebt'),newnote,dialognum=0;
 savebt.onclick =function(e){
     let h3name = prompt('저장할 파일명을 입력해주세요')
-    console.log(e)
+
+    let mainmemo = document.querySelector('#memo')
     let newli = document.createElement('li')
     newli.classList.add('newnote')
     let newa = document.createElement('a')
@@ -551,20 +574,32 @@ savebt.onclick =function(e){
     let newh3 = document.createElement('h3')
     newh3.innerText = h3name
     newimg.setAttribute('src','image/note.png')
+    let dia = document.createElement('dialog');
+
+    dia.setAttribute('data-id',dialognum)
+    dia.innerHTML = mainmemo.value
+    dialognum++
+    mainmemo.value = '';
     newa.append(newimg)
     newa.append(newh3)
+    newa.append(dia)
     newli.append(newa)
     document.querySelector('.iconwrapbox ul').appendChild(newli)
-    notelicheck()
+    document.querySelector('.memobox').style.display = 'none'
+    document.querySelectorAll('.work_line')[10].style.display = 'none'
+    setTimeout(function(){
+        notelicheck() // 이거 만든이유는 저장버튼이 눌린 이후에 newnote 클래스를 가진 요소가  생성되기 때문에
+        // 해당 클래스를 가진 녀석에게 이벤트를 등록시키려면 아무리 생각해도 세이브 버틴이 눌린 이후 셋타이머로 몇초 후에 newnote변수에
+        // 쿼리 셀렉트 값을 전송한는게 나을것 같음..안되네.. 윈도우 클릭이벤트로 전역적으로 잡아서 해당 클래스에 직접 이벤트를 적용하는게 나을것 같음
+
+    }
+    ,1000)
 }
  function notelicheck(){
-    newnote= document?.querySelectorAll('.newnote')
-     newnote.onclick=function(e){
-         e.target.onmousemove=function(){
-            let x = e.clientX,y=clientY;
-            e.target.style.tansform = `translate(${x},${y})`         }
-     }
- }
+    newnote= document.querySelectorAll('.newnote')
+}
+
+
 
 
 
@@ -900,6 +935,8 @@ setInterval(function(){
     timebox.innerHTML= nowhour + " : " +nowmi;
  }
 },(1000*30))
+
+
 // 카카오톡 : 추후구현 기능 -> 카카오gpt api삽입하여 채팅기능 구현, 카카오톡 로그인기능 추가 (실게 카톡으로도 대화내용 전송되도록 해보고 싶음)
 
 let kakaouserID = document.querySelector('#userID')
