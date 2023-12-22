@@ -1990,9 +1990,13 @@ align-items: center;
     box-sizing: border-box;
 }
 @media screen and (max-width:600px){
+
 	.wrapingfull{
-        min-width: 800px;
-        max-height: 800px;
+        display : grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 9fr 1fr ;
+        min-width: 600px;
+        max-height: 700px;
     }
     .iconwrapbox>ul>li{
         width: 80px;
@@ -2005,4 +2009,21 @@ align-items: center;
         object-fit: contain;
     }
     .timebox{display: none;}
+}
+@media screen and (max-width:480px){
+	.wrapingfull{
+        min-width: 450px;
+        max-height: 500px;
+    }
+    .iconwrapbox>ul>li{
+        width: 50px;
+    }
+    .iconwrapbox>ul>li>a{
+    font-size: 12px;
+    }
+    .iconwrapbox img{
+        width: 25px;
+        object-fit: contain;
+    }
+   
 }
