@@ -1,4 +1,5 @@
 #cgvWrap{
+    overflow: hidden;
     position: relative;
 }
 
@@ -81,6 +82,9 @@
         font-weight: 400;
         color: #666;
         line-height:1.8em;
+    }
+    .fixedNav .fixedbtn_search{
+        filter: brightness(1);
     }
 .fixedbtn_search{
     width: 40px;
@@ -183,8 +187,9 @@ nav{
     height:0px;
     top: 52px;
     left: 0;
-    background-color: #fff;
-    transition: all 0.8s;
+    transition: all 0.4s;
+    background: rgb(238,238,238);
+    background: linear-gradient(0deg, rgba(238,238,238,1) 0%, rgba(255,255,255,1) 15%);
 }
 .nav_menu{
     position: relative;
@@ -213,7 +218,7 @@ nav{
         padding-top:15px;
         width: 100%;
         height: 0;
-        transition: all 0.8s;
+        transition: all 0.4s;
         overflow: hidden;
         box-sizing: border-box;
     }
@@ -226,7 +231,7 @@ nav{
         width: 1px;
         height: 210px;
         background: #e2e2e2;
-        transition: all 0.8s;
+        transition: all 0.4s;
     } 
     .sub_menu dt a{ 
         font-size: 14px;
@@ -292,6 +297,7 @@ nav{
 
 /*main */
 main{   
+    padding-top: 30px;
     width: 980px;
     margin: 0 auto;
 }
@@ -434,7 +440,7 @@ main{
         bottom: 0;
         width: 920px;
         padding: 20px 30px;
-        background: rgba(0, 0, 0, 0.8);
+        background: rgba(0, 0, 0, 0.4);
         color: #fdfcf0;
         font-size: 12px;
         font-weight:600;
@@ -724,8 +730,10 @@ main{
       position: absolute;
 display :none;
 }  
-.info > li{
+.info > li:not(:last-child){
+    width: 800px;
     border-bottom: 1px solid #181815;
+
 }
 .info_movie{
   
