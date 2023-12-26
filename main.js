@@ -195,16 +195,22 @@ function nowopenmycom(value){
     }
 // 휴지통기능 임시로 구현  새로 만든 파일들은 드래그해서 넣으면 사라짐
 window.ondragend=function(e){
+ 
     let x = e.clientX
     let y = e.clientY
    function dropClick(x, y){
     let cb = document.elementFromPoint(x, y);
     console.log(cb)
+    console.log(cb.nodeName)
     // document.elementFromPoint(x, y); 내 마우스가 어디 태그 위에 있는지를 알려줌
     if(cb.id=='rec'){
     recycle.style='display:none'
     }else{
-        cb.append(recycle)
+        switch(cb.nodeName){
+            case 'UL':
+                cb.append(recycle)
+            break;
+        }
         // 수정해서 파일 드래그 드롭기능으로 변경함 (사소한 버그가 존재함... 근데 재밌으니 뭐..)
         // 추가수정사항으로 폴더에 직접 드래그시 해당폴더로 삽입되는 기능
     }
