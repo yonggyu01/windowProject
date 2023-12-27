@@ -65,7 +65,8 @@ height: 100vh;
 .first_select_no{
 display: none;
 width: 100vw;
-height: 500vh;
+/* height: 100vh; */
+/* overflow: hidden; */
 }
 .first_select_yes .bg{
     background-image: url(../images/firstbg.png);
@@ -85,8 +86,18 @@ height: 500vh;
     justify-content: center;
 
 }
+.first_select_no nav h1{
+    width: 80px;
+    height: 80px;
+    background-image: url(../images/너는솔로.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    text-indent: -9999px;
+
+}
 .first_select_no nav{
-    position: absolute;
+    position: fixed;
     display: flex;
     width: 1200px;
     justify-content: space-evenly;
@@ -95,13 +106,38 @@ height: 500vh;
     padding-top: 20px;
     margin: 0 auto;
 }
+.first_select_no nav ul li a{
+    font-size: 22px;
+    font-weight: bold;
+}
+
 .first_select_no nav ul{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 980px;
 
 }
+.first_select_no main{
+    position: relative;
+}
+.first_select_no .sidebar{
+    position: fixed;
+    top : 50%;
+    right : 10px;
+}
 .first_select_no main .mainbg{
+    width: 100vw;
     height: 100vh;
     background-color: pink;
+}
+.first_select_no main .mainbg2{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(105, 170, 254);
+}
+.first_select_no main .mainbg3{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(231, 81, 248);
 }
