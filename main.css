@@ -1161,10 +1161,12 @@ color :red;
     /* display: none; */
 }
 .kakaobg img{
-    width: 150px;
+    width: 130px;
+    overflow: hidden;
     height: 150px;
     object-fit: contain;
     margin-bottom: 30px;
+
 }
 #kakaologin fieldset input{
     font-size: 20px;
