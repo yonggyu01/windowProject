@@ -1378,6 +1378,9 @@ window.onkeydown = function(e){
               }
           }
       }
+      item.ondragstart = function(){
+        return false;
+    }
   })
 // css 노트부분
 
@@ -1396,6 +1399,9 @@ css_basic_list.forEach(function(item,idx){
                 }
             }
     }
+    item.ondragstart = function(){
+        return false;
+    }
 })
 let css_media_list = document.querySelectorAll('.css_media_list ul li')
 let css_media_use = document.querySelectorAll('.css_media_use ul li')
@@ -1412,6 +1418,10 @@ css_media_list.forEach(function(item,idx){
                 css_media_use[i].style.display='none'
             }
         }
+        
+    }
+    item.ondragstart = function(){
+        return false;
     }
 })
 
@@ -1444,24 +1454,37 @@ document.querySelector('.cmdopen').onclick=function(){
 
     
 }
+//인풋창 클릭시 자동포커스
+document.querySelector('.cmd_view').onclick=function(){
+    cmdenter.focus()
+}
 //cmd창 인풋 구현
 
 cmdenter.onkeyup=function(e){
     console.log(e)
     let enter1 = e.code,evalue=cmdenter.value;
+    let pu,pt;
+    pt = document.createElement('p')
+    pt.innerHTML = '파일이 존재하지 않습니다.'
     if(enter1=='Enter'){
         let br = document.createElement('br')
         switch (evalue) {
             case 'cd..':
             if(mm==2){
                 mm--
+                pu= document.querySelector('.cmd_linewrap p').innerText 
+                cmdwrap.append(pu)
+                cmdwrap.append(br)
                 document.querySelector('.cmd_linewrap p').innerText = "C:\\Users\\"
                 cmdenter.value = ''
             }else if(mm==1){
                 mm--
+                let pu1 = document.querySelector('.cmd_linewrap p').innerText 
+                cmdwrap.append(pu1)
+                cmdwrap.append(br)
                 document.querySelector('.cmd_linewrap p').innerText = "C:\\"
                 cmdenter.value = ''
-            }else{
+            }else if(mm==0){
                 let text1 = document.createElement('p')
                 text1.innerHTML = '이미 최상위 폴더입니다.'
                 cmdenter.value = ''
@@ -1470,11 +1493,31 @@ cmdenter.onkeyup=function(e){
             }
             break;
             case 'dir' : 
-            let text2 = document.createElement('p')
-            text2.innerHTML = 'HTML, CSS, JAVASCRIPT 폴더가 존재합니다.'
-            cmdenter.value = ''
-            cmdwrap.append(text2)
-            cmdwrap.append(br)
+            if(document.querySelector('.cmd_linewrap p').innerText=='C:\\html\\'){
+                let logt = document.createElement('p')
+                logt.innerHTML = '\<폴더\> html'+'<br>'+'html.exe'
+                cmdenter.value = ''
+                cmdwrap.append(logt)
+              cmdwrap.append(br)
+            }else if(document.querySelector('.cmd_linewrap p').innerText=='C:\\css\\'){
+                let logt1 = document.createElement('p')
+                logt1.innerHTML = '\<폴더\> css'+'<br>'+'css.exe'
+                cmdenter.value = ''
+                cmdwrap.append(logt1)
+                cmdwrap.append(br)
+            }else if(document.querySelector('.cmd_linewrap p').innerText=='C:\\javascript\\'){
+                let logt2 = document.createElement('p')
+                logt1.innerHTML = '\<폴더\> javascript'+'<br>'+'javascript.exe'
+                cmdenter.value = ''
+                cmdwrap.append(logt2)
+                cmdwrap.append(br)
+            }else{
+                let text2 = document.createElement('p')
+                text2.innerHTML = 'html, css, javascript 폴더가 존재합니다.'
+                cmdenter.value = ''
+                cmdwrap.append(text2)
+                cmdwrap.append(br)
+            }
             break;
             case 'ipconfig' : 
             let text3 = document.createElement('p')
@@ -1484,20 +1527,68 @@ cmdenter.onkeyup=function(e){
             cmdwrap.append(br)
             break;
             case 'cd html' : 
-            mm==1
+            mm=1
+            pu = document.querySelector('.cmd_linewrap p').innerText 
+                cmdwrap.append(pu)
+                cmdwrap.append(br)
             document.querySelector('.cmd_linewrap p').innerText = "C:\\html\\"
             cmdenter.value = ''
             break;
             case 'cd css' : 
-            mm==1
+            mm=1
+            pu = document.querySelector('.cmd_linewrap p').innerText 
+                cmdwrap.append(pu)
+                cmdwrap.append(br)
             document.querySelector('.cmd_linewrap p').innerText = "C:\\css\\"
             cmdenter.value = ''
             break;
             case 'cd javascript' : 
-            mm==1
+            mm=1
+           pu = document.querySelector('.cmd_linewrap p').innerText 
+                cmdwrap.append(pu)
+                cmdwrap.append(br)
             document.querySelector('.cmd_linewrap p').innerText = "C:\\javascript\\"
             cmdenter.value = ''
             break;
+            case 'html.exe' :
+                if(document.querySelector('.cmd_linewrap p').innerText=='C:\\html\\'){
+                  setTimeout(function(){
+                      document.querySelectorAll('#mycom')[0].style.display ='block'
+                      document.querySelectorAll('.work_line')[1].style.display ='block'
+                      cmdenter.value = ''
+                    },1000)
+                }else{
+                    cmdenter.value = '';
+                    cmdwrap.append(pt)
+                    cmdwrap.append(br)
+                }
+                break;
+            case 'css.exe' :
+                if(document.querySelector('.cmd_linewrap p').innerText=='C:\\css\\'){
+                    setTimeout(function(){
+                        document.querySelectorAll('#mycom')[1].style.display ='block'
+                        document.querySelectorAll('.work_line')[4].style.display ='block'
+                        cmdenter.value = ''
+                    },1000)
+                }else{
+                    cmdenter.value = '';
+                    cmdwrap.append(pt)
+                    cmdwrap.append(br)
+                }
+                break;
+            case 'javascript.exe' :
+                if(document.querySelector('.cmd_linewrap p').innerText=='C:\\javascript\\'){
+                    setTimeout(function(){
+                        document.querySelectorAll('#mycom')[2].style.display ='block'
+                        document.querySelectorAll('.work_line')[7].style.display ='block'
+                        cmdenter.value = ''
+                    },1000) 
+                }else{
+                    cmdenter.value = '';
+                    cmdwrap.append(pt)
+                    cmdwrap.append(br)
+                }
+                break;
             default:
                 let textline = document.createElement('p')
                 textline.innerHTML = cmdenter.value
@@ -1508,9 +1599,4 @@ cmdenter.onkeyup=function(e){
         }
        
 }
-
-
-
-
-
 })
