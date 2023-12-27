@@ -86,7 +86,10 @@ h1>a{
     font-weight: bold;
     width: 135px;
     margin: auto;
- 
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
 }
 #nonelist>li>a{
     /* font-size: inherit; */
@@ -99,12 +102,7 @@ h1>a{
     align-items: center;
     justify-content: center;
 }
-#nonelist>li{
-    display: flex;
-    flex-direction: column;
-    /* justify-content: center; */
-    align-items: center;
-}
+
 .linea{
     display: inline-block;
      height: 6px;
@@ -186,9 +184,9 @@ h1>a{
     /* height: 240px; */
     height: 0;
     position: absolute;
-    top:60px;
+    top:120px;
     left:0;
-    transition: all 0.5s;
+    transition: all 0.4s;
     overflow: hidden;
 }
 .bgbar{

@@ -159,7 +159,7 @@ navilist.forEach(function(item,idx){
         
         for(i=0; i<lit1.length; i++){
             lit1[i].style.height = 180 + 'px'
-            lit1[i].style.opacity = 1
+            // lit1[i].style.opacity = 1
             if(idx == i){
                 line[i].style.width = linewidth[i] + 'px'
             }else{
@@ -173,7 +173,7 @@ nav1.addEventListener('mouseleave',function(){
     barclose();
     for(i=0; i<lit1.length; i++){
         lit1[i].style.height = 0 + 'px'
-        lit1[i].style.opacity = 0
+        // lit1[i].style.opacity = 0
     } 
     setTimeout(function(){
             for(i=0; i<linewidth.length; i++){

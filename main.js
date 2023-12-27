@@ -60,7 +60,7 @@ bricon.forEach(function(item,idx){
                 // 인터넷창 오픈시 로딩화면 뜨게함
             break;
             default: 
-            console.log(idx)
+            // console.log(idx)
                 killmenu[idx+8].style.display = 'block'
                 killmenu[idx+8].style.zIndex = zindexnum;
                 work_line[idx+8].style.display = 'block';
@@ -168,7 +168,7 @@ function nowopenmycom(value){
             recycle = e.target.parentElement.parentElement
             //임시로 메모장기능 추가함 바로바로 뜨니깐 좀 정신사나움 1.5초후 뜨는거로
             let datachecker = e.target.nextElementSibling?.nextElementSibling == null ?  e.target.dataset.id : e.target.nextElementSibling.nextSibling.dataset.id
-            console.log(datachecker)
+            // console.log(datachecker)
             let dialogselect = document.querySelector(`dialog[data-id="${datachecker}"]`)
             setTimeout(function(){
                 dialogselect.open =dialogselect.open == false ?  true : false;
@@ -200,8 +200,8 @@ window.ondragend=function(e){
     let y = e.clientY
    function dropClick(x, y){
     let cb = document.elementFromPoint(x, y);
-    console.log(cb)
-    console.log(cb.nodeName)
+    // console.log(cb)
+    // console.log(cb.nodeName)
     // document.elementFromPoint(x, y); 내 마우스가 어디 태그 위에 있는지를 알려줌
     if(cb.id=='rec'){
     recycle.style='display:none'
@@ -553,7 +553,19 @@ function fullandmin(item,selected,maxormin){
     item.parentElement.parentElement.parentElement.style.left =  (Math.random()*600)+'px'
     item.parentElement.parentElement.parentElement.children[item.parentElement.parentElement.parentElement.children.length-1].style.height = '50vh'
     item.parentElement.parentElement.parentElement.children[item.parentElement.parentElement.parentElement.children.length-1].style.width = '50vw'
-   }    
+   }else if(selected == 'fb' && maxormin == 'max' && item.parentElement.parentElement.parentElement.className =='cmd' ){
+   item.parentElement.parentElement.style.width = '100vw'
+   item.parentElement.parentElement.parentElement.style.top = '0px'
+   item.parentElement.parentElement.parentElement.style.left = '0px'
+   item.parentElement.parentElement.parentElement.children[item.parentElement.parentElement.parentElement.children.length-1].style.height = '100vh'
+   item.parentElement.parentElement.parentElement.children[item.parentElement.parentElement.parentElement.children.length-1].style.width = '100vw'
+  }else if(selected == 'fb' && maxormin == 'min' && item.parentElement.parentElement.parentElement.className =='cmd'){
+   item.parentElement.parentElement.style.width = '50vw'
+   item.parentElement.parentElement.parentElement.style.top =  (Math.random()*500)+'px'
+   item.parentElement.parentElement.parentElement.style.left =  (Math.random()*600)+'px'
+   item.parentElement.parentElement.parentElement.children[item.parentElement.parentElement.parentElement.children.length-1].style.height = '50vh'
+   item.parentElement.parentElement.parentElement.children[item.parentElement.parentElement.parentElement.children.length-1].style.width = '50vw'
+  }  
 }
 
 fullbtn.forEach(function(item){
@@ -567,7 +579,7 @@ fullbtn.forEach(function(item){
             fullswitch = 0
         }
                    
-               console.log(e)
+            //    console.log(e)
     })
 })
 let savebt = document.querySelector('.savebt'),newnote,dialognum=0;
@@ -876,7 +888,7 @@ mypainter.onmousedown = function(event){
     painting = true;
     ctx.beginPath();
     ctx.moveTo(event.offsetX, event.offsetY)
-    console.log(event.offsetX,event.offsetY)
+    // console.log(event.offsetX,event.offsetY)
 }
 // 마우스의 현재 위치는 event.offsetx 와 offsety로 잡았음
 mypainter.onmouseup = function(event){
@@ -989,7 +1001,7 @@ jaristart.onclick = function(){
     gnnn.innerHTML = jari1.length
     let jaritimer0 = setInterval(function(){
         jarigamestart()
-        console.log(jarinum)
+        // console.log(jarinum)
         if(jarinum>=jari1.length){
             clearInterval(jaritimer0)
             jarinum = 0;
@@ -1066,7 +1078,7 @@ let hancom = document.querySelectorAll('#hancom')
 let hancomtap = document.querySelectorAll('.bbt')
 hancomtap.forEach(function(item,idx){
     item.onclick=function(){
-        console.log(idx)
+        // console.log(idx)
     for(i=0; i<hancomtap.length; i++){
        if(i==idx){
         hancom[i].style.display = 'block'
@@ -1145,7 +1157,7 @@ jari2a.onchange=function(){
     norih4 = document.querySelectorAll('.jariviewbox2 .noridownbox h4')
    let value = jari2a.value
 
-   console.log(value)
+//    console.log(value)
    if(noriboxheight==126 && noriYposition >270){
     clearInterval(noriinter)
     noritimer = sonagilist[0].length
@@ -1250,17 +1262,17 @@ yahoo_sbtn.onclick = function(){
         if(a.search(/KFC/i) > 0){
             tarray[0] = a.search(/KFC/i)
 
-            console.log(tarray)
+            // console.log(tarray)
        }else if(a.search(/CGV/i)>0){
             tarray[1] = a.search(/CGV/i)
-            console.log(tarray) 
+            // console.log(tarray) 
         }
         for(i=0;i<tarray.length; i++){
             if((tarray[i])!=undefined){
                 result = i
             }
         }
-        console.log(result)
+        // console.log(result)
         switch(result){
             case 0:
                 siteview[2].style.display = 'block'
@@ -1339,7 +1351,7 @@ ul.children[y].children[0].children[x].className = 'snake';
 }
 window.onkeydown = function(e){
         // console.log(e.code)
-        console.log(tempBox.x,tempBox.y)
+        // console.log(tempBox.x,tempBox.y)
         switch (e.code){
             case 'KeyA':
                 tempBox.x -=1 
@@ -1461,7 +1473,7 @@ document.querySelector('.cmd_view').onclick=function(){
 //cmd창 인풋 구현
 
 cmdenter.onkeyup=function(e){
-    console.log(e)
+    // console.log(e)
     let enter1 = e.code,evalue=cmdenter.value;
     let pu,pt;
     pt = document.createElement('p')
@@ -1599,4 +1611,14 @@ cmdenter.onkeyup=function(e){
         }
        
 }
+// 종료버튼은 스크립트로 진행 , 버튼누를시 wrapingfull 을 display none하고
+// 그냥 바디에 종료화면 백그라운드로 띄워주면 될듯?
+document.querySelectorAll('.wrap1>ul>li')[6].onclick = function(){
+    document.querySelector('.wrapingfull').style.display='none'
+    document.querySelector('.ending').style.display ='flex'
+}
+document.querySelector('.ending').onclick=function(){
+    window.location='index.html'
+}
+
 })
