@@ -390,6 +390,10 @@ opacity: 1;
     overflow-x: scroll;
     height: 700px;
 }
+.htmlbasic ol{
+    padding-left: 10px;
+    box-sizing: border-box;
+}
 
 /* html다음노트 */
 .htmltaglist{

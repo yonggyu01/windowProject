@@ -170,14 +170,13 @@ function nowopenmycom(value){
             let datachecker = e.target.nextElementSibling?.nextElementSibling == null ?  e.target.dataset.id : e.target.nextElementSibling.nextSibling.dataset.id
             // console.log(datachecker)
             let dialogselect = document.querySelector(`dialog[data-id="${datachecker}"]`)
-            setTimeout(function(){
-                dialogselect.open =dialogselect.open == false ?  true : false;
+                dialogselect.open =dialogselect.open == true ? false : '';
                 dialogselect.style.left = Math.random()*1000+'px'
                 dialogselect.style.top = Math.random()*500+'px'
                 dialogselect.style.width = 300+'px'
                 dialogselect.style.height = 300 + 'px'
                 dialogselect.style.overflow = 'scroll'
-            },1500)
+          
             
         }else if(e.target.parentElement.parentElement?.classList?.value=='moving'){
             recycle = e.target.parentElement.parentElement
@@ -193,6 +192,22 @@ function nowopenmycom(value){
     //         break; 
     //    }
     }
+
+    // 더블클릭시 켜지도록 바꿔봄
+window.ondblclick=function(e){
+    let datachecker = e.target.nextElementSibling?.nextElementSibling == null ?  e.target.dataset.id : e.target.nextElementSibling.nextSibling.dataset.id
+    // console.log(datachecker)
+    let dialogselect = document.querySelector(`dialog[data-id="${datachecker}"]`)
+    setTimeout(function(){
+        dialogselect.open =dialogselect.open == false ?  true : false;
+        dialogselect.style.left = Math.random()*1000+'px'
+        dialogselect.style.top = Math.random()*500+'px'
+        dialogselect.style.width = 300+'px'
+        dialogselect.style.height = 300 + 'px'
+        dialogselect.style.overflow = 'scroll'
+    },1000)
+}
+
 // 휴지통기능 임시로 구현  새로 만든 파일들은 드래그해서 넣으면 사라짐
 window.ondragend=function(e){
  
@@ -597,7 +612,7 @@ savebt.onclick =function(e){
     let dia = document.createElement('dialog');
 
     dia.setAttribute('data-id',dialognum)
-    dia.innerHTML = mainmemo.value
+    dia.innerHTML = `<div style="display:flex;flex-direction: column;justify-content: space-between;box-sizing: border-box; position: relative;"><p style="padding-left:10px">${mainmemo.value}</p><br><br><br><br><br><p style="color : gray;position:absolute;bottom:-10px;left : 10%">이 창을 클릭시 종료됩니다.</p></div>`
     dialognum++
     mainmemo.value = '';
     newa.append(newimg)
