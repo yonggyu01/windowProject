@@ -213,14 +213,42 @@
                 <select name="sort" id="sortitem">
                     <option value="0">예매율순</option>
                     <option value="1">평점순</option>
-                    <option value="2">관람객순</option>
+                    <!-- <option value="2">관람객순</option> -->
                 </select>
                 <button>GO</button>
             </fieldset>
         </form>    
         <section class='main_movie'>
+            <template class="litemplate">
+                <li class="template_item">
+                    <span class="num_rank"></span>
+                    <div class="img_wrap">
+                        <img src="" alt="">
+                        <p class="age12"></p>
+                        <div class="cgvflex">
+                            <p class="imax xx">IMAX</p>
+                            <p class="4dx">4DX</p>
+                            <p class="screenx xx">SCREENX</p>
+                        </div>
+                    </div>
+                    <div class="textwrap">
+                    <h3></h3>
+                    <div class="textsubwrap">
+                    <p>예매율 :<span class="ticketsales"></span></p>
+                    <p><span class="wrap">
+                            <span class="result"></span>
+                            <span class="tomato"></span>
+                        </span>
+                    </p>
+                </div>
+                       <p class="resultdate"><span class="dday"></span></p> 
+                       <a href="#none">예매하기</a>
+                    </div>
+                </li>
+            </template>
         <h2 class="xx">무비차트 - 예매율순</h2>
             <ol class="firstol">
+           
                 <li>
                     <span class="num_rank">No.1</span>
                     <div class="img_wrap">
@@ -285,7 +313,7 @@
                     </div>
                     <div class="textwrap">
                     <h3>3일의 휴가</h3>
-                    <div class="textsubwrap">
+                     <div class="textsubwrap">
                         <p>예매율 :
                             <span class="ticketsales">10.2%</span></p>
                         <p><span class="wrap">

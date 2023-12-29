@@ -3,7 +3,17 @@ function imgchange(url){
    
 }
 window.onload =function(){
-    
+        //로그인 확인
+        if(window.localStorage?.Loging){
+            if(window.localStorage.Loging=='true'){
+                document.querySelectorAll('.login_menu li')[0].style.display='none'
+                document.querySelectorAll('.login_menu li')[1].style.display='none'
+            }else{
+                document.querySelectorAll('.login_menu li')[0].style.display='block'
+                document.querySelectorAll('.login_menu li')[1].style.display='block'
+            }
+        }
+
     let chartnum=0,chartnum2=0,eventnum=0,automode=0,eventtime=0,autotimer;
     document.querySelector('.familysite_list').style.display ='none'
     window.onclick = function(e){
@@ -20,18 +30,25 @@ window.onload =function(){
                 break;
             case 'btn_play' :
                 document.querySelector('.video1').play();
+                e.target.style.display='none'
+                document.querySelector('.btn_Stop').style.display='block'
                 break;
             case 'btn_Stop' :
                 document.querySelector('.video1').pause();
+                e.target.style.display='none'
+                document.querySelector('.btn_play').style.display='block'
                 break;
             case 'btn_soundOn' :
                 document.querySelector('.video1').muted = 0;
+                e.target.style.display='none'
+                document.querySelector('.btn_soundOff').style.display='inline-block '
                 break;
             case 'btn_soundOff' :
                 document.querySelector('.video1').muted = 1;
+                e.target.style.display='none'
+                document.querySelector('.btn_soundOn').style.display='inline-block'
                 break;
             case 'mchart':
-
                 e.target.parentElement.nextElementSibling.children[0].style.color = 'gray'
                 e.target.style.color='black'
                document.querySelector('.chart_wrap .slide_wrap').style.width = '1000px'
@@ -39,7 +56,6 @@ window.onload =function(){
                document.querySelector('.chart_wrap .slide_btn').style.display = 'block'
             break;
             case 'm2chart':
-            
                 e.target.parentElement.previousElementSibling.children[0].style.color = 'gray'
                 e.target.style.color='black'
                 document.querySelector('.chart2_wrap').style.display = 'block'
