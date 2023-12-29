@@ -10,7 +10,7 @@
         window.onload = function(){
             const user_name = document.getElementById('user_name')
             const user_id = document.getElementById('user_id')
-            const user_id_check = document.getElementById('id_check')
+            // const user_id_check = document.getElementById('id_check')
             const user_pass = document.getElementById('user_pass')
             const user_passcheck = document.getElementById('user_passcheck')
             const user_phone = document.getElementById('user_phone')
@@ -35,7 +35,7 @@
                 e.preventDefault();
                 for(let x of nonevalue){
                    if(!x.value){
-                    console.log(x)
+              
                     e.preventDefault();
                     x.focus()
                     return alert(`${x.placeholder}에 내용이 없습니다.`);
@@ -68,7 +68,10 @@
                     window.localStorage.setItem(user_id.value,user_id.value)
                     window.localStorage.setItem(`${user_id.value}_pass`,user_pass.value)
                     document.querySelector('#joinpage').style.display='none'
-                    document.querySelector('.sign_succ').innerHTML = `<h2 style=" display: flex;text-align:center;font-size : 30px;padding-top : 150px;margin:auto;width:980px" >${user_id.value} 님 회원가입에 성공하였습니다.</h2>`
+                    document.querySelector('.sign_succ').innerHTML = `<h2 style=" display: flex;text-align:center;font-size : 30px;padding-top : 150px;margin:0 auto 100px;width:980px;justify-content:center;" >${user_id.value} 님 회원가입에 성공하였습니다.</h2>`
+                    setTimeout(function(){
+                        location.href= '../html/CGV_login.html'
+                    },2000)
                 }
             }
             mailaddress.onchange = function(){
@@ -125,15 +128,15 @@
     // return false; 로 전달하게 if문ㅇ 속에 넣으면  이벤트가 실행이 안됨.  이벤트 비활성화 하는 방법중 하나임;
 // 
 
-user_id_check.onclick =()=>{
-    if(document.querySelector('#user_id').value){
+document.querySelector('#user_id').onkeyup =()=>{
+    if(document.querySelector('#user_id').value.length > 4){
         searchid(document.querySelector('#user_id').value)
     }else{
-        document.querySelector('.idresultbox').innerHTML = `<span style="margin-left : 5px; color:red">아이디 입력하세요</span>`
+        document.querySelector('.idresultbox').innerHTML = `<span style="margin-left : 5px; color:red">아이디를 4글자 이상 입력해주세요</span>`
     }
     setTimeout(function(){
         document.querySelector('.idresultbox').innerHTML=''
-    },1000)
+    },10000)
 }
 function searchid(idvalue){
         if(!window.localStorage[idvalue]){
