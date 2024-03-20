@@ -2018,8 +2018,6 @@ box-sizing: border-box;
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
-    gap:50px;
-    margin-left: 50px;
 }
 .modal{
     display: flex;
