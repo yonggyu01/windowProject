@@ -1514,6 +1514,13 @@ helpbtn[1].onclick=function(){
         return false
     }
     }
+    // help이미지 드래그 불가
+    const dontmove = document.querySelectorAll('.helpslidewrap img')
+    dontmove.forEach((item)=>{
+        item.ondragstart = function(){
+            return false;
+        }
+    })
 
 //인풋창 클릭시 자동포커스
 document.querySelector('.cmd_view').onclick=function(){
