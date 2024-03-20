@@ -481,7 +481,7 @@ wheadwrap.onmousedown = function(e){
 */
 
 let whead = document.querySelectorAll('.wheadwrap,.wheadwrap1,.wheadwrap2,.wheadwrap3,.wheadwrap4,.wheadwrap5,.subprogram')
-let movewin = document.querySelectorAll('.mycomputer,.htmlStudy,.cssStudy,.javaStudy,.javanote,.javanote1,.memobox,.calcul,.paint,.kakaotalk,.korean,.internet,.bomb,.html_note1,.html_note2,.css_note2,.css_note1,.cmd')
+let movewin = document.querySelectorAll('.mycomputer,.htmlStudy,.cssStudy,.javaStudy,.javanote,.javanote1,.memobox,.calcul,.paint,.kakaotalk,.korean,.internet,.bomb,.html_note1,.html_note2,.css_note2,.css_note1,.cmd,.help')
     whead.forEach(function(item,idx){
         item.addEventListener('mousedown',function(e){
             movewin[idx].style.zIndex = 10000;
@@ -1481,6 +1481,40 @@ document.querySelector('.cmdopen').onclick=function(){
 
     
 }
+//help 오픈
+let helpopen = document.querySelector('.helpopen')
+helpopen.onclick=function(){
+    document.querySelector('.help').style.display = 'block'
+
+    startbutton.dispatchEvent(new Event('click'))
+    work_line[18].style.display='block'
+}
+// help 창 슬라이드 효과주기
+let mymodal = document.querySelectorAll('.modal')
+let helpbtn = document.querySelectorAll('.helplt,.helprt'),helpnum=0
+//왼쪽 클릭
+helpbtn[0].onclick=function(){
+if(helpnum>0){
+    helpnum--
+    mymodal[helpnum].scrollIntoView({behavior : 'smooth',
+    block : 'nearest',  inline : 'start'
+})
+}else{
+    return false
+}
+}
+// 오른쪽 클릭
+helpbtn[1].onclick=function(){
+    if(helpnum<mymodal.length){
+        helpnum++
+        mymodal[helpnum].scrollIntoView({behavior : 'smooth',
+        block : 'nearest',  inline : 'start'
+    })
+    }else{
+        return false
+    }
+    }
+
 //인풋창 클릭시 자동포커스
 document.querySelector('.cmd_view').onclick=function(){
     cmdenter.focus()

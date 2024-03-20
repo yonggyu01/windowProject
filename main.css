@@ -188,7 +188,7 @@ opacity: 1;
     flex-direction: column;
     flex-wrap: wrap;
     gap:15px;
-    height: 100vh;
+    height: calc(100vh - 50px);
    align-content: flex-start;
 }
 
@@ -1967,6 +1967,74 @@ box-sizing: border-box;
     padding-left: 5px;
     box-sizing: border-box;
  }
+/* 모달창 */
+
+.help{
+    position: absolute;
+    /* width: 600px; */
+    top :20%;
+    left : 30%;
+    /* display: none; */
+}
+.help>div>h2>img{
+    width: 18px;
+    height: 18px;
+    margin-right: 5px;
+}
+.help_view{
+    position: relative;
+    width: 100%;
+    background-color: black;
+    overflow-y: auto;
+    color:white;
+    box-sizing: border-box;
+}
+.helplt,.helprt{
+    position: absolute;
+    top:50%;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    outline: none;
+    font-size: 1.5em;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.helplt{
+    margin-left: 5px;
+}
+.helprt{
+    right:0;
+    margin-right: 5px;
+}
+.helpoever{
+    overflow:hidden;
+    width: 50vw;
+
+}
+.helpslidewrap{
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    gap:50px;
+    margin-left: 50px;
+}
+.modal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*  */
+    /* height: 50vh; */
+}
+.modal img{
+    min-width: 50vw;
+    object-fit: cover;
+}
+
+
+
 
 /* 작업표시줄은 푸터에 구현 */
 
@@ -2059,6 +2127,8 @@ align-items: center;
 .endinglog p,.endinglog mark{
     font-size: 1.2em;
 }
+
+
 @media screen and (max-width:600px){
 
 	.wrapingfull{
