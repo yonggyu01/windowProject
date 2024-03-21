@@ -29,8 +29,9 @@ let mycommenu = document.querySelectorAll('#mycom')
 let killmenu =document.querySelectorAll('#screenmenu, #mycom, #javanote ,.memobox,.calcul,.paint,.kakaotalk,.korean,.internet,.bomb,.html_note1,.html_note2,.css_note1,.css_note2')
 // killmenu에 아이템 새로 등록시 추가로 등록시키기만 하면됨. 단 자바 노트부분에 컨텐츠 추가시 html태그에서 위치를 잘 고민해야함
 // kill메뉴 이제 필요는 없긴 함...
+
 bricon.forEach(function(item,idx){
-    item.onclick =function(){
+    item.ondblclick =function(){
         zindexnum++
         switch(idx){
             case 0:
@@ -1514,7 +1515,7 @@ helpbtn[1].onclick=function(){
         return false
     }
     }
-    // help이미지 드래그 불가
+    // help이미지 드래그 불가햣
     const dontmove = document.querySelectorAll('.helpslidewrap img')
     dontmove.forEach((item)=>{
         item.ondragstart = function(){
